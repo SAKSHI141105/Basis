@@ -12,6 +12,11 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
+from pipeline.config import ARTIFACTS_DIR, TRAIN_THREADS_PARQUET
+
+INDEX_EMBEDDINGS_PATH = ARTIFACTS_DIR / "index_embeddings.npy"
+INDEX_METADATA_PATH = ARTIFACTS_DIR / "index_metadata.parquet"
+
 
 @dataclass
 class RetrievalResult:
@@ -65,3 +70,45 @@ class RetrievalIndex:
                 )
             )
         return results
+
+    def save(self, embeddings_path=INDEX_EMBEDDINGS_PATH, metadata_path=INDEX_METADATA_PATH) -> None:
+        embeddings_path.parent.mkdir(parents=True, exist_ok=True)
+        np.save(embeddings_path, self.embeddings)
+        self.metadata.to_parquet(metadata_path, index=False)
+
+    @classmethod
+    def load(cls, embeddings_path=INDEX_EMBEDDINGS_PATH, metadata_path=INDEX_METADATA_PATH) -> "RetrievalIndex":
+        embeddings = np.load(embeddings_path)
+        metadata = pd.read_parquet(metadata_path)
+        return cls(embeddings, metadata)
+
+
+def build_index(train_threads: pd.DataFrame, embed_fn) -> RetrievalIndex:
+    """Build the index from resolved training-split threads only.
+
+    `embed_fn` takes a list[str] of customer_msg_clean values and returns an
+    (n, d) array — injected so tests don't need to load a real
+    sentence-transformers model, and so this stays swappable per TRD 1.
+    """
+    resolved = train_threads[train_threads["resolved"]].reset_index(drop=True)
+    embeddings = embed_fn(resolved["customer_msg_clean"].tolist())
+    metadata_cols = [c for c in ("thread_id", "brand_reply_clean", "intent") if c in resolved.columns]
+    metadata = resolved[metadata_cols]
+    return RetrievalIndex(np.asarray(embeddings, dtype=np.float32), metadata)
+
+
+def _sentence_transformer_embed_fn():
+    from pipeline.taxonomy import embed_messages
+
+    return embed_messages
+
+
+def run() -> RetrievalIndex:
+    train_threads = pd.read_parquet(TRAIN_THREADS_PARQUET)
+    index = build_index(train_threads, _sentence_transformer_embed_fn())
+    index.save()
+    return index
+
+
+if __name__ == "__main__":
+    run()
