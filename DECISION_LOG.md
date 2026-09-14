@@ -115,3 +115,30 @@ generation quality and the judge's discrimination may be weaker than a
 the user's, both hitting the same per-project-per-model daily quota)
 doubled the burn rate and neither finished before the quota was already
 exhausted from earlier live end-to-end testing that same day.
+
+## gemini-3.5-flash-lite ALSO has a hard daily cap (500 requests/day)
+
+**Discovered:** running the real eval harness live (198 examples x 3 calls
+each = ~594 needed), it crashed 303 calls in with the same
+`RESOURCE_EXHAUSTED` shape, this time `quotaValue: '500'` for
+`gemini-3.5-flash-lite`. Combined with the 192 calls already spent labeling
+the golden set earlier the same day (plus earlier smoke-test calls), the
+day's combined budget for this model was exhausted before judge-scoring
+even started (classify+generate finished for ~155 examples, 0 judge calls
+made — run_eval.py does all classify+generate first, then all judge calls,
+so the crash landed entirely inside the first phase).
+
+**Why this isn't a wasted run:** every successful call is cached to disk by
+content hash (`pipeline/llm_client.py`'s `DiskCache`), including across
+process restarts. Re-running `make eval-live` after the daily quota resets
+replays all ~155 already-done classify/generate calls as free cache hits
+and only spends fresh quota on the ~43 remaining classify/generate calls
+plus all 198 judge calls (~241 calls) — comfortably within a single day's
+500-request budget on a quiet day.
+
+**Decision:** no code change needed here — the caching architecture already
+built for exactly this reason (TRD §8.2/8.3) is what makes a free-tier
+daily quota survivable across multiple days without losing progress or
+re-spending budget. This is disclosed as a real timeline constraint: a full
+live golden-set run plus a same-day labeling pass does not fit in one day's
+free-tier budget for a freshly created key.
