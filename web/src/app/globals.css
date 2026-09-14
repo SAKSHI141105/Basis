@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fafaf8;
+  --surface: #ffffff;
+  --surface-2: #f1f0ec;
+  --text: #1c1c1a;
+  --text-secondary: #5b5a54;
+  --text-muted: #8b897f;
+  --border: #e4e2da;
+  --border-strong: #cfccc0;
+
+  --accent: #2c4a6e;
+  --accent-bg: #e8eef5;
+  --accent-border: #b9cadb;
+
+  --success: #3d6b4f;
+  --success-bg: #e6f0e9;
+  --success-border: #b9d6c3;
+
+  --warning: #8a5a2b;
+  --warning-bg: #fbf0e2;
+  --warning-border: #e8caa0;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-bg: var(--accent-bg);
+  --color-accent-border: var(--accent-border);
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-success-border: var(--success-border);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-border: var(--warning-border);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-plex-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17181a;
+    --surface: #1f2023;
+    --surface-2: #26272b;
+    --text: #edece8;
+    --text-secondary: #a9a79e;
+    --text-muted: #75736a;
+    --border: #333438;
+    --border-strong: #45464b;
+
+    --accent: #8fb3da;
+    --accent-bg: #22314a;
+    --accent-border: #345078;
+
+    --success: #8fc9a4;
+    --success-bg: #1e3626;
+    --success-border: #31573e;
+
+    --warning: #e3b27a;
+    --warning-bg: #3a2c18;
+    --warning-border: #5c4526;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
