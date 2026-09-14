@@ -27,10 +27,15 @@ logger = logging.getLogger(__name__)
 DEFAULT_CACHE_PATH = CACHE_DIR / "llm_cache.jsonl"
 
 # Approximate free-tier requests-per-minute per model tier (TRD §8.1).
-# Exact numbers fluctuate — verify against Google's current rate-limit page
-# before relying on these for a live run; these are conservative defaults.
+# Exact numbers fluctuate — verify against https://aistudio.google.com/rate-limit
+# (requires login, not fetchable from here) before relying on these for a
+# live run; these are conservative TRD-documented defaults. Model names
+# updated from TRD's gemini-2.5-* to gemini-3.5-* — see DECISION_LOG.md.
 MODEL_RPM = {
-    "gemini-2.5-flash-lite": 15,
+    "gemini-3.5-flash-lite": 15,
+    "gemini-3.5-flash": 10,
+    "gemini-3.5-pro": 5,
+    "gemini-2.5-flash-lite": 15,  # kept for any cached responses recorded under the old name
     "gemini-2.5-flash": 10,
     "gemini-2.5-pro": 5,
 }
