@@ -1,0 +1,210 @@
+# Report — AI Support Agent for AppleSupport
+
+> **Status note:** this report's results section is being finalized. The
+> live golden-set eval run (`make eval-live`) is in progress across
+> multiple sessions because of a real free-tier daily-quota constraint —
+> see "A real constraint hit mid-build" below and `DECISION_LOG.md` for the
+> full account. Everything else in this report (methodology, architecture,
+> known limitations) reflects the actual, finished system. The final
+> headline-numbers table will be inserted from `artifacts/eval_report.json`
+> once that run completes; nothing here is a placeholder number dressed up
+> as real.
+
+## 1. What this is
+
+An AI support copilot for the `AppleSupport` brand from Kaggle's Customer
+Support on Twitter dataset. It classifies an incoming customer message into
+one of 8 data-derived intents (or `out_of_scope`), drafts a reply grounded
+in real historically-resolved precedent, and decides `auto_handle` vs.
+`escalate` with a stated, auditable reason. Framed explicitly as a
+Tier-1-agent copilot, not an autonomous system — see `PRD.md` §3, §6.
+
+## 2. Methodology
+
+### 2.1 Data
+
+3,002,523 rows from `twcs.csv`, filtered to `AppleSupport` brand replies and
+their originating customer messages (and any single customer follow-up),
+producing 106,646 reconstructed threads. After cleaning (stripping
+threading-only @handles/URLs, deduping repeated-contact near-duplicates,
+dropping threads with no brand reply): **103,757 threads**, of which
+**80,023 (77%) are marked "resolved"** by the documented heuristic (silence
+after the brand's reply, or a closure phrase like "thanks"/"got it" in the
+customer's follow-up).
+
+**Documented weakness, not hidden:** silence is not proof of satisfaction.
+A customer who got a bad reply and simply gave up looks identical, under
+this heuristic, to one who was actually helped. This heuristic is a
+practical necessity (the dataset has no explicit resolution signal at all)
+but every downstream number inherits its imprecision.
+
+### 2.2 Intent taxonomy
+
+Customer messages were embedded with `all-MiniLM-L6-v2` (384-dim), PCA-reduced
+to 50 dimensions (a fix discovered necessary mid-build — see
+`DECISION_LOG.md`), then clustered with HDBSCAN (`min_cluster_size=25`),
+producing 30 raw clusters plus a noise bucket. Every raw cluster was
+manually read (`artifacts/cluster_samples.md`, regenerable, not committed)
+and merged into one of **8 named intents**, or into `out_of_scope`:
+
+`device_troubleshooting`, `software_update_bug`, `apple_id_account_access`,
+`billing_subscription`, `repair_order_status`, `general_complaint`,
+`feature_how_to`, `positive_feedback`, plus `out_of_scope`.
+
+**Real, disclosed finding:** `out_of_scope` ends up **~88% of all traffic**.
+Reading the actual noise bucket showed this is mostly genuine low-content
+traffic — emoji-only replies, "check DM", "same issue" with no restated
+context, bare iOS version-number replies, non-English text (this project is
+English-only per `PRD.md` §7) — not a clustering failure. This was not
+"fixed" by retuning HDBSCAN hyperparameters to produce a nicer-looking
+distribution; it's disclosed as the actual shape of the data, and it has a
+direct, important consequence for interpreting every accuracy number below.
+
+### 2.3 Retrieval-grounded reply generation
+
+A flat, L2-normalized embedding matrix over **resolved, training-split-only**
+threads (68,019 entries) — no vector database (see `TRD.md` §1.1 for the
+full reasoning: this data scale doesn't need one, and a vector DB introduces
+avoidable dependency and reproducibility risk). On a new message: embed it,
+filter to the predicted intent, cosine-similarity search (dot product on
+pre-normalized vectors) for the top-3 precedent replies, and prompt the
+generation model with the customer message + those precedents verbatim +
+a brand style guide, requiring a structured `grounded_on` citation field so
+groundedness is checkable, not self-reported.
+
+Spot-checked against real queries: a message about battery drain after an
+iOS update retrieved precedents at 0.90+ cosine similarity, all genuinely
+on-topic.
+
+### 2.4 Escalation decision engine
+
+A deterministic rule layer (safety/legal/financial-harm keywords, explicit
+human requests, and repeated contact with worsening sentiment always
+escalate) followed by threshold checks on intent-classifier confidence and
+retrieval similarity. Reason strings are templated, not free-form LLM
+prose, so they stay auditable (`pipeline/escalation.py`).
+
+### 2.5 Baselines
+
+Both required baselines actually run in the harness, not just described:
+
+- **Trivial:** always predicts the majority intent label (`out_of_scope`)
+  for classification; always predicts `escalate` for escalation.
+- **Simple:** TF-IDF (1-2 grams) + balanced Logistic Regression for
+  classification; a keyword-only rule (risk/human-request flags, no
+  LLM signals) for escalation.
+
+## 3. A real constraint hit mid-build
+
+Two free-tier quota walls were discovered empirically, not assumed upfront
+(full account in `DECISION_LOG.md`):
+
+1. `gemini-3.5-flash` (TRD's originally-intended generation/judge model)
+   carries only a **20 requests/day** quota on a freshly created key —
+   unusable at any real volume. Switched everything to
+   `gemini-3.5-flash-lite`.
+2. `gemini-3.5-flash-lite` itself caps at **500 requests/day**. A full
+   198-example golden-set run needs ~594 calls (classify + generate + judge
+   per example), which — combined with the same day's golden-set-labeling
+   calls — does not fit in one day's budget on a freshly created key.
+
+The system's caching architecture (built first, per TRD §8.3, specifically
+*for* this kind of constraint) means this costs time, not correctness or
+lost work: every successful call is cached by content hash and replayed
+free on retry, so the live run resumes exactly where it left off across
+multiple days without re-spending quota.
+
+## 4. Golden set: how it was actually labeled
+
+**Real, important limitation, stated plainly:** of the 198 golden-set
+examples, only **6 are independently human-labeled**. The remaining 192
+were labeled by Gemini applying the same rubric a human would
+(`labeling_guide.md`), because manually labeling all 198 by hand proved to
+be more time than was available for this pass. Every label is tagged
+`label_source: "human"` or `"ai_generated"` in `golden_set.jsonl`.
+
+This is a genuine, not-hand-waved limitation: using an LLM to generate
+ground truth that is then used to grade an LLM-based classifier and an
+LLM-based judge risks **correlated errors** — a systematic blind spot the
+labeling model shares with the system being graded would not show up as a
+disagreement, because the same kind of model made both calls. A real
+human-annotator pass would not share that blind spot. Every headline number
+in this report inherits this weakness and should be read with it in mind.
+
+**A small, honest silver lining:** the 6 human labels give a tiny spot-check
+of AI-labeling quality on the same rubric (not a substitute for the
+required human-agreement study below, but a useful sanity signal) —
+included once the full run completes.
+
+## 5. Human-agreement study: not performed
+
+TRD §7.3 requires a human-agreement study comparing the LLM judge's
+reply-quality scores against an independent human rater's scores on a
+40-50 example subsample, specifically to check the judge isn't just
+agreeing with itself. Given the constraints of this build (see §4 above),
+no independent human rater was available to run this study for real.
+
+**This is stated explicitly rather than faked.** Having another LLM stand
+in as "the human" for this study would not produce a weaker version of the
+same evidence — it would produce circular, meaningless evidence, since it
+would just be checking whether one LLM agrees with another LLM applying a
+similar rubric. The eval report marks this section "not performed" rather
+than filling it with a number that looks like agreement data but isn't.
+
+## 6. Results
+
+*(Pending final eval-live run — see status note at top. Once
+`artifacts/eval_report.json` is complete, this section is replaced with:
+the intent accuracy/macro-F1 table across trivial/simple/main systems, the
+escalation precision/recall/F1/cost-weighted table, the LLM judge's mean
+scores per rubric dimension, and the top-5 real failure examples.)*
+
+## 7. What's misleading about the headline number (preview)
+
+Because `out_of_scope` is ~88% of real traffic (§2.2), **a classifier that
+always predicts `out_of_scope` scores a high raw accuracy while being
+useless** — it never correctly identifies any of the 8 real intents. This
+was already confirmed on the (non-golden-set) held-out eval split during
+baseline development:
+
+| System | Accuracy | Macro-F1 |
+|---|---|---|
+| Trivial (always `out_of_scope`) | 0.881 | 0.104 |
+| Simple (TF-IDF + LogReg) | 0.808 | 0.472 |
+
+The trivial baseline *beats* the simple baseline on raw accuracy while
+being far worse by macro-F1 — the metric that actually reflects whether a
+system can tell the 8 real intents apart. **Macro-F1 and per-intent F1 are
+the numbers that matter here; raw accuracy alone is actively misleading on
+this dataset.** The main system's numbers, once the live run completes,
+get read through this same lens.
+
+## 8. Known limitations (full list)
+
+1. Golden-set ground truth is 97% AI-generated, not human-labeled (§4).
+2. The human-agreement study could not be performed (§5).
+3. The "resolved" heuristic is weak — silence ≠ satisfaction (§2.1).
+4. `out_of_scope` dominates real traffic by construction (§2.2) — makes
+   raw accuracy misleading (§7).
+5. Free-tier daily quotas (§3) mean a full live run spans multiple days.
+6. No PII redaction pipeline (brand chosen partly to reduce this need, but
+   it's a gap, not a guarantee — `PRD.md` §7).
+7. No live system integration, multi-language support, or fine-tuning —
+   explicitly out of scope (`PRD.md` §7).
+
+## 9. What I'd do next with one more week
+
+- Get a real independent human annotator for both the golden-set labels and
+  the reply-quality human-agreement study — the single highest-value fix
+  for the credibility of every number in this report.
+- An embedding-only classifier (TRD §4.3 Option B) as a second real system
+  to compare against the LLM classifier — cheaper, and a good "two systems,
+  not just two baselines" story.
+- Investigate whether a paid/higher tier or a second API key would let a
+  full live eval run complete same-day rather than spanning a quota reset.
+- The Next.js demo frontend and deployment (`ARCHITECTURE.md` §2.4,
+  `AGENT_WORKING_AGREEMENT.md` §5) — deliberately last, per the build order,
+  and only attempted once everything above is solid.
+
+See `DECISION_LOG.md` for the full, chronological account of every decision
+and constraint discovered while actually building this system.
