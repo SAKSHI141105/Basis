@@ -1,0 +1,13 @@
+intents:
+  - id: billing
+    description: billing and subscription issues
+    examples: ["I was overcharged"]
+    cluster_ids: [0, 2]
+  - id: device_help
+    description: device troubleshooting
+    examples: ["phone won't turn on"]
+    cluster_ids: [1]
+  - id: out_of_scope
+    description: unrelated, spam, or noise
+    examples: ["random unrelated text"]
+    cluster_ids: [-1]
