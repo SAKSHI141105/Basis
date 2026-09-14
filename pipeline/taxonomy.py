@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import logging
 import os
+from functools import lru_cache
 
 import numpy as np
 import pandas as pd
@@ -29,6 +30,7 @@ CLUSTERS_PATH = ARTIFACTS_DIR / "cluster_assignments.parquet"
 SAMPLES_PATH = ARTIFACTS_DIR / "cluster_samples.md"
 
 
+@lru_cache(maxsize=1)
 def _load_embedding_model():
     """Load the sentence-transformers model, offline after the first download.
 
@@ -36,6 +38,11 @@ def _load_embedding_model():
     call (TRD's "known bottleneck" table promises subsequent runs are
     local-only, not just the model weights but every load). Falls back to
     a normal (network) load only when nothing is cached yet.
+
+    Cached in-process (lru_cache) — callers like the eval harness and the
+    live service call embed_messages() once per request/example, and
+    reloading the model from disk each time was adding several seconds per
+    call for no reason.
     """
     from sentence_transformers import SentenceTransformer
 
