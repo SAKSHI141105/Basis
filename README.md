@@ -51,6 +51,16 @@ make setup
    make eval-live   # re-calls the real Gemini API for real, ~30-60 min
    ```
    This produces `artifacts/eval_report.json` and `eval_report.md`.
+5. **Run the demo frontend** (optional — the API + eval report are the core
+   deliverables, this is the polish layer per `AGENT_WORKING_AGREEMENT.md` §1):
+   ```bash
+   make run-api                         # terminal 1 — FastAPI on :8000
+   cd web && cp .env.local.example .env.local && npm install && npm run dev
+   ```
+   Open `http://localhost:3000` — the overview page reads the eval report,
+   the live demo panel calls `/pipeline` against a real message from
+   `golden_set.jsonl`, and `/eval` reads the same `eval_report.json` as the
+   written report (never a live recompute, so the two never disagree).
 
 ## Two run modes, honestly labeled
 
@@ -95,7 +105,7 @@ and the eval report's "what's misleading about my headline number" section.
 pipeline/   offline pipeline (ingest, clean, taxonomy, index, baselines, llm_client)
 service/    FastAPI serving layer (/classify, /draft-reply, /decide, /pipeline)
 eval/       evaluation harness (golden set, metrics, LLM judge, human-agreement study)
-web/        Next.js demo frontend (not yet built — see AGENT_WORKING_AGREEMENT.md §1 milestone order)
+web/        Next.js demo frontend — overview, live demo panel, eval dashboard
 tests/      pytest unit + integration tests (no API key needed — fully mocked)
 ```
 
