@@ -29,10 +29,25 @@ CLUSTERS_PATH = ARTIFACTS_DIR / "cluster_assignments.parquet"
 SAMPLES_PATH = ARTIFACTS_DIR / "cluster_samples.md"
 
 
-def embed_messages(messages: list[str]) -> np.ndarray:
+def _load_embedding_model():
+    """Load the sentence-transformers model, offline after the first download.
+
+    Tries local_files_only first so a cached model never makes a network
+    call (TRD's "known bottleneck" table promises subsequent runs are
+    local-only, not just the model weights but every load). Falls back to
+    a normal (network) load only when nothing is cached yet.
+    """
     from sentence_transformers import SentenceTransformer
 
-    model = SentenceTransformer(EMBEDDING_MODEL_NAME)
+    try:
+        return SentenceTransformer(EMBEDDING_MODEL_NAME, local_files_only=True)
+    except Exception:
+        logger.info("model %s not cached locally — downloading (one-time)", EMBEDDING_MODEL_NAME)
+        return SentenceTransformer(EMBEDDING_MODEL_NAME)
+
+
+def embed_messages(messages: list[str]) -> np.ndarray:
+    model = _load_embedding_model()
     embeddings = model.encode(messages, show_progress_bar=True, normalize_embeddings=True)
     return np.asarray(embeddings, dtype=np.float32)
 
