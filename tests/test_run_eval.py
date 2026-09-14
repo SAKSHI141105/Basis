@@ -120,6 +120,39 @@ def test_run_eval_produces_full_report(tmp_path, monkeypatch):
     assert "misleading" in report["misleading_number_note"].lower()
 
 
+def test_run_eval_skips_example_on_failure_instead_of_crashing(tmp_path, monkeypatch):
+    monkeypatch.setenv("JUDGE_MODEL", "gemini-3.5-flash")
+    state = _build_fake_state(tmp_path)
+
+    golden_set_with_uncached = GOLDEN_SET + [
+        {
+            "thread_id": "t3",
+            "customer_msg": "this message was never cached, so its classify call will fail",
+            "true_intent": "billing",
+            "true_escalation": "auto_handle",
+        }
+    ]
+
+    report = run(
+        golden_set=golden_set_with_uncached,
+        state=state,
+        simple_model=_FakeSimpleModel(),
+        trivial_label="device_help",
+        human_scores_path=tmp_path / "human_judge_scores.json",
+        report_json_path=tmp_path / "eval_report.json",
+        report_md_path=tmp_path / "eval_report.md",
+    )
+
+    assert report["golden_set_size"] == 3
+    assert report["skipped_example_ids"] == ["t3"]
+    assert report["main_system_examples_evaluated"] == 2
+    # trivial/simple baselines still scored on all 3; main system only on 2
+    assert len(report["judge_scores"]) == 2
+
+    md_text = (tmp_path / "eval_report.md").read_text(encoding="utf-8")
+    assert "1 example(s) were skipped" in md_text
+
+
 def test_render_markdown_produces_readable_sections(tmp_path):
     report = {
         "golden_set_size": 2,

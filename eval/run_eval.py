@@ -8,10 +8,14 @@ Imports the service's core functions directly rather than over HTTP
 from __future__ import annotations
 
 import json
+import logging
 import os
 from pathlib import Path
 
 from dotenv import load_dotenv
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+logger = logging.getLogger(__name__)
 
 from eval.baselines_escalation import simple_keyword_rule, trivial_always_escalate
 from eval.human_agreement import compute_agreement
@@ -94,38 +98,60 @@ def run(
     simple_escalation_preds = simple_keyword_rule(messages)
 
     # --- Main system: classify + retrieve + generate + decide, per example ---
+    # Resilient to a mid-run failure (e.g. a free-tier daily quota wall, see
+    # DECISION_LOG.md) -- a failed example is logged and skipped rather than
+    # crashing the whole run and discarding every already-cached result.
     state = state if state is not None else load_state()
     main_intent_preds = []
     main_escalation_preds = []
     per_example = []
-    for ex, message in zip(golden_set, messages):
-        decision, info = _main_system_escalation_decision(state, message)
+    skipped_ids = []
+    aligned_true_intents = []
+    aligned_true_escalations = []
+    total = len(golden_set)
+    for i, (ex, message, t_intent, t_esc) in enumerate(zip(golden_set, messages, true_intents, true_escalations)):
+        try:
+            decision, info = _main_system_escalation_decision(state, message)
+        except Exception as e:
+            logger.warning("skipping %s (classify/generate/decide failed): %s", ex["thread_id"], e)
+            skipped_ids.append(ex["thread_id"])
+            continue
         main_intent_preds.append(info["classification"].intent)
         main_escalation_preds.append(decision)
+        aligned_true_intents.append(t_intent)
+        aligned_true_escalations.append(t_esc)
         per_example.append({"example": ex, **info})
+        if (i + 1) % 10 == 0 or (i + 1) == total:
+            logger.info("main system: %d/%d examples processed", i + 1, total)
 
     intent_metrics = {
         "trivial": compute_intent_metrics(true_intents, trivial_intent_preds).__dict__,
         "simple": compute_intent_metrics(true_intents, simple_intent_preds).__dict__,
-        "main": compute_intent_metrics(true_intents, main_intent_preds).__dict__,
+        "main": compute_intent_metrics(aligned_true_intents, main_intent_preds).__dict__,
     }
     escalation_metrics = {
         "trivial": compute_escalation_metrics(true_escalations, trivial_escalation_preds).__dict__,
         "simple": compute_escalation_metrics(true_escalations, simple_escalation_preds).__dict__,
-        "main": compute_escalation_metrics(true_escalations, main_escalation_preds).__dict__,
+        "main": compute_escalation_metrics(aligned_true_escalations, main_escalation_preds).__dict__,
     }
 
     # --- LLM judge on the main system's generated replies ---
     judge_scores = []
-    for item in per_example:
-        score = judge_reply(
-            item["example"]["customer_msg"],
-            item["reply"].draft,
-            item["precedents"],
-            state.llm_client,
-            os.environ.get("JUDGE_MODEL", "gemini-3.5-flash-lite"),
-        )
+    for i, item in enumerate(per_example):
+        try:
+            score = judge_reply(
+                item["example"]["customer_msg"],
+                item["reply"].draft,
+                item["precedents"],
+                state.llm_client,
+                os.environ.get("JUDGE_MODEL", "gemini-3.5-flash-lite"),
+            )
+        except Exception as e:
+            logger.warning("skipping judge score for %s: %s", item["example"]["thread_id"], e)
+            continue
         judge_scores.append({"thread_id": item["example"]["thread_id"], **score.__dict__, "mean_score": score.mean_score})
+        if (i + 1) % 10 == 0 or (i + 1) == len(per_example):
+            logger.info("judge: %d/%d examples scored", i + 1, len(per_example))
 
     judge_summary = {}
     if judge_scores:
@@ -166,6 +192,8 @@ def run(
 
     report = {
         "golden_set_size": len(golden_set),
+        "main_system_examples_evaluated": len(per_example),
+        "skipped_example_ids": skipped_ids,
         "intent_metrics": intent_metrics,
         "escalation_metrics": escalation_metrics,
         "judge_scores": judge_scores,
@@ -195,6 +223,16 @@ def run(
 def render_markdown(report: dict, out_path: Path) -> None:
     lines = ["# Evaluation Report\n"]
     lines.append(f"Golden set size: **{report['golden_set_size']}**\n")
+
+    skipped = report.get("skipped_example_ids") or []
+    if skipped:
+        evaluated = report.get("main_system_examples_evaluated", report["golden_set_size"] - len(skipped))
+        lines.append(
+            f"**Note:** {len(skipped)} example(s) were skipped (call failed, e.g. a "
+            f"free-tier quota wall) and are excluded from the main system's metrics below "
+            f"-- main system numbers reflect {evaluated}/{report['golden_set_size']} examples, "
+            f"trivial/simple baselines still reflect all {report['golden_set_size']}.\n"
+        )
 
     lines.append("## Intent classification\n")
     lines.append("| System | Accuracy | Macro-F1 |")
