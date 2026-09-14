@@ -25,6 +25,10 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 logger = logging.getLogger(__name__)
 
 DEFAULT_CACHE_PATH = CACHE_DIR / "llm_cache.jsonl"
+# The small, committed cache that make eval-fast replays (TRD 8.2/AGENT_WORKING_AGREEMENT
+# §2 — the one exception to "never commit .cache/"). Built from DEFAULT_CACHE_PATH
+# after a full live run via `python -m pipeline.build_fast_cache`.
+GOLDEN_CACHE_PATH = CACHE_DIR / "llm_cache_golden.jsonl"
 
 # Approximate free-tier requests-per-minute per model tier (TRD §8.1).
 # Exact numbers fluctuate — verify against https://aistudio.google.com/rate-limit
@@ -108,8 +112,13 @@ class LLMClient:
     """
 
     def __init__(self, cache: DiskCache | None = None, mode: str | None = None):
-        self.cache = cache or DiskCache()
         self.mode = mode or os.environ.get("EVAL_MODE", "live")
+        if cache is not None:
+            self.cache = cache
+        else:
+            # fast mode reads the small committed golden-set cache; live mode
+            # reads/grows the full (gitignored) cache from real API calls.
+            self.cache = DiskCache(GOLDEN_CACHE_PATH if self.mode == "fast" else DEFAULT_CACHE_PATH)
         self._pacers: dict[str, TokenBucketPacer] = {}
 
     def _pacer_for(self, model: str) -> TokenBucketPacer:

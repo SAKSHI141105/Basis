@@ -48,6 +48,11 @@ eval-fast:
 eval-live:
 	EVAL_MODE=live $(PYTHON) -m eval.run_eval
 
+# Run once after a full eval-live completes, to freeze its results into the
+# small cache that eval-fast replays and that gets committed to the repo.
+freeze-fast-cache:
+	$(PYTHON) -m pipeline.build_fast_cache
+
 test:
 	$(PYTHON) -m pytest -q
 
