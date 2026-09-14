@@ -37,7 +37,29 @@ def embed_messages(messages: list[str]) -> np.ndarray:
     return np.asarray(embeddings, dtype=np.float32)
 
 
-def cluster_embeddings(embeddings: np.ndarray, min_cluster_size: int = 25) -> np.ndarray:
+def _reduce_dims(embeddings: np.ndarray, n_components: int = 50) -> np.ndarray:
+    """PCA down from 384-dim sentence embeddings before clustering.
+
+    Discovered empirically, not planned upfront: HDBSCAN's tree-based
+    algorithms lose their speedup in high dimensions (curse of
+    dimensionality forces a near-brute-force pairwise distance computation),
+    which made clustering 103k raw 384-dim embeddings take 20+ minutes of
+    CPU time with no result. Reducing to 50 components (captures the large
+    majority of variance for MiniLM embeddings) brings this back to a
+    tractable, honest one-time design-time cost. This does not affect the
+    retrieval index, which uses full-dimension embeddings separately.
+    """
+    if embeddings.shape[1] <= n_components:
+        return embeddings
+    from sklearn.decomposition import PCA
+
+    reduced = PCA(n_components=n_components, random_state=RANDOM_SEED).fit_transform(embeddings)
+    return reduced.astype(np.float32)
+
+
+def cluster_embeddings(
+    embeddings: np.ndarray, min_cluster_size: int = 25, pca_components: int = 50
+) -> np.ndarray:
     """Cluster with HDBSCAN; fall back to KMeans if the import fails.
 
     HDBSCAN's noise label (-1) becomes the seed for the out_of_scope bucket
@@ -45,16 +67,17 @@ def cluster_embeddings(embeddings: np.ndarray, min_cluster_size: int = 25) -> np
     k via silhouette score and does not populate an out_of_scope seed —
     documented as a behavior difference, not a silent one (Architecture §6).
     """
+    reduced = _reduce_dims(embeddings, pca_components) if pca_components else embeddings
     try:
         import hdbscan
 
         clusterer = hdbscan.HDBSCAN(min_cluster_size=min_cluster_size, metric="euclidean")
-        labels = clusterer.fit_predict(embeddings)
+        labels = clusterer.fit_predict(reduced)
         logger.info("HDBSCAN produced %d clusters (+ noise)", len(set(labels)) - (1 if -1 in labels else 0))
         return labels
     except ImportError:
         logger.warning("hdbscan not importable on this machine — falling back to KMeans (Architecture §6)")
-        return _kmeans_fallback(embeddings)
+        return _kmeans_fallback(reduced)
 
 
 def _kmeans_fallback(embeddings: np.ndarray, k_range: range = range(6, 13)) -> np.ndarray:
