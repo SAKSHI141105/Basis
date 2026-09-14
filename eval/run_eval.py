@@ -45,6 +45,37 @@ def load_golden_set(path=GOLDEN_SET_JSONL) -> list[dict]:
     return records
 
 
+def _build_misleading_number_note(intent_metrics: dict) -> str:
+    """Generate the "what's misleading" note from the ACTUAL computed numbers,
+    not a hardcoded assumption -- a static claim about which baseline "looks
+    falsely strong" can be flat wrong depending on whether the golden set's
+    class balance matches real traffic (it deliberately doesn't -- see
+    pipeline/golden_set.py's stratified sampling and REPORT.md 7)."""
+    trivial = intent_metrics["trivial"]
+    main = intent_metrics["main"]
+
+    if trivial["accuracy"] > 0.5 and trivial["macro_f1"] < 0.2:
+        return (
+            f"The trivial baseline's raw accuracy ({trivial['accuracy']:.3f}) looks "
+            f"strong even though its macro-F1 ({trivial['macro_f1']:.3f}) shows it's "
+            "useless -- always predicting the majority label scores well on accuracy "
+            "when one class dominates. Macro-F1 and per-intent F1 are what actually "
+            "reflect classification quality; raw accuracy alone is misleading here. "
+            "See REPORT.md section 7 for how this flips depending on class balance."
+        )
+    return (
+        "What would be misleading here is assuming this golden set reflects real "
+        "traffic volume: it is deliberately stratified roughly evenly across "
+        "intents (pipeline/golden_set.py), NOT the real ~88% out_of_scope-skewed "
+        f"traffic distribution (taxonomy.yaml) -- so the trivial baseline's "
+        f"accuracy here ({trivial['accuracy']:.3f}) is low, not falsely high. On "
+        "real, naturally-imbalanced traffic the same trivial baseline would score "
+        "far higher on accuracy while being equally useless. Read accuracy "
+        "numbers from this report as 'performance on a balanced sample,' not "
+        "'performance on real traffic volume.' See REPORT.md section 7."
+    )
+
+
 def _main_system_escalation_decision(state, message: str) -> tuple[str, dict]:
     classification = run_classify(state, message)
     reply, precedents = run_draft_reply(state, message, classification.intent)
@@ -200,14 +231,7 @@ def run(
         "judge_summary": judge_summary,
         "human_agreement": human_agreement,
         "failure_examples": failures[:5],
-        "misleading_number_note": (
-            "What's misleading about the headline accuracy number: it is dominated "
-            "by the out_of_scope majority class "
-            "(~88% of real traffic per taxonomy.yaml) -- a baseline that always "
-            "predicts out_of_scope can beat a real classifier on accuracy while "
-            "scoring near-zero on macro-F1. Macro-F1 and per-intent F1 are the "
-            "numbers that actually reflect classification quality here."
-        ),
+        "misleading_number_note": _build_misleading_number_note(intent_metrics),
     }
 
     report_json_path = report_json_path or REPORT_JSON

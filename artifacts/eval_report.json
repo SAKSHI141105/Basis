@@ -503,5 +503,5 @@
       "pred_escalation": "auto_handle"
     }
   ],
-  "misleading_number_note": "What's misleading about the headline accuracy number: it is dominated by the out_of_scope majority class (~88% of real traffic per taxonomy.yaml) -- a baseline that always predicts out_of_scope can beat a real classifier on accuracy while scoring near-zero on macro-F1. Macro-F1 and per-intent F1 are the numbers that actually reflect classification quality here."
+  "misleading_number_note": "What would be misleading here is assuming this golden set reflects real traffic volume: it is deliberately stratified roughly evenly across intents (pipeline/golden_set.py), NOT the real ~88% out_of_scope-skewed traffic distribution (taxonomy.yaml) -- so the trivial baseline's accuracy here (0.051) is low, not falsely high. On real, naturally-imbalanced traffic the same trivial baseline would score far higher on accuracy while being equally useless. Read accuracy numbers from this report as 'performance on a balanced sample,' not 'performance on real traffic volume.' See REPORT.md section 7."
 }

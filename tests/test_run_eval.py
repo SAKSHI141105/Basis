@@ -3,7 +3,7 @@ import json
 import numpy as np
 import pandas as pd
 
-from eval.run_eval import render_markdown, run
+from eval.run_eval import _build_misleading_number_note, render_markdown, run
 from pipeline.classify import build_classification_prompt
 from pipeline.generate import build_generation_prompt
 from pipeline.index import RetrievalIndex
@@ -151,6 +151,31 @@ def test_run_eval_skips_example_on_failure_instead_of_crashing(tmp_path, monkeyp
 
     md_text = (tmp_path / "eval_report.md").read_text(encoding="utf-8")
     assert "1 example(s) were skipped" in md_text
+
+
+def test_misleading_note_flags_falsely_strong_trivial_accuracy():
+    # trivial: high accuracy, near-zero macro-F1 -> imbalanced-traffic story
+    intent_metrics = {
+        "trivial": {"accuracy": 0.88, "macro_f1": 0.10},
+        "simple": {"accuracy": 0.80, "macro_f1": 0.47},
+        "main": {"accuracy": 0.90, "macro_f1": 0.75},
+    }
+    note = _build_misleading_number_note(intent_metrics)
+    assert "0.880" in note
+    assert "useless" in note
+
+
+def test_misleading_note_flags_balanced_golden_set_story():
+    # trivial: low accuracy on a stratified golden set -> opposite story
+    intent_metrics = {
+        "trivial": {"accuracy": 0.05, "macro_f1": 0.01},
+        "simple": {"accuracy": 0.67, "macro_f1": 0.67},
+        "main": {"accuracy": 0.84, "macro_f1": 0.69},
+    }
+    note = _build_misleading_number_note(intent_metrics)
+    assert "0.050" in note
+    assert "stratified" in note
+    assert "misleading" in note.lower()
 
 
 def test_render_markdown_produces_readable_sections(tmp_path):
