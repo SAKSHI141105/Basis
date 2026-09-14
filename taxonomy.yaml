@@ -1,0 +1,116 @@
+# Intent taxonomy for the AppleSupport support agent.
+#
+# Derived from HDBSCAN clustering of 103,757 customer messages (PCA-reduced
+# to 50 dims before clustering — see pipeline/taxonomy.py:_reduce_dims for
+# why), min_cluster_size=25, producing 30 raw clusters + a noise bucket.
+# Each raw cluster was manually read (artifacts/cluster_samples.md) and
+# merged into one of the 8 named intents below, or into out_of_scope.
+# cluster_ids is what pipeline/apply_taxonomy.py uses to map cluster -> intent.
+#
+# Documented finding, not hidden: the HDBSCAN noise bucket alone was ~87%
+# of all messages. Reading the noise sample showed this is mostly genuinely
+# low-content traffic (emoji-only replies, "check DM", "same issue" with no
+# restated context, bare iOS version numbers, non-English text — PRD scopes
+# this project to English only) rather than a clustering failure. Several
+# named raw clusters (17, 19, 20, 21, 23, 24, 28, 29) turned out to be the
+# same kind of low-content/meta-conversational traffic and were folded into
+# out_of_scope rather than kept as their own weak "intent." This makes
+# out_of_scope the majority class by construction, which is disclosed in the
+# report rather than treated as a clustering bug to chase away.
+
+intents:
+  - id: device_troubleshooting
+    description: >
+      Device or app malfunction not tied to a specific recent software
+      update — data/photos disappearing, hardware defects (headphones,
+      AirPods), iMessage not sending, App Store not loading.
+    examples:
+      - "All my photos got deleted off my phone help"
+      - "My AirPods won't pair and keep making a dropping noise"
+      - "iMessage isn't working, I can't send or receive texts"
+    cluster_ids: [0, 1, 3, 10]
+
+  - id: software_update_bug
+    description: >
+      A bug the customer attributes directly to an OS/app update — battery
+      drain after updating, the iOS 11 "I" autocorrect glitch, Bluetooth/
+      WiFi re-enabling itself, a Mac bricked by a High Sierra update.
+    examples:
+      - "Battery life is half of what it was since updating to iOS 11"
+      - "Ever since iOS 11 my WiFi and Bluetooth turn back on by themselves"
+      - "Why does typing I autocorrect to a box with a question mark"
+    cluster_ids: [2, 7, 12, 15, 16, 18, 26, 27]
+
+  - id: apple_id_account_access
+    description: >
+      Locked out of or unable to verify an Apple ID / iCloud account, plus
+      questions about whether an Apple-branded email is a phishing attempt
+      (account-security adjacent).
+    examples:
+      - "I forgot my Apple ID password and can't recover my account"
+      - "My iCloud account has been locked for security reasons"
+      - "Is this email asking to verify my account a phishing scam?"
+    cluster_ids: [5, 14]
+
+  - id: billing_subscription
+    description: >
+      Charges, payment methods, or subscription/purchase access issues —
+      primarily Apple Music/iTunes billing and purchased-content access.
+    examples:
+      - "You charged me for an Apple Music subscription I never requested"
+      - "iTunes won't accept my PayPal as a payment method"
+      - "I bought an album but it won't let me redownload it"
+    cluster_ids: [4]
+
+  - id: repair_order_status
+    description: >
+      Pre-order/order status, activation, and warranty questions for a
+      device purchase — largely iPhone X launch-period order tracking.
+    examples:
+      - "My iPhone X order says preparing for shipment, is that normal?"
+      - "iPhone X won't activate, activation servers are down"
+      - "Does my unlocked iPhone warranty apply internationally?"
+    cluster_ids: [11]
+
+  - id: general_complaint
+    description: >
+      Dissatisfaction with a product redesign, in-store experience, or
+      customer-support interaction, without a specific fixable bug report.
+    examples:
+      - "The new Podcasts app redesign is unusable, please revert it"
+      - "Had the worst customer service experience at the Apple Store"
+      - "AppleCare support wasted 90 minutes and fixed nothing"
+    cluster_ids: [6, 9, 13]
+
+  - id: feature_how_to
+    description: >
+      "How do I" / "where is this feature" questions about something that
+      exists but the customer can't find or hasn't figured out yet.
+    examples:
+      - "I updated to iOS 11.2 but don't see Apple Pay Cash, how do I enable it?"
+      - "How do I set up Apple Pay Cash in Wallet settings?"
+      - "Where did the option to add a card in Wallet go?"
+    cluster_ids: [8]
+
+  - id: positive_feedback
+    description: >
+      Short acknowledgment that a fix worked or thanks for help — closing
+      messages in an already-resolved thread.
+    examples:
+      - "That worked! Thanks so much."
+      - "Thank you, I appreciate it!"
+      - "Got it, that fixed the issue."
+    cluster_ids: [22, 25]
+
+  - id: out_of_scope
+    description: >
+      HDBSCAN noise, plus low-content/meta-conversational traffic that
+      isn't a standalone actionable support message on its own: bare "help
+      me" with no content, "check DM"/"sent a DM", "same issue" with no
+      restated context, bare version-number replies, emoji-only replies,
+      and non-English text (English-only scope per PRD 7).
+    examples:
+      - "help me pls"
+      - "check dms"
+      - "😡😡😡"
+    cluster_ids: [-1, 17, 19, 20, 21, 23, 24, 28, 29]
