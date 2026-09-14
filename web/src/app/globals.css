@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #fafaf8;
+  --bg: #fbfaf7;
   --surface: #ffffff;
-  --surface-2: #f1f0ec;
-  --text: #1c1c1a;
-  --text-secondary: #5b5a54;
-  --text-muted: #8b897f;
-  --border: #e4e2da;
-  --border-strong: #cfccc0;
+  --surface-2: #f5f2ea;
+  --text: #17160f;
+  --text-secondary: #57544a;
+  --text-muted: #918d80;
+  --border: #e9e4d6;
+  --border-strong: #d5cfbc;
 
-  --accent: #2c4a6e;
-  --accent-bg: #e8eef5;
-  --accent-border: #b9cadb;
+  --accent: #1f3f63;
+  --accent-hover: #16304d;
+  --accent-bg: #eaf0f7;
+  --accent-border: #c3d4e6;
 
-  --success: #3d6b4f;
-  --success-bg: #e6f0e9;
-  --success-border: #b9d6c3;
+  --success: #2b6b45;
+  --success-bg: #e9f3ec;
+  --success-border: #c0e0c9;
 
-  --warning: #8a5a2b;
-  --warning-bg: #fbf0e2;
-  --warning-border: #e8caa0;
+  --warning: #96591f;
+  --warning-bg: #fcf1de;
+  --warning-border: #ecc48f;
+
+  --shadow-sm: 0 1px 2px rgba(23, 22, 15, 0.05);
+  --shadow-md: 0 8px 24px -8px rgba(23, 22, 15, 0.12);
+  --shadow-card: 0 1px 3px rgba(23, 22, 15, 0.04), 0 1px 2px rgba(23, 22, 15, 0.04);
 }
 
 @theme inline {
@@ -33,6 +38,7 @@
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-accent-bg: var(--accent-bg);
   --color-accent-border: var(--accent-border);
   --color-success: var(--success);
@@ -43,31 +49,7 @@
   --color-warning-border: var(--warning-border);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-plex-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #17181a;
-    --surface: #1f2023;
-    --surface-2: #26272b;
-    --text: #edece8;
-    --text-secondary: #a9a79e;
-    --text-muted: #75736a;
-    --border: #333438;
-    --border-strong: #45464b;
-
-    --accent: #8fb3da;
-    --accent-bg: #22314a;
-    --accent-border: #345078;
-
-    --success: #8fc9a4;
-    --success-bg: #1e3626;
-    --success-border: #31573e;
-
-    --warning: #e3b27a;
-    --warning-bg: #3a2c18;
-    --warning-border: #5c4526;
-  }
+  --font-display: var(--font-fraunces);
 }
 
 * {
@@ -76,12 +58,18 @@
 
 html {
   height: 100%;
+  color-scheme: light;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+::selection {
+  background: var(--accent-bg);
+  color: var(--accent);
 }
 
 @media (prefers-reduced-motion: reduce) {

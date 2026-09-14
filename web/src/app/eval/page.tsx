@@ -14,8 +14,8 @@ export default async function EvalDashboardPage() {
   if (!report) {
     return (
       <div className="mx-auto max-w-[1120px] px-6 py-16">
-        <h1 className="text-[18px] font-medium mb-3">Eval dashboard</h1>
-        <div className="rounded-lg border border-border bg-surface-2 p-6 text-[13.5px] leading-[1.6] text-text-secondary font-mono">
+        <h1 className="font-display text-[24px] font-medium mb-4 text-text">Eval dashboard</h1>
+        <div className="rounded-xl border border-border bg-surface-2 p-7 text-[13.5px] leading-[1.65] text-text-secondary font-mono">
           <code>eval_report.json</code> not yet generated. Run{" "}
           <code>make eval-fast</code> (replays the committed cache) or{" "}
           <code>make eval-live</code> (calls the real API) from the project root,
@@ -29,8 +29,8 @@ export default async function EvalDashboardPage() {
 
   return (
     <div className="mx-auto max-w-[1120px] px-6 py-16">
-      <h1 className="text-[18px] font-medium mb-1">Eval dashboard</h1>
-      <p className="text-[13px] text-text-secondary mb-2">
+      <h1 className="font-display text-[24px] font-medium mb-2 text-text">Eval dashboard</h1>
+      <p className="text-[13.5px] text-text-secondary mb-2">
         Golden set: {report.golden_set_size} examples
         {skipped.length > 0 && (
           <>
@@ -42,15 +42,15 @@ export default async function EvalDashboardPage() {
       </p>
 
       {/* Misleading-number note gets equal visual weight, per Design Brief 3.3 */}
-      <section className="mt-8 rounded-lg border border-warning-border bg-warning-bg p-6">
-        <h2 className="text-[12px] font-mono uppercase tracking-[0.06em] text-warning mb-2">
+      <section className="mt-9 rounded-xl border border-warning-border bg-warning-bg p-7 shadow-[var(--shadow-card)]">
+        <h2 className="text-[12px] font-mono uppercase tracking-[0.06em] text-warning mb-2.5">
           What&apos;s misleading about the headline number
         </h2>
-        <p className="text-[14px] leading-[1.6] text-text">{report.misleading_number_note}</p>
+        <p className="text-[14.5px] leading-[1.65] text-text">{report.misleading_number_note}</p>
       </section>
 
-      <section className="mt-10">
-        <h2 className="text-[13px] font-medium uppercase tracking-[0.06em] text-text-muted mb-4">
+      <section className="mt-12">
+        <h2 className="text-[12.5px] font-medium uppercase tracking-[0.08em] text-text-muted mb-4">
           Intent classification
         </h2>
         <MetricsTable
@@ -63,8 +63,8 @@ export default async function EvalDashboardPage() {
         />
       </section>
 
-      <section className="mt-10">
-        <h2 className="text-[13px] font-medium uppercase tracking-[0.06em] text-text-muted mb-4">
+      <section className="mt-12">
+        <h2 className="text-[12.5px] font-medium uppercase tracking-[0.08em] text-text-muted mb-4">
           Escalation decision
         </h2>
         <MetricsTable
@@ -79,11 +79,11 @@ export default async function EvalDashboardPage() {
         />
       </section>
 
-      <section className="mt-10">
-        <h2 className="text-[13px] font-medium uppercase tracking-[0.06em] text-text-muted mb-4">
+      <section className="mt-12">
+        <h2 className="text-[12.5px] font-medium uppercase tracking-[0.08em] text-text-muted mb-4">
           Confusion matrix &mdash; main system
         </h2>
-        <div className="rounded-lg border border-border bg-surface p-4">
+        <div className="rounded-xl border border-border bg-surface p-5 shadow-[var(--shadow-card)]">
           <ConfusionMatrix
             labels={report.intent_metrics.main.labels}
             matrix={report.intent_metrics.main.confusion_matrix}
@@ -92,27 +92,30 @@ export default async function EvalDashboardPage() {
       </section>
 
       {Object.keys(report.judge_summary).length > 0 && (
-        <section className="mt-10">
-          <h2 className="text-[13px] font-medium uppercase tracking-[0.06em] text-text-muted mb-4">
+        <section className="mt-12">
+          <h2 className="text-[12.5px] font-medium uppercase tracking-[0.08em] text-text-muted mb-4">
             LLM judge &mdash; reply quality (1-5)
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-px bg-border rounded-lg overflow-hidden border border-border">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {Object.entries(report.judge_summary).map(([k, v]) => (
-              <div key={k} className="bg-surface p-4">
-                <p className="text-[11px] font-mono text-text-muted mb-1">{k.replace("mean_", "")}</p>
-                <p className="text-[20px] font-mono tabular-nums">{v.toFixed(2)}</p>
+              <div
+                key={k}
+                className="rounded-xl border border-border bg-surface p-5 shadow-[var(--shadow-card)]"
+              >
+                <p className="text-[11px] font-mono text-text-muted mb-1.5">{k.replace("mean_", "")}</p>
+                <p className="font-display text-[24px] font-medium tabular-nums text-text">{v.toFixed(2)}</p>
               </div>
             ))}
           </div>
         </section>
       )}
 
-      <section className="mt-10">
-        <h2 className="text-[13px] font-medium uppercase tracking-[0.06em] text-text-muted mb-4">
+      <section className="mt-12">
+        <h2 className="text-[12.5px] font-medium uppercase tracking-[0.08em] text-text-muted mb-4">
           Human-agreement study
         </h2>
         {report.human_agreement ? (
-          <div className="rounded-lg border border-border bg-surface p-6 text-[13.5px] leading-[1.7] font-mono">
+          <div className="rounded-xl border border-border bg-surface p-7 text-[13.5px] leading-[1.75] font-mono shadow-[var(--shadow-card)]">
             <p>n = {report.human_agreement.n}</p>
             <p>Cohen&apos;s kappa: {report.human_agreement.cohen_kappa.toFixed(3)}</p>
             <p>
@@ -122,7 +125,7 @@ export default async function EvalDashboardPage() {
             <p>Mean absolute diff: {report.human_agreement.mean_absolute_diff.toFixed(3)}</p>
           </div>
         ) : (
-          <div className="rounded-lg border border-border bg-surface-2 p-6 text-[13.5px] leading-[1.6] text-text-secondary">
+          <div className="rounded-xl border border-border bg-surface-2 p-7 text-[13.5px] leading-[1.65] text-text-secondary">
             Not performed &mdash; no independent human rater was available for this
             build. Using another LLM as a stand-in would produce circular, not
             weaker, evidence, so this is marked not-performed rather than faked.
@@ -133,14 +136,19 @@ export default async function EvalDashboardPage() {
       </section>
 
       {report.failure_examples.length > 0 && (
-        <section className="mt-10 mb-16">
-          <h2 className="text-[13px] font-medium uppercase tracking-[0.06em] text-text-muted mb-4">
+        <section className="mt-12 mb-20">
+          <h2 className="text-[12.5px] font-medium uppercase tracking-[0.08em] text-text-muted mb-4">
             Failure examples
           </h2>
           <div className="flex flex-col gap-3">
             {report.failure_examples.map((f) => (
-              <div key={f.thread_id} className="rounded-lg border border-border bg-surface p-5">
-                <p className="text-[13.5px] leading-[1.6] mb-3">&ldquo;{f.customer_msg}&rdquo;</p>
+              <div
+                key={f.thread_id}
+                className="rounded-xl border border-border bg-surface p-6 shadow-[var(--shadow-card)]"
+              >
+                <p className="font-display text-[15px] italic leading-[1.6] mb-3.5 text-text">
+                  &ldquo;{f.customer_msg}&rdquo;
+                </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2 text-[12px]">
                   <span className="text-text-muted">
                     intent: true <IntentBadge intent={f.true_intent} /> pred{" "}
@@ -162,13 +170,13 @@ export default async function EvalDashboardPage() {
 
 function MetricsTable({ columns, rows }: { columns: string[]; rows: (string | number)[][] }) {
   return (
-    <div className="overflow-x-auto rounded-lg border border-border">
+    <div className="overflow-x-auto rounded-xl border border-border shadow-[var(--shadow-card)]">
       <table className="w-full border-collapse text-[13px]">
         <thead>
           <tr className="border-b border-border bg-surface-2">
-            <th className="text-left font-medium px-4 py-2.5">System</th>
+            <th className="text-left font-medium px-5 py-3">System</th>
             {columns.map((c) => (
-              <th key={c} className="text-right font-medium px-4 py-2.5 font-mono">
+              <th key={c} className="text-right font-medium px-5 py-3 font-mono">
                 {c}
               </th>
             ))}
@@ -177,9 +185,9 @@ function MetricsTable({ columns, rows }: { columns: string[]; rows: (string | nu
         <tbody>
           {rows.map((row, i) => (
             <tr key={i} className="border-b border-border last:border-0 bg-surface">
-              <td className="px-4 py-2.5">{row[0]}</td>
+              <td className="px-5 py-3">{row[0]}</td>
               {row.slice(1).map((v, j) => (
-                <td key={j} className="px-4 py-2.5 text-right font-mono tabular-nums">
+                <td key={j} className="px-5 py-3 text-right font-mono tabular-nums">
                   {v}
                 </td>
               ))}
