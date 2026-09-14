@@ -142,11 +142,42 @@ class LLMClient:
             return self._call_ollama_fallback(prompt, params)
 
         from google import genai
+        from google.genai import errors as genai_errors
 
-        self._pacer_for(model).wait()
         client = genai.Client(api_key=api_key)
-        result = client.models.generate_content(model=model, contents=prompt, config=params or None)
-        return result.text
+
+        # Retry transient overload/rate-limit errors with exponential backoff
+        # (TRD 8.2 point 3: "Request pacing, not just retry-on-429" implies
+        # retries are expected — free-tier Gemini returns 503 UNAVAILABLE
+        # under load fairly often, which is not a bug in our request).
+        max_attempts = 5
+        base_delay = 2.0
+        for attempt in range(1, max_attempts + 1):
+            self._pacer_for(model).wait()
+            try:
+                result = client.models.generate_content(
+                    model=model, contents=prompt, config=params or None
+                )
+                return result.text
+            except genai_errors.ServerError as e:
+                if attempt == max_attempts:
+                    raise
+                delay = base_delay * (2 ** (attempt - 1))
+                logger.warning(
+                    "transient error from %s (attempt %d/%d), retrying in %.0fs: %s",
+                    model, attempt, max_attempts, delay, e,
+                )
+                time.sleep(delay)
+            except genai_errors.ClientError as e:
+                if getattr(e, "code", None) == 429 and attempt < max_attempts:
+                    delay = base_delay * (2 ** (attempt - 1))
+                    logger.warning(
+                        "rate-limited by %s (attempt %d/%d), retrying in %.0fs",
+                        model, attempt, max_attempts, delay,
+                    )
+                    time.sleep(delay)
+                    continue
+                raise
 
     def _call_ollama_fallback(self, prompt: str, params: dict[str, Any]) -> str:
         import requests
