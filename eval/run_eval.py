@@ -123,7 +123,7 @@ def run(
             item["reply"].draft,
             item["precedents"],
             state.llm_client,
-            os.environ.get("JUDGE_MODEL", "gemini-3.5-flash"),
+            os.environ.get("JUDGE_MODEL", "gemini-3.5-flash-lite"),
         )
         judge_scores.append({"thread_id": item["example"]["thread_id"], **score.__dict__, "mean_score": score.mean_score})
 

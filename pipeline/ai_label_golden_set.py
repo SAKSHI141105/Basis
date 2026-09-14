@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 GOLDEN_SET_RAW_PARQUET = ARTIFACTS_DIR / "golden_set_raw.parquet"
 GOLDEN_LABELS_JSON = ARTIFACTS_DIR / "golden_labels.json"
 
-LABELING_MODEL = os.environ.get("GENERATION_MODEL", "gemini-3.5-flash")
+LABELING_MODEL = os.environ.get("GENERATION_MODEL", "gemini-3.5-flash-lite")
 LABELING_TEMPERATURE = 0.0
 
 

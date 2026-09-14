@@ -88,3 +88,30 @@ access (Architecture §6's known-bottlenecks table).
 
 **Decision:** try `local_files_only=True` first, falling back to a normal
 (network) load only if nothing is cached yet (`pipeline/taxonomy.py`).
+
+## gemini-3.5-flash's free-tier daily quota is only 20 requests
+
+**Discovered:** running the AI golden-set labeler for real, every call to
+`gemini-3.5-flash` started returning `429 RESOURCE_EXHAUSTED` with
+`quotaValue: '20'` on the `GenerateRequestsPerDayPerProjectPerModel-FreeTier`
+metric — a 20-*requests-per-day* cap, not per-minute. This is far below
+what TRD §8.1 assumed for the "flash" tier (500-1,500 RPD historically for
+`gemini-2.5-flash`) and isn't published anywhere discoverable without an
+authenticated AI Studio view. `gemini-3.5-flash-lite` does not hit this
+limit at the same volume.
+
+**Decision:** use `gemini-3.5-flash-lite` for classification, generation,
+*and* the judge — collapsing TRD §8.1's lite/full split, because the full
+tier's real daily quota makes it unusable for a 200-example golden-set run
+regardless of the quality trade-off TRD intended. This is a real, binding
+free-tier constraint discovered empirically (exactly the kind of thing
+TRD §8.1 flags as needing verification "at implementation time"), not a
+judgment call about quality vs. cost. Documented as a limitation: reply
+generation and judging both run on the lighter model, so both the
+generation quality and the judge's discrimination may be weaker than a
+`gemini-3.5-flash`-based pipeline would produce.
+
+**Also discovered:** running two labeling processes concurrently (mine and
+the user's, both hitting the same per-project-per-model daily quota)
+doubled the burn rate and neither finished before the quota was already
+exhausted from earlier live end-to-end testing that same day.

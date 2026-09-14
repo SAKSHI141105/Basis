@@ -45,5 +45,5 @@ def load_state() -> AppState:
         llm_client=llm_client,
         brand_style_guide=DEFAULT_BRAND_STYLE_GUIDE,
         classifier_model=os.environ.get("CLASSIFIER_MODEL", "gemini-3.5-flash-lite"),
-        generation_model=os.environ.get("GENERATION_MODEL", "gemini-3.5-flash"),
+        generation_model=os.environ.get("GENERATION_MODEL", "gemini-3.5-flash-lite"),
     )
