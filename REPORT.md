@@ -1,14 +1,13 @@
 # Report — AI Support Agent for AppleSupport
 
-> **Status note:** this report's results section is being finalized. The
-> live golden-set eval run (`make eval-live`) is in progress across
-> multiple sessions because of a real free-tier daily-quota constraint —
-> see "A real constraint hit mid-build" below and `DECISION_LOG.md` for the
-> full account. Everything else in this report (methodology, architecture,
-> known limitations) reflects the actual, finished system. The final
-> headline-numbers table will be inserted from `artifacts/eval_report.json`
-> once that run completes; nothing here is a placeholder number dressed up
-> as real.
+> **Status note:** §6 below reports **real but partial** results — 152 of
+> 198 golden-set examples (46 skipped on a quota-exhausted call, resilient
+> skip per `DECISION_LOG.md`), and 0 judge scores (none cached yet). Every
+> number traces to an actual Gemini API call already made; nothing here is
+> a placeholder. The live run (`make eval-live`) continues across sessions
+> as free-tier quota allows — see "A real constraint hit mid-build" below —
+> and this section will be updated to the full 198/198 + judge scores once
+> it completes.
 
 ## 1. What this is
 
@@ -151,33 +150,73 @@ would just be checking whether one LLM agrees with another LLM applying a
 similar rubric. The eval report marks this section "not performed" rather
 than filling it with a number that looks like agreement data but isn't.
 
-## 6. Results
+## 6. Results (partial — 152/198, 0 judge scores)
 
-*(Pending final eval-live run — see status note at top. Once
-`artifacts/eval_report.json` is complete, this section is replaced with:
-the intent accuracy/macro-F1 table across trivial/simple/main systems, the
-escalation precision/recall/F1/cost-weighted table, the LLM judge's mean
-scores per rubric dimension, and the top-5 real failure examples.)*
+From `artifacts/eval_report.json`, committed and reproducible via
+`make eval-fast`. **46 examples and all judge scores are missing** because
+the live run hit a free-tier quota wall mid-run (§3) — every number below
+is real, from actual Gemini calls, on whatever subset has completed so far.
 
-## 7. What's misleading about the headline number (preview)
+**Intent classification** (main system: 152 examples; baselines: all 198):
 
-Because `out_of_scope` is ~88% of real traffic (§2.2), **a classifier that
-always predicts `out_of_scope` scores a high raw accuracy while being
-useless** — it never correctly identifies any of the 8 real intents. This
-was already confirmed on the (non-golden-set) held-out eval split during
-baseline development:
+| System | Accuracy | Macro-F1 |
+|---|---|---|
+| Trivial (always majority label) | 0.051 | 0.011 |
+| Simple (TF-IDF + LogReg) | 0.672 | 0.670 |
+| Main system (LLM classifier) | 0.836 | 0.694 |
+
+**Escalation decision:**
+
+| System | Precision | Recall | F1 | Cost-weighted |
+|---|---|---|---|---|
+| Trivial (always escalate) | 0.414 | 1.000 | 0.586 | 0.805 |
+| Simple (keyword rule) | 0.750 | 0.037 | 0.070 | 0.599 |
+| Main system | 0.500 | 0.171 | 0.255 | 0.592 |
+
+**A real, concerning finding, not smoothed over:** the main system's
+escalation **recall is only 0.171** — it misses roughly 5 of every 6
+examples that should have been escalated, on this partial slice. PRD §6 is
+explicit that a missed escalation (a confidently-wrong reply sent
+unsupervised) is the *expensive* failure mode here, more expensive than an
+unnecessary escalation. A recall this low is a real problem with the
+current threshold calibration (`pipeline/escalation.py`'s
+`DEFAULT_CONFIDENCE_THRESHOLD`/`DEFAULT_SIMILARITY_THRESHOLD`), not a
+rounding error — worth retuning against the golden set once it's complete,
+called out explicitly in §9 below.
+
+LLM judge scores: none yet (0/152 cached) — no reply-quality numbers to
+report until the live run produces some.
+
+## 7. What's misleading about the headline number
+
+Two distinct "misleading number" stories showed up in this build, at two
+different stages — worth keeping both, since they point in *opposite*
+directions:
+
+**On the full, naturally-imbalanced dataset** (§2.2: `out_of_scope` is
+~88% of real traffic), confirmed on the held-out eval split during baseline
+development:
 
 | System | Accuracy | Macro-F1 |
 |---|---|---|
 | Trivial (always `out_of_scope`) | 0.881 | 0.104 |
 | Simple (TF-IDF + LogReg) | 0.808 | 0.472 |
 
-The trivial baseline *beats* the simple baseline on raw accuracy while
-being far worse by macro-F1 — the metric that actually reflects whether a
-system can tell the 8 real intents apart. **Macro-F1 and per-intent F1 are
-the numbers that matter here; raw accuracy alone is actively misleading on
-this dataset.** The main system's numbers, once the live run completes,
-get read through this same lens.
+Here the trivial baseline *beats* the simple baseline on raw accuracy while
+being far worse by macro-F1 — accuracy alone is misleading in the
+*optimistic* direction for a do-nothing baseline.
+
+**On the golden set** (§6 above), the opposite distortion shows up: the
+golden set is deliberately stratified roughly evenly across the 9 intents
+(`pipeline/golden_set.py`), not the natural ~88%-skewed distribution, so
+the trivial baseline's accuracy *collapses* to 0.051 instead of looking
+falsely strong. **Which number is "misleading" depends entirely on which
+distribution you're reading it against** — a headline metric is only as
+trustworthy as the sampling behind it, and this project surfaced both
+directions of that problem, not just the one it went looking for.
+**Macro-F1 and per-intent F1 remain the numbers that actually reflect
+classification quality in either case; raw accuracy alone should not be
+trusted on this dataset.**
 
 ## 8. Known limitations (full list)
 
@@ -186,14 +225,23 @@ get read through this same lens.
 3. The "resolved" heuristic is weak — silence ≠ satisfaction (§2.1).
 4. `out_of_scope` dominates real traffic by construction (§2.2) — makes
    raw accuracy misleading (§7).
-5. Free-tier daily quotas (§3) mean a full live run spans multiple days.
-6. No PII redaction pipeline (brand chosen partly to reduce this need, but
+5. Free-tier daily quotas (§3) mean a full live run spans multiple days —
+   §6's results are from 152/198 examples and 0/152 judge scores as of this
+   writing, clearly marked partial, not presented as final.
+6. **Main system escalation recall is low (0.171) on the partial results**
+   (§6) — a real, not-yet-explained weakness in the current threshold
+   calibration, exactly the kind of finding this report exists to surface.
+7. No PII redaction pipeline (brand chosen partly to reduce this need, but
    it's a gap, not a guarantee — `PRD.md` §7).
-7. No live system integration, multi-language support, or fine-tuning —
+8. No live system integration, multi-language support, or fine-tuning —
    explicitly out of scope (`PRD.md` §7).
 
 ## 9. What I'd do next with one more week
 
+- **Retune the escalation thresholds against the golden set** — §6's 0.171
+  recall is the single most actionable finding in this report; the
+  deterministic thresholds in `pipeline/escalation.py` were set by
+  reasonable default, never calibrated against real labeled data.
 - Get a real independent human annotator for both the golden-set labels and
   the reply-quality human-agreement study — the single highest-value fix
   for the credibility of every number in this report.
@@ -202,9 +250,9 @@ get read through this same lens.
   not just two baselines" story.
 - Investigate whether a paid/higher tier or a second API key would let a
   full live eval run complete same-day rather than spanning a quota reset.
-- The Next.js demo frontend and deployment (`ARCHITECTURE.md` §2.4,
-  `AGENT_WORKING_AGREEMENT.md` §5) — deliberately last, per the build order,
-  and only attempted once everything above is solid.
+- Deployment (`AGENT_WORKING_AGREEMENT.md` §5) — deliberately last, per the
+  build order, and only attempted once everything above is solid. The
+  Next.js demo frontend (`ARCHITECTURE.md` §2.4) is already built.
 
 See `DECISION_LOG.md` for the full, chronological account of every decision
 and constraint discovered while actually building this system.
