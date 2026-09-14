@@ -9,8 +9,9 @@ env/
 .env
 
 data/raw/
-artifacts/
-.cache/
+artifacts/*
+!artifacts/eval_report.json
+.cache/*
 !.cache/llm_cache_golden.jsonl
 
 *.parquet

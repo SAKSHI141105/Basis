@@ -1,0 +1,507 @@
+{
+  "golden_set_size": 198,
+  "main_system_examples_evaluated": 152,
+  "skipped_example_ids": [
+    "149947_149946",
+    "109039_109040",
+    "622622_622621",
+    "1000099_1000097",
+    "1397313_1397311",
+    "2573904_2573902",
+    "1362534_1362532",
+    "1365536_1365534",
+    "2004793_2004792",
+    "1535596_1535595",
+    "2092700_2092699",
+    "2003017_2003016",
+    "1196348_1196347",
+    "2983592_2983591",
+    "1543319_1543318",
+    "2002928_2002927",
+    "46574_46573",
+    "1241155_1241154",
+    "2557263_2557262",
+    "1388296_1388295",
+    "1596048_1596047",
+    "2837182_2837181",
+    "1298605_1298604",
+    "371150_371149",
+    "568394_568393",
+    "557814_557812",
+    "2675743_2675741",
+    "556945_556943",
+    "555265_555263",
+    "546679_546677",
+    "586945_586944",
+    "553562_553561",
+    "570925_570924",
+    "554726_554725",
+    "539889_539888",
+    "552150_552149",
+    "594621_594620",
+    "583641_583640",
+    "553485_553484",
+    "1899440_1899439",
+    "546662_546661",
+    "554773_554772",
+    "549695_549694",
+    "553591_553590",
+    "552120_552119",
+    "570150_570149"
+  ],
+  "intent_metrics": {
+    "trivial": {
+      "accuracy": 0.050505050505050504,
+      "macro_f1": 0.010683760683760684,
+      "per_intent_f1": {
+        "apple_id_account_access": 0.0,
+        "billing_subscription": 0.0,
+        "device_troubleshooting": 0.0,
+        "feature_how_to": 0.0,
+        "general_complaint": 0.0,
+        "out_of_scope": 0.09615384615384616,
+        "positive_feedback": 0.0,
+        "repair_order_status": 0.0,
+        "software_update_bug": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          23,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          32,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          17,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          21,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          18,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          21,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          41,
+          0,
+          0,
+          0
+        ]
+      ],
+      "labels": [
+        "apple_id_account_access",
+        "billing_subscription",
+        "device_troubleshooting",
+        "feature_how_to",
+        "general_complaint",
+        "out_of_scope",
+        "positive_feedback",
+        "repair_order_status",
+        "software_update_bug"
+      ]
+    },
+    "simple": {
+      "accuracy": 0.6717171717171717,
+      "macro_f1": 0.6699569893368343,
+      "per_intent_f1": {
+        "apple_id_account_access": 0.9090909090909091,
+        "billing_subscription": 0.6486486486486487,
+        "device_troubleshooting": 0.6666666666666666,
+        "feature_how_to": 0.717948717948718,
+        "general_complaint": 0.8372093023255814,
+        "out_of_scope": 0.06060606060606061,
+        "positive_feedback": 0.8,
+        "repair_order_status": 0.9767441860465116,
+        "software_update_bug": 0.4126984126984127
+      },
+      "confusion_matrix": [
+        [
+          20,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          12,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          5,
+          18,
+          1,
+          0,
+          4,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          14,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          18,
+          1,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          5,
+          0,
+          3
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          21,
+          0
+        ],
+        [
+          0,
+          3,
+          2,
+          6,
+          4,
+          12,
+          1,
+          0,
+          13
+        ]
+      ],
+      "labels": [
+        "apple_id_account_access",
+        "billing_subscription",
+        "device_troubleshooting",
+        "feature_how_to",
+        "general_complaint",
+        "out_of_scope",
+        "positive_feedback",
+        "repair_order_status",
+        "software_update_bug"
+      ]
+    },
+    "main": {
+      "accuracy": 0.8355263157894737,
+      "macro_f1": 0.6943448421621465,
+      "per_intent_f1": {
+        "apple_id_account_access": 0.9565217391304348,
+        "billing_subscription": 0.88,
+        "device_troubleshooting": 0.7868852459016393,
+        "feature_how_to": 0.4,
+        "general_complaint": 0.8,
+        "out_of_scope": 0.631578947368421,
+        "positive_feedback": 0.9411764705882353,
+        "repair_order_status": 0.0,
+        "software_update_bug": 0.8529411764705882
+      },
+      "confusion_matrix": [
+        [
+          22,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          11,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          24,
+          1,
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          18,
+          1,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          2,
+          6,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          2,
+          1,
+          0,
+          0,
+          29
+        ]
+      ],
+      "labels": [
+        "apple_id_account_access",
+        "billing_subscription",
+        "device_troubleshooting",
+        "feature_how_to",
+        "general_complaint",
+        "out_of_scope",
+        "positive_feedback",
+        "repair_order_status",
+        "software_update_bug"
+      ]
+    }
+  },
+  "escalation_metrics": {
+    "trivial": {
+      "precision": 0.41414141414141414,
+      "recall": 1.0,
+      "f1": 0.5857142857142857,
+      "cost_weighted_score": 0.8047138047138047,
+      "false_auto_handle_count": 0,
+      "false_escalate_count": 116
+    },
+    "simple": {
+      "precision": 0.75,
+      "recall": 0.036585365853658534,
+      "f1": 0.06976744186046512,
+      "cost_weighted_score": 0.5993265993265993,
+      "false_auto_handle_count": 79,
+      "false_escalate_count": 1
+    },
+    "main": {
+      "precision": 0.5,
+      "recall": 0.17142857142857143,
+      "f1": 0.2553191489361702,
+      "cost_weighted_score": 0.5921052631578947,
+      "false_auto_handle_count": 58,
+      "false_escalate_count": 12
+    }
+  },
+  "judge_scores": [],
+  "judge_summary": {},
+  "human_agreement": null,
+  "failure_examples": [
+    {
+      "thread_id": "1236865_1236864",
+      "customer_msg": "iOS 11 is buggy. Please fix it. 😩",
+      "true_intent": "device_troubleshooting",
+      "pred_intent": "general_complaint",
+      "true_escalation": "auto_handle",
+      "pred_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2000150_2000149",
+      "customer_msg": "your new IOS update is complete fucking dog shit. Ever since i downloaded this bs my phone hasnt work properly. I want the old 1 bak",
+      "true_intent": "device_troubleshooting",
+      "pred_intent": "software_update_bug",
+      "true_escalation": "escalate",
+      "pred_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2406550_2406548",
+      "customer_msg": "My iPhone 6 went dead while I was transferring it to a new iCloud account? Any obvious reasons as to why this might have happened? Never seen an iPhone going dead and it was supposed to be 2 years old (bought it 2 years ago). Thanks",
+      "true_intent": "software_update_bug",
+      "pred_intent": "device_troubleshooting",
+      "true_escalation": "auto_handle",
+      "pred_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2422587_2422584",
+      "customer_msg": "Ever since the update my reminders display on my lock screen all the time. Even before and after they’re due. And even when marked completed. What’s the deal #AppleSupport #iPhoneUpdate",
+      "true_intent": "general_complaint",
+      "pred_intent": "software_update_bug",
+      "true_escalation": "escalate",
+      "pred_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "622711_622712",
+      "customer_msg": "11.1.2 (15B202). USA",
+      "true_intent": "feature_how_to",
+      "pred_intent": "out_of_scope",
+      "true_escalation": "escalate",
+      "pred_escalation": "auto_handle"
+    }
+  ],
+  "misleading_number_note": "What's misleading about the headline accuracy number: it is dominated by the out_of_scope majority class (~88% of real traffic per taxonomy.yaml) -- a baseline that always predicts out_of_scope can beat a real classifier on accuracy while scoring near-zero on macro-F1. Macro-F1 and per-intent F1 are the numbers that actually reflect classification quality here."
+}
