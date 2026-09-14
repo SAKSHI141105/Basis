@@ -6,7 +6,10 @@ from __future__ import annotations
 
 from contextlib import asynccontextmanager
 
+from dotenv import load_dotenv
 from fastapi import FastAPI, Request
+
+load_dotenv()  # GEMINI_API_KEY / model names — must run before load_state() reads os.environ
 
 from service.pipeline_runner import run_classify, run_decide, run_draft_reply, run_pipeline
 from service.schemas import (
