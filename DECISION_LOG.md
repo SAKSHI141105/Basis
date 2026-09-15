@@ -301,14 +301,29 @@ run's cached signals (zero extra API calls): the new retrieval index's
 similarity distribution meant 0.70/0.90 was no longer near-optimal.
 `confidence_threshold=0.95`/`similarity_threshold=0.95` is the new shipped
 default — recall improved again (0.573 → 0.707) at some cost to precision
-(0.566 → 0.433, since the stricter confidence threshold pushes more
-borderline-but-correct auto-handle cases into escalate too). Patched
+(0.566 → 0.433, since the stricter thresholds push more
+borderline-but-correct auto-handle cases into escalate too). First patched
 directly into the already-generated `eval_report.json`'s escalation
-section (recomputed from the same cached signals) rather than re-running
-the full pipeline again for a decision-layer-only change.
+section from cached signals (no API calls), then confirmed identical by
+running `make eval-fast` end-to-end against the committed cache — which
+also regenerated `failure_examples` with fresh escalation decisions under
+the new thresholds, catching a mismatch the manual patch alone hadn't
+surfaced (see next entry).
 
-**One case-study finding survived unchanged across both retunings:** §7's
-case 2 (heavy profanity, 1.00 similarity precedent, 0.95 confidence) still
-gets `auto_handle` under the new thresholds too — concrete evidence that
-this specific miss needs a new hard trigger (profanity/hostility), not
-another round of threshold tuning.
+**One case-study finding survived unchanged across both retunings, and the
+retuning introduced two new ones:** an initial pass over §7's 5 case
+studies (written against the manually-patched aggregate metrics, before
+`make eval-fast` regenerated `failure_examples` fresh) incorrectly reported
+case 1 as having no escalation mismatch. Caught during a follow-up audit by
+cross-checking the live `/eval` page against `eval_report.json` directly:
+case 1 ("iOS 11 is buggy...", 0.91 similarity) is a **new false-escalate**
+introduced by the stricter 0.95 similarity threshold — 0.91 cleared the
+old 0.90 threshold correctly but not the new one. Case 3 is the same
+pattern. Case 2 (heavy profanity, 1.00 similarity precedent, 0.95
+confidence) still gets `auto_handle` under the new thresholds — confirming
+that miss specifically needs a new hard trigger (profanity/hostility), not
+another round of threshold tuning, while cases 1 and 3 are the honest,
+disclosed cost of trading precision for the recall gain. Fixed in
+`REPORT.md` §7 immediately once found — a reminder to verify report prose
+against the final artifact, not an intermediate one, especially after a
+sequence of patch-then-rerun steps.

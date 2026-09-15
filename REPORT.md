@@ -352,7 +352,7 @@ trustworthy signal in this entire report, because it's the only place the
 "ground truth" isn't itself LLM-generated.
 
 **1. "iOS 11 is buggy. Please fix it. 😩"**
-True: `device_troubleshooting` — Predicted: `out_of_scope`
+True: `device_troubleshooting` — Predicted: `out_of_scope` (escalation: true `auto_handle`, predicted `escalate`, retrieval similarity 0.91)
 A genuinely ambiguous, very short message: "buggy" implies a malfunction
 but names no specific symptom. In the previous (pre-multilingual) eval run
 this was predicted `general_complaint`; here it's predicted `out_of_scope`
@@ -360,7 +360,11 @@ this was predicted `general_complaint`; here it's predicted `out_of_scope`
 example, which is further evidence the taxonomy's `out_of_scope` /
 `general_complaint` / `device_troubleshooting` three-way boundary is
 genuinely blurry for short, symptom-free complaints, not just a
-single-run fluke.
+single-run fluke. **This is also a new false-escalate introduced by the
+second threshold retuning:** 0.91 similarity cleared the old 0.90
+threshold (correct `auto_handle` in the previous run) but not the new,
+stricter 0.95 one — a direct, disclosed cost of the recall gain in §6, not
+a free improvement.
 
 **2. "your new IOS update is complete fucking dog shit... phone hasnt
 work properly. I want the old 1 bak"**
@@ -420,12 +424,16 @@ errors trace to a real, fixable taxonomy ambiguity (the `general_complaint`
 blurry when a complaint IS about a bug, and case 1's prediction flipping
 between runs shows this instability isn't a one-off). On escalation, the
 second threshold retuning (§6) fixed case 4's miss and left case 3 debatably
-correct instead of wrong — genuine progress — but **case 2's miss survives
-both retunings intact**: profanity/anger still isn't its own hard trigger
-in `pipeline/escalation.py`, and no amount of threshold tuning alone can
-fix a case where the retrieved precedent is a perfect (1.00) similarity
-match. That remains the single most concrete, well-evidenced fix candidate
-left in the system.
+correct instead of wrong, but **introduced two new false-escalates (cases
+1 and 3)** as the direct, disclosed cost of raising both thresholds to gain
+recall — not a free improvement, a real trade-off. And **case 2's miss
+survives both retunings intact**: profanity/anger still isn't its own hard
+trigger in `pipeline/escalation.py`, and no amount of threshold tuning
+alone can fix a case where the retrieved precedent is a perfect (1.00)
+similarity match. That remains the single most concrete, well-evidenced
+fix candidate left in the system — the retuning traded some false-escalates
+for better recall elsewhere, but it cannot substitute for a real hostility
+signal.
 
 ## 8. What's misleading about the headline number
 
