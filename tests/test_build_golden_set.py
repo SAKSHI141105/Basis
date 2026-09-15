@@ -27,6 +27,15 @@ def test_merge_labels_only_includes_fully_labeled():
     assert records[0]["thread_id"] == "a"
 
 
+def test_merge_labels_includes_resolution_quality_note():
+    raw = _fixture_raw()
+    labels = {"a": {"true_intent": "billing", "true_escalation": "auto_handle"}}
+    records = merge_labels(raw, labels)
+    assert "resolution_quality_note" in records[0]
+    assert isinstance(records[0]["resolution_quality_note"], str)
+    assert len(records[0]["resolution_quality_note"]) > 0
+
+
 def test_merge_labels_carries_ambiguous_note():
     raw = _fixture_raw()
     labels = {

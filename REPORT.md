@@ -35,6 +35,17 @@ this heuristic, to one who was actually helped. This heuristic is a
 practical necessity (the dataset has no explicit resolution signal at all)
 but every downstream number inherits its imprecision.
 
+**Quantified, not just asserted (PRD 4.4's "reference resolution quality
+notes"):** every golden-set example carries a `resolution_quality_note`
+(`pipeline/resolution_quality.py`, derived from already-known thread
+fields, no new labeling pass) classifying *which* evidence produced its
+`resolved` flag. Across the 198 golden-set examples: **156 (79%) are
+resolved by silence alone, 33 (17%) are marked unresolved, only 3 (2%)
+fall back on a late-arriving non-committal reply, and just 6 (3%) carry an
+actual closure phrase from the customer.** Put plainly: only 3% of this
+project's "resolved" ground truth has any textual evidence of real
+satisfaction — the other 79% is silence, dressed up as a label.
+
 ### 2.2 Intent taxonomy
 
 Customer messages were embedded with `all-MiniLM-L6-v2` (384-dim), PCA-reduced
@@ -188,6 +199,28 @@ agreement with real human labels) before trusting them at face value.**
 The main system clearly outperforms both baselines on the metric that
 actually matters (macro-F1) — this holds up at full scale, not just on the
 partial sample seen mid-build.
+
+**Per-intent F1, main system** (one aggregate number hides which intents
+the classifier actually struggles with — TRD §7.2):
+
+| Intent | F1 |
+|---|---|
+| `out_of_scope` | 0.632 |
+| `feature_how_to` | 0.750 |
+| `software_update_bug` | 0.784 |
+| `device_troubleshooting` | 0.781 |
+| `general_complaint` | 0.800 |
+| `positive_feedback` | 0.914 |
+| `billing_subscription` | 0.897 |
+| `repair_order_status` | 0.955 |
+| `apple_id_account_access` | 0.957 |
+
+The classifier is weakest on exactly the two intents you'd expect: the
+catch-all `out_of_scope` bucket (hardest to define precisely) and
+`feature_how_to` (shortest, thinnest messages — see §7's case study on
+"11.1.2 (15B202). USA"). It's strongest on intents with distinctive
+vocabulary (`apple_id_account_access`, `repair_order_status`). Full numbers
+in `artifacts/eval_report.json`.
 
 **Escalation decision, before threshold retuning** (original defaults,
 `confidence_threshold=0.6`, `similarity_threshold=0.55` — never calibrated

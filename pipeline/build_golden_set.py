@@ -5,7 +5,9 @@ golden_set.jsonl per TRD 7.1's schema.
 Labels are collected out-of-band (a labeling artifact, see labeling_guide.md)
 and handed to this module as a plain {thread_id: {true_intent, true_escalation,
 ambiguous_note}} JSON mapping — this module has no network access to fetch
-them itself.
+them itself. `resolution_quality_note` (PRD 4.4) is computed here, not
+collected out-of-band -- it's fully derivable from already-known thread
+fields (pipeline/resolution_quality.py), no labeling pass needed.
 """
 from __future__ import annotations
 
@@ -14,6 +16,7 @@ import json
 import pandas as pd
 
 from pipeline.config import ARTIFACTS_DIR
+from pipeline.resolution_quality import resolution_quality_note
 
 GOLDEN_SET_RAW_PARQUET = ARTIFACTS_DIR / "golden_set_raw.parquet"
 GOLDEN_LABELS_JSON = ARTIFACTS_DIR / "golden_labels.json"
@@ -42,6 +45,7 @@ def merge_labels(raw: pd.DataFrame, labels: dict[str, dict]) -> list[dict]:
                 "true_intent": label["true_intent"],
                 "true_escalation": label["true_escalation"],
                 "ambiguous_note": label.get("ambiguous_note") or "",
+                "resolution_quality_note": resolution_quality_note(row),
             }
         )
     return records

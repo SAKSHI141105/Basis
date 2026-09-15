@@ -161,7 +161,10 @@ tests/      pytest unit + integration tests (no API key needed — fully mocked)
   now recall 0.573) — a real, verified improvement that still inherits the
   golden-set-labeling caveat above.
 - The "resolved" heuristic (silence or a closure phrase after the brand's
-  reply) is weak — silence is not proof of satisfaction. See `TRD.md` §2.3.
+  reply) is weak — silence is not proof of satisfaction. Quantified on the
+  golden set (`resolution_quality_note` in `golden_set.jsonl`): only 3% of
+  "resolved" examples have an actual closure phrase; 79% are silence alone.
+  See `TRD.md` §2.3 and `REPORT.md` §2.1.
 - `out_of_scope` is ~88% of real traffic by construction (see
   `taxonomy.yaml`'s header) — this makes raw accuracy a misleading headline
   metric on the *natural* distribution; macro-F1 is what actually reflects
