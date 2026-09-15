@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ApiError, PipelineResponse, SampleMessage, getSamples, runPipeline } from "@/lib/api";
 import { ConfidenceValue, EscalationBadge, IntentBadge } from "@/components/Badges";
+import { InfoTooltip } from "@/components/InfoTooltip";
 
 type Stage = "classify" | "retrieve" | "draft" | "decide";
 const STAGES: { key: Stage; label: string }[] = [
@@ -88,13 +89,19 @@ export default function DemoPage() {
           )}
         </div>
 
+        <div className="mb-2 flex items-center gap-1.5">
+          <label className="text-[11px] font-mono uppercase tracking-[0.06em] text-text-muted">
+            Or write your own
+          </label>
+          <InfoTooltip text="Works in any language, not just English — write in Spanish, Hindi, German, or anything else, and the reply comes back in that same language." />
+        </div>
         <textarea
           value={message}
           onChange={(e) => {
             setMessage(e.target.value);
             setSelectedId(null);
           }}
-          placeholder="Or write a customer message here…"
+          placeholder="Write a customer message in any language…"
           rows={4}
           className="w-full rounded-lg border border-border bg-surface px-3.5 py-3 text-[13.5px] leading-[1.5] text-text placeholder:text-text-muted resize-none shadow-[var(--shadow-card)]"
         />
@@ -125,7 +132,7 @@ export default function DemoPage() {
             )}
             <TraceStep visible={visibleStage >= 1} label="1. Classify">
               {result && (
-                <div className="flex items-center gap-3 rounded-xl border border-border bg-surface p-4 shadow-[var(--shadow-card)]">
+                <div className="hover-lift flex items-center gap-3 rounded-xl border border-border bg-surface p-4 shadow-[var(--shadow-card)]">
                   <IntentBadge intent={result.classify.intent} />
                   <span className="text-[12px] text-text-muted">confidence</span>
                   <ConfidenceValue value={result.classify.confidence} />
@@ -142,7 +149,7 @@ export default function DemoPage() {
                   {result.draft_reply.grounded_on.map((id, i) => (
                     <div
                       key={id}
-                      className="rounded-xl border border-border bg-surface-2 px-4 py-3 shadow-[var(--shadow-card)]"
+                      className="hover-lift rounded-xl border border-border bg-surface-2 px-4 py-3 shadow-[var(--shadow-card)]"
                     >
                       <p className="text-[11px] font-mono text-text-muted">
                         precedent thread {id} &middot; similarity{" "}
@@ -156,7 +163,7 @@ export default function DemoPage() {
 
             <TraceStep visible={visibleStage >= 3} label="3. Drafted reply">
               {result && (
-                <p className="text-[14.5px] leading-[1.65] rounded-xl border border-border bg-surface p-5 shadow-[var(--shadow-card)]">
+                <p className="hover-lift text-[14.5px] leading-[1.65] rounded-xl border border-border bg-surface p-5 shadow-[var(--shadow-card)]">
                   {result.draft_reply.draft}
                 </p>
               )}
@@ -164,7 +171,7 @@ export default function DemoPage() {
 
             <TraceStep visible={visibleStage >= 4} label="4. Decision">
               {result && (
-                <div className="rounded-xl border border-border bg-surface p-5 shadow-[var(--shadow-card)]">
+                <div className="hover-lift rounded-xl border border-border bg-surface p-5 shadow-[var(--shadow-card)]">
                   <EscalationBadge decision={result.decision.decision} />
                   <p className="mt-3 text-[13.5px] leading-[1.65] text-text-secondary">
                     {result.decision.reason}
