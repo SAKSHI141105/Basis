@@ -88,7 +88,7 @@ make setup
 
 | Mode | Command | What it does |
 |---|---|---|
-| Fast (default) | `make eval-fast` | Replays the committed LLM-response cache (808 real responses) — instant, no network calls |
+| Fast (default) | `make eval-fast` | Replays the committed LLM-response cache (1,190 real responses) — instant, no network calls |
 | Live | `make eval-live` | Re-calls the real Gemini API, with rate-limit pacing and retry on transient errors |
 
 No `GEMINI_API_KEY` set → the pipeline falls back to a local Ollama model for
@@ -154,7 +154,7 @@ tests/      pytest unit + integration tests (no API key needed — fully mocked)
   judge's reply-quality scores against an independent human rater) could not
   be performed for the same reason — using another LLM as a stand-in for
   "the human" would be circular, not weaker evidence. The LLM judge's very
-  high, suspiciously uniform scores (4.88/5 overall) are correspondingly
+  high, suspiciously uniform scores (4.81/5 overall) are correspondingly
   unverified.
 - Escalation thresholds were originally uncalibrated (recall 0.146) and have
   since been retuned against the golden set (`pipeline/tune_escalation_thresholds.py`,

@@ -5,7 +5,7 @@
 > two free-tier API keys and several days of quota walls — the full account
 > is in "A real constraint hit mid-build" below and `DECISION_LOG.md`.
 > Reproducible instantly via `make eval-fast` against the committed cache
-> (`.cache/llm_cache_golden.jsonl`, 808 real cached responses).
+> (`.cache/llm_cache_golden.jsonl`, 1,190 real cached responses).
 
 ## 1. What this is
 
@@ -275,13 +275,21 @@ human judgment is exactly as uncertain as the labels themselves.
 | Dimension | Mean |
 |---|---|
 | Groundedness | 4.90 |
-| Correctness | 4.87 |
+| Correctness | 4.77 |
 | Tone | 4.95 |
-| Actionability | 4.79 |
-| **Overall** | **4.88** |
+| Actionability | 4.61 |
+| **Overall** | **4.81** |
+
+(These reflect the brand style guide after it was corrected to actually
+be derived from real replies, not assumed — §3 has the full account.
+Correctness/actionability dropped slightly from an earlier pre-correction
+run (4.87/4.79 → 4.77/4.61): a real, small, honest effect of constraining
+replies to genuinely match the brand's actual style — shorter, no
+sign-off, deferring account-specific detail to DM — rather than the judge
+simply agreeing with itself more before the fix.)
 
 **A second "misleading number" worth naming, not just reporting:** these
-scores are suspiciously uniform and high — every dimension within 0.16 of
+scores are suspiciously uniform and high — every dimension within 0.34 of
 each other, clustered near the top of a 5-point scale. That pattern is
 exactly what you'd expect either from (a) a genuinely well-grounded,
 on-brand generation pipeline, or (b) an LLM judge being lenient/agreeable

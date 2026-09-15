@@ -21,10 +21,10 @@ Golden set size: **198**
 ## LLM judge (reply quality, 1-5)
 
 - mean_groundedness: 4.90
-- mean_correctness: 4.87
+- mean_correctness: 4.77
 - mean_tone: 4.95
-- mean_actionability: 4.79
-- mean_overall: 4.88
+- mean_actionability: 4.61
+- mean_overall: 4.81
 
 ## Human-agreement study
 

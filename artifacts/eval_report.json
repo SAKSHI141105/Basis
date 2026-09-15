@@ -418,7 +418,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering help, asking for details in a DM, and maintaining a warm, actionable, and concise tone.",
+      "rationale": "The draft accurately combines phrasing from the precedents into a helpful, warm, and actionable response directing the user to DM.",
       "mean_score": 5.0
     },
     {
@@ -427,17 +427,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly mirrors the precedent reply, maintains an empathetic and professional tone despite the customer's hostility, and provides a clear next step.",
+      "rationale": "The draft accurately synthesizes the precedents with an empathetic, helpful tone, clear next steps, and no hallucinations.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2406550_2406548",
       "groundedness": 5,
-      "correctness": 4,
+      "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines elements from the precedents to offer assistance and a clear next step while maintaining a warm and concise tone.",
-      "mean_score": 4.75
+      "rationale": "The draft accurately reflects the precedents by offering help, explaining the situation, and directing the customer to DM.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "2422587_2422584",
@@ -445,7 +445,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the provided precedents to offer a warm, helpful, and actionable response that directs the customer to DM.",
+      "rationale": "The draft accurately combines elements from the precedents to offer help with the update and direct the user to DMs for troubleshooting.",
       "mean_score": 5.0
     },
     {
@@ -454,16 +454,16 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by acknowledging the customer's info, asking for details, and inviting them to DM for further assistance.",
+      "rationale": "The draft accurately combines elements from the precedents to thank the user, ask to move to DMs, and offer a closer look with a warm and actionable tone.",
       "mean_score": 5.0
     },
     {
       "thread_id": "84232_84230",
-      "groundedness": 4,
-      "correctness": 5,
+      "groundedness": 5,
+      "correctness": 4,
       "tone": 4,
       "actionability": 5,
-      "rationale": "The draft borrows standard phrasing from the precedents, provides a helpful and actionable link to solve the common iOS 'I' autocorrect bug, maintains a warm and concise tone, and only adds a slight brand-specific follow-up offer.",
+      "rationale": "The draft accurately combines phrases from the retrieved precedents and provides a helpful, actionable link while maintaining a polite tone despite the customer's profanity.",
       "mean_score": 4.5
     },
     {
@@ -472,7 +472,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies by offering help and directing the user to DMs, while maintaining a warm, actionable, and correct tone.",
+      "rationale": "The draft accurately reflects the precedent replies by offering help and directing the customer to DM, maintaining a warm and actionable tone.",
       "mean_score": 5.0
     },
     {
@@ -481,7 +481,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches the provided precedent reply, maintaining a helpful and actionable tone while directing the customer to DMs.",
+      "rationale": "The draft accurately reflects the precedent replies by offering empathy and a clear call-to-action to send a DM while maintaining a helpful, warm, and concise brand tone.",
       "mean_score": 5.0
     },
     {
@@ -490,7 +490,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately synthesizes phrases from the precedents into a helpful, warm, and actionable response guiding the customer to DMs.",
+      "rationale": "The draft accurately reflects the empathetic and direct style of the precedents, correctly identifies the device and issue, maintains a warm and concise brand tone, and provides a clear, actionable next step via DM.",
       "mean_score": 5.0
     },
     {
@@ -499,7 +499,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly mirrors the retrieved precedent in tone, structure, and content while providing a clear and helpful next step.",
+      "rationale": "The draft closely aligns with the provided precedents by acknowledging the app issue and directing the customer to DM for further assistance in a warm, actionable manner.",
       "mean_score": 5.0
     },
     {
@@ -508,7 +508,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements from all precedents while maintaining a warm, concise tone and clear next steps.",
+      "rationale": "The draft accurately adapts the precedent structure and troubleshooting steps to address the customer's specific movie loading issue while maintaining a warm, helpful, and actionable tone.",
       "mean_score": 5.0
     },
     {
@@ -517,17 +517,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedent replies into a warm, helpful, and actionable response.",
+      "rationale": "The draft perfectly matches one of the retrieved precedents, offering a helpful, warm, and actionable next step.",
       "mean_score": 5.0
     },
     {
       "thread_id": "498559_498558",
-      "groundedness": 5,
+      "groundedness": 4,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent of offering assistance via DM, maintains a helpful and warm tone, and provides a clear next step for the customer.",
-      "mean_score": 5.0
+      "rationale": "The draft borrows the empathetic and proactive phrasing of the precedents while directly addressing both customer issues and providing a clear call to action.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "1740795_1740794",
@@ -535,7 +535,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements from the precedents to offer a helpful, polite, and actionable response without introducing ungrounded information.",
+      "rationale": "The draft seamlessly combines elements from the precedents to offer a helpful, warm, and actionable response without hallucinating.",
       "mean_score": 5.0
     },
     {
@@ -544,7 +544,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines phrases from the retrieved precedents into a helpful, warm, and actionable response.",
+      "rationale": "The draft directly uses approved precedent phrasing to offer a helpful next step while maintaining a warm, professional tone.",
       "mean_score": 5.0
     },
     {
@@ -553,7 +553,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines relevant parts of the precedent replies to address the customer's phone and battery issue while offering a clear next step.",
+      "rationale": "The draft accurately combines elements from the precedents to address the phone issue empathetically and provides a clear next step via DM.",
       "mean_score": 5.0
     },
     {
@@ -562,7 +562,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering assistance and directing the customer to DMs, maintaining a warm and actionable tone.",
+      "rationale": "The draft accurately reflects the precedents by directing the customer to DMs for assistance, maintains a warm and concise tone, and provides a clear, actionable next step.",
       "mean_score": 5.0
     },
     {
@@ -571,7 +571,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines phrasing from the precedents into a helpful, warm, and actionable closing response.",
+      "rationale": "The draft accurately reflects the precedent responses, maintains a warm and concise tone, and provides a clear next step for the customer.",
       "mean_score": 5.0
     },
     {
@@ -580,7 +580,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent by advising the customer to contact the Apple Store directly, maintaining a helpful tone and a clear next step.",
+      "rationale": "The draft accurately reflects the precedent of directing customers to the Apple Store directly, maintains a helpful and warm tone, and provides a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -589,7 +589,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft is directly pulled from precedent, offers a helpful and professional response to the angry customer, maintains a warm yet concise tone, and gives a clear next step (DM us).",
+      "rationale": "The draft accurately reflects the precedents by offering assistance and directing the customer to a DM, maintaining a warm and concise tone with a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -598,26 +598,26 @@
       "correctness": 4,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately reflects the precedents by offering help and directing the user to DMs, maintaining a warm, professional, and actionable tone.",
+      "rationale": "The draft accurately adapts the precedent by offering empathy and a clear call to action to move to DMs.",
       "mean_score": 4.5
     },
     {
       "thread_id": "2001209_2001208",
       "groundedness": 5,
-      "correctness": 5,
+      "correctness": 3,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines relevant elements from the precedents to provide a helpful, warm, and actionable workaround link.",
-      "mean_score": 5.0
+      "actionability": 2,
+      "rationale": "The draft uses valid precedent and a warm tone, but cuts off right before providing the actual workaround steps, leaving the customer without a concrete solution.",
+      "mean_score": 3.75
     },
     {
       "thread_id": "2072314_2072313",
-      "groundedness": 3,
-      "correctness": 3,
-      "tone": 4,
-      "actionability": 3,
-      "rationale": "The draft blends elements from the precedents well, but lacks the specific troubleshooting steps and asks for unnecessary DM details prematurely.",
-      "mean_score": 3.25
+      "groundedness": 5,
+      "correctness": 5,
+      "tone": 5,
+      "actionability": 5,
+      "rationale": "The draft accurately reflects the precedent by asking for the iOS version and more details via DM while maintaining a helpful tone and clear next steps.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "257194_257193",
@@ -625,17 +625,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines elements from the precedents to address the iOS notification issue with a warm, actionable, and grounded response.",
+      "rationale": "The draft effectively combines empathetic framing and clarifying questions adapted from the provided precedents while maintaining a helpful, concise tone and clear next steps.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2114729_2114728",
       "groundedness": 5,
-      "correctness": 4,
-      "tone": 4,
+      "correctness": 5,
+      "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the provided precedents, maintaining a helpful tone and clear next steps, though the combined sentence is slightly run-on.",
-      "mean_score": 4.5
+      "rationale": "The draft accurately reflects the precedent by asking the customer to move to DM for more details, maintains a calm and helpful tone despite the profanity, and provides a clear next step.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "1732571_1732570",
@@ -643,7 +643,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately synthesizes the precedents while addressing both the customer's devices with a helpful, warm, and actionable directive.",
+      "rationale": "The draft accurately mirrors the precedents by offering help and asking for a DM with details, while nicely adapting the language to fit both of the customer's devices.",
       "mean_score": 5.0
     },
     {
@@ -652,7 +652,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft is an exact match to one of the retrieved precedents, ensuring it is fully grounded, correct, appropriately toned, and actionable.",
+      "rationale": "The draft accurately reflects the precedent responses by expressing a desire to help and directing the customer to DM for further investigation.",
       "mean_score": 5.0
     },
     {
@@ -661,7 +661,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches a provided precedent while maintaining a warm, professional, and actionable tone in response to an aggressive user.",
+      "rationale": "The draft accurately mirrors the precedents by offering help and asking for a DM, maintaining a warm and professional tone despite the customer's profanity.",
       "mean_score": 5.0
     },
     {
@@ -670,7 +670,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines phrases from the precedents to offer a warm, correct, and actionable next step for the customer.",
+      "rationale": "The draft accurately reflects the precedents by acknowledging the issue and directing the customer to DM for further help while maintaining a warm, actionable, and concise tone.",
       "mean_score": 5.0
     },
     {
@@ -679,7 +679,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches one of the retrieved precedents, offering a helpful, warm, and actionable next step for the customer's battery issue.",
+      "rationale": "The draft accurately reflects the precedents by acknowledging the battery concern and directing the customer to DM for further help with a warm, concise tone.",
       "mean_score": 5.0
     },
     {
@@ -688,7 +688,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to provide a helpful, polite, and actionable response.",
+      "rationale": "The draft directly uses phrases from the precedents, offers a helpful and warm response, and provides a clear next step by moving the conversation to DM.",
       "mean_score": 5.0
     },
     {
@@ -697,7 +697,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches the provided precedent, offers a helpful and factually appropriate troubleshooting step, maintains a warm and concise brand tone, and provides clear, actionable instructions.",
+      "rationale": "The draft accurately reflects the precedents by acknowledging the issue with empathy and directing the customer to DM for further assistance.",
       "mean_score": 5.0
     },
     {
@@ -715,7 +715,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent by asking for the device type in a DM, maintaining a warm and professional tone, and providing a clear, actionable next step for the customer.",
+      "rationale": "The draft accurately reflects the precedent responses by asking for device information in a DM while maintaining a helpful tone and clear next steps.",
       "mean_score": 5.0
     },
     {
@@ -724,7 +724,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents into a helpful, concise, and actionable response with a warm brand tone.",
+      "rationale": "The draft effectively combines elements from the precedents to offer a warm, correct, and actionable response asking for the iOS version via DM.",
       "mean_score": 5.0
     },
     {
@@ -739,11 +739,11 @@
     {
       "thread_id": "1445545_1445544",
       "groundedness": 5,
-      "correctness": 4,
+      "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the provided precedents to offer a warm, actionable next step for the customer.",
-      "mean_score": 4.75
+      "rationale": "The draft directly uses a retrieved precedent, offers a helpful and actionable next step in DMs, and maintains a warm, concise tone.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "2980232_2980231",
@@ -751,7 +751,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering assistance, acknowledging the iPhone software context, and directing the customer to a DM to continue the conversation.",
+      "rationale": "The draft closely follows the precedent replies, offering empathetic assistance and a clear call to action to continue via DM.",
       "mean_score": 5.0
     },
     {
@@ -760,7 +760,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the precedents' structure and tone, offering empathetic support and a clear call to action via DM.",
+      "rationale": "The draft accurately synthesizes language from the precedents while maintaining a warm, helpful tone and providing a clear, actionable next step.",
       "mean_score": 5.0
     },
     {
@@ -775,11 +775,11 @@
     {
       "thread_id": "1649013_1649012",
       "groundedness": 5,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately uses the precedent phrasing while adding a helpful, polite, and actionable next step for the customer.",
-      "mean_score": 5.0
+      "correctness": 3,
+      "tone": 4,
+      "actionability": 2,
+      "rationale": "The draft perfectly matches the precedent and maintains a good tone, but stops abruptly without providing the actual workaround steps.",
+      "mean_score": 3.5
     },
     {
       "thread_id": "1516133_1516132",
@@ -787,7 +787,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines elements from the precedents to offer help, share battery tips, and direct the customer to DM for further assistance in a warm and actionable manner.",
+      "rationale": "The draft effectively combines elements from the precedents to offer a warm, actionable, and accurate response without hallucinating unauthorized troubleshooting steps.",
       "mean_score": 5.0
     },
     {
@@ -796,44 +796,44 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies by offering help and directing the customer to a direct message for further assistance.",
+      "rationale": "The draft accurately reflects the precedent replies by offering assistance and directing the customer to DM for further support, maintaining a warm and actionable tone.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2014852_2014851",
-      "groundedness": 5,
+      "groundedness": 4,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to offer a helpful workaround link, a warm tone, and a clear next step.",
-      "mean_score": 5.0
+      "rationale": "The draft closely follows the precedent by including the workaround link from a similar context and offering a DM follow-up, maintaining a helpful and warm tone.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "2283809_2283811",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines relevant precedents to warn the customer, provide a helpful phishing resource, and maintain a warm, concise tone.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately combines elements from the precedents to warn the user about phishing with a warm, concise tone, though it slightly tweaks the phrasing for the action step.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "670636_670635",
       "groundedness": 5,
       "correctness": 5,
-      "tone": 5,
+      "tone": 4,
       "actionability": 5,
-      "rationale": "The draft accurately uses the precedent for moving the conversation to DMs to investigate a potentially fraudulent email with a warm, actionable, and correct approach.",
-      "mean_score": 5.0
+      "rationale": "The draft accurately reflects the precedent responses by identifying the potential phishing attempt and directing the user to helpful resources with a clear, concise tone.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "967315_967313",
-      "groundedness": 4,
+      "groundedness": 5,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft borrows strongly from the precedents and adds helpful specific actions and resources while maintaining a warm and concise tone.",
-      "mean_score": 4.75
+      "rationale": "The draft accurately combines elements from the precedents to provide a helpful, safe, and actionable response in the correct brand tone.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "1594932_1594930",
@@ -841,26 +841,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the provided precedents, offering a helpful, polite, and actionable response to a potential phishing message.",
+      "rationale": "The draft is a direct and exact match to the provided precedent reply, making it fully grounded, correct, well-toned, and actionable.",
       "mean_score": 5.0
     },
     {
       "thread_id": "853177_853175",
-      "groundedness": 5,
-      "correctness": 5,
+      "groundedness": 4,
+      "correctness": 4,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by confirming it is a phishing attempt, maintains a warm and concise tone, and provides a helpful, actionable support link.",
-      "mean_score": 5.0
+      "actionability": 3,
+      "rationale": "The draft adopts language closely matching the provided phishing-confirmation precedents, but trails off without actually providing the promised information or next steps on how to report it.",
+      "mean_score": 4.0
     },
     {
       "thread_id": "1172244_1172246",
-      "groundedness": 5,
-      "correctness": 5,
+      "groundedness": 4,
+      "correctness": 4,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents, provides a helpful and correct link, maintains a warm and concise tone, and offers a concrete next step for the customer.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft borrows phrasing well from the precedents to offer a helpful, warm, and actionable next step for the customer.",
+      "mean_score": 4.25
     },
     {
       "thread_id": "660458_660457",
@@ -868,7 +868,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines precedent phrases into a warm, concise, and actionable response that correctly addresses the customer's security concern.",
+      "rationale": "The draft accurately reflects the precedents, provides helpful and correct information with a link, maintains a warm and concise tone, and gives a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -877,7 +877,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the provided precedents to create a helpful, warm, and actionable response without hallucinating.",
+      "rationale": "The draft accurately combines elements from the precedents to provide a helpful, warm, and actionable response without hallucinating.",
       "mean_score": 5.0
     },
     {
@@ -886,35 +886,35 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines phrases directly from the precedents, providing a helpful, warm, and actionable next step for the customer.",
+      "rationale": "The draft accurately reflects the precedent replies by showing empathy and directing the customer to send a DM for further assistance.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1655469_1655468",
       "groundedness": 5,
-      "correctness": 5,
+      "correctness": 4,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies, provides a correct and helpful support resource, maintains a warm and concise tone, and gives a clear next step.",
-      "mean_score": 5.0
+      "actionability": 3,
+      "rationale": "The draft perfectly matches a provided precedent and has a warm tone, but lacks a direct link to the referenced guide.",
+      "mean_score": 4.25
     },
     {
       "thread_id": "109020_109019",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by addressing the outage status, suggesting a device restart, and offering a clear next step.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft directly uses phrasing and troubleshooting steps from the retrieved precedents while maintaining a helpful, concise tone.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "449466_449465",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines elements directly from the precedents to provide a helpful, warm, and actionable response.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft closely aligns with the precedents by confirming the email is fake, directing the customer to the phishing page, and maintaining a warm, concise tone.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "483198_483197",
@@ -922,7 +922,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines phrases from the retrieved precedents, maintains a warm and helpful tone, and provides a clear, actionable next step.",
+      "rationale": "The draft accurately mirrors the tone and instructions of the precedents by offering help and directing the customer to DM.",
       "mean_score": 5.0
     },
     {
@@ -931,7 +931,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly mirrors the precedent, offering a warm, helpful, and actionable next step to verify the email's legitimacy.",
+      "rationale": "The draft accurately combines elements from the precedents into a helpful, warm, and actionable response directing the user to DMs.",
       "mean_score": 5.0
     },
     {
@@ -940,7 +940,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents into a warm, concise, and helpful response that prompts the customer for more details.",
+      "rationale": "The draft accurately reflects the precedents by offering help and asking for details about the issue in a warm, concise manner.",
       "mean_score": 5.0
     },
     {
@@ -949,7 +949,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements from the provided precedents to deliver an accurate, well-toned, and actionable response.",
+      "rationale": "The draft accurately synthesizes the precedents with a warm, concise tone, validates the customer's concern, and provides a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -957,9 +957,9 @@
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to validate the user's suspicion, confirm it is a phishing email, and provide a direct helpful link.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft is directly lifted from a valid precedent, maintains a warm and concise tone, and validates the customer's concern with a clear path forward.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "2955499_2955498",
@@ -967,7 +967,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately synthesizes multiple precedents into a helpful, warm, and actionable response that directly addresses the customer's phishing concern.",
+      "rationale": "The draft closely follows the precedent language, provides a helpful and correct safety resource, maintains a warm and concise tone, and offers a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -976,7 +976,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent by praising the catch and offering a reporting mechanism via DM while maintaining a warm and actionable tone.",
+      "rationale": "The draft accurately reflects the precedent by praising the catch and providing a helpful, actionable reporting link in a warm tone.",
       "mean_score": 5.0
     },
     {
@@ -985,7 +985,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to address the potential phishing email with a helpful link and an offer for further assistance in DMs.",
+      "rationale": "The draft accurately reflects the precedent responses by confirming the email is fake and providing a helpful link for further assistance.",
       "mean_score": 5.0
     },
     {
@@ -994,17 +994,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements from all retrieved precedents to provide a helpful, accurate, and actionable response in a warm and concise tone.",
+      "rationale": "The draft accurately combines relevant precedents to directly address the user's phishing concern with a helpful and actionable link in a warm, concise tone.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1626534_1626533",
-      "groundedness": 3,
-      "correctness": 2,
-      "tone": 3,
-      "actionability": 3,
-      "rationale": "The draft awkwardly combines two distinct precedents by telling the user to report the email while simultaneously asking for a DM, creating a confusing and contradictory set of next steps.",
-      "mean_score": 2.75
+      "groundedness": 5,
+      "correctness": 5,
+      "tone": 5,
+      "actionability": 5,
+      "rationale": "The draft accurately combines elements from the precedents to provide a secure, helpful, well-toned, and actionable response regarding a potential phishing email.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "620187_620186",
@@ -1012,7 +1012,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately synthesizes multiple precedents by offering troubleshooting steps first and a DM fallback if they fail, matching the brand's warm and actionable tone.",
+      "rationale": "The draft accurately combines troubleshooting steps and a DM fallback from the precedents into a warm, clear, and actionable response.",
       "mean_score": 5.0
     },
     {
@@ -1021,7 +1021,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements directly from the retrieved precedents to offer a helpful, warm, and actionable response.",
+      "rationale": "The draft accurately reflects the precedent for moving the conversation to a DM while maintaining a warm, helpful tone and providing a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1030,7 +1030,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately adapts the retrieved precedent to address app downloads while maintaining a warm, helpful, and actionable tone.",
+      "rationale": "The draft accurately reflects the precedent replies by offering help via DM while adapting the text smoothly to address downloading apps instead of updating.",
       "mean_score": 5.0
     },
     {
@@ -1048,17 +1048,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches one of the retrieved precedents with high factual helpfulness, a warm tone, and a clear call to action.",
+      "rationale": "The draft accurately reflects the precedents by directing the customer to DM for help while maintaining a warm, actionable, and correct support approach.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1391216_1391215",
-      "groundedness": 4,
-      "correctness": 4,
+      "groundedness": 5,
+      "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft closely adapts the phrasing of the precedents to offer a warm tone and clear next steps, though it drops the specific 'PayPal' reference from the source text.",
-      "mean_score": 4.25
+      "actionability": 5,
+      "rationale": "The draft accurately mirrors the language and instructions from the provided precedents while offering a warm, clear, and actionable next step for the customer.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "2261502_2261501",
@@ -1066,7 +1066,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements from the precedents into a warm, helpful response with a clear and actionable next step.",
+      "rationale": "The draft accurately reflects the precedents by offering empathy and inviting the customer to DM, while directly addressing the specific photo and iCloud backup issue mentioned.",
       "mean_score": 5.0
     },
     {
@@ -1075,7 +1075,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately synthesizes troubleshooting questions and next steps from the precedents while maintaining a warm, actionable, and correct tone.",
+      "rationale": "The draft perfectly adopts the exact phrasing and request from precedent thread 1983098_1983097, ensuring it is grounded, helpful, warm, and actionable.",
       "mean_score": 5.0
     },
     {
@@ -1084,7 +1084,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to offer a helpful, warm, and actionable response with a relevant support article.",
+      "rationale": "The draft accurately reflects the precedent by offering troubleshooting steps and directing the customer to DM if needed, maintaining a warm tone and clear next steps.",
       "mean_score": 5.0
     },
     {
@@ -1093,7 +1093,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines phrasing from the provided precedents into a helpful, warm, and actionable response.",
+      "rationale": "The draft accurately combines elements from the precedents into a helpful, concise, warm, and actionable response.",
       "mean_score": 5.0
     },
     {
@@ -1102,7 +1102,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines elements from the provided precedents, offering a warm tone, relevant troubleshooting questions, and a clear call to action.",
+      "rationale": "The draft seamlessly combines elements from the precedents to offer a warm, actionable, and accurate response to the customer's issue.",
       "mean_score": 5.0
     },
     {
@@ -1120,7 +1120,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering help, asking for the device via DM, and maintaining a warm, concise tone with a clear next step.",
+      "rationale": "The draft accurately mirrors the precedents by offering help, asking for the device via DM, and maintaining a warm, actionable tone.",
       "mean_score": 5.0
     },
     {
@@ -1129,7 +1129,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering help, asking for the device via DM, and maintaining a warm, concise tone with a clear next step.",
+      "rationale": "The draft accurately reflects the precedent replies by asking for a DM and the device type in a warm, actionable, and correct manner.",
       "mean_score": 5.0
     },
     {
@@ -1138,7 +1138,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly combines questions and requests from the precedents into a helpful, warm, and actionable response.",
+      "rationale": "The draft accurately synthesizes the precedent replies by asking about the headphone origin and directing the customer to DM, while maintaining a helpful tone and clear next steps.",
       "mean_score": 5.0
     },
     {
@@ -1147,7 +1147,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately synthesizes elements from the precedents into a warm, helpful, and actionable response directing the customer to DMs.",
+      "rationale": "The draft accurately reflects the precedents by expressing empathy, acknowledging the importance of photos, and providing a clear, actionable next step to continue the conversation in DMs.",
       "mean_score": 5.0
     },
     {
@@ -1165,7 +1165,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches a provided precedent, offers a clear and correct next step, and maintains a warm, helpful, and concise tone.",
+      "rationale": "The draft accurately reflects the precedent support strategies by offering assistance and directing the customer to DM for further help with a warm and concise tone.",
       "mean_score": 5.0
     },
     {
@@ -1183,7 +1183,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to offer a warm, actionable, and correct response for troubleshooting the missing photos issue.",
+      "rationale": "The draft accurately reflects the precedents by offering to investigate via DM while maintaining a warm, empathetic, and actionable customer support tone.",
       "mean_score": 5.0
     },
     {
@@ -1192,7 +1192,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the provided precedents to offer a warm, helpful, and actionable next step for the customer.",
+      "rationale": "The draft accurately reflects the precedent of asking the customer for a DM while maintaining a warm, helpful, and actionable tone.",
       "mean_score": 5.0
     },
     {
@@ -1210,7 +1210,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches the retrieved precedent, offering a warm, helpful tone with a clear and actionable next step.",
+      "rationale": "The draft accurately reflects the precedent replies by offering help and directing the customer to DMs in a warm, concise manner with a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1219,17 +1219,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents while appropriately tailoring the message to the customer's specific AppleCare issue.",
+      "rationale": "The draft accurately uses phrasing from the precedents, provides a helpful and empathetic response, maintains a warm and concise brand tone, and gives a clear call to action.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2641026_2641024",
-      "groundedness": 5,
-      "correctness": 5,
+      "groundedness": 4,
+      "correctness": 4,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent by offering direct troubleshooting assistance via DM.",
-      "mean_score": 5.0
+      "rationale": "The draft accurately combines the empathetic acknowledgment from the precedents with the actionable DM request from thread 489714_489713.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "974463_1875343",
@@ -1237,26 +1237,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches one of the retrieved precedents, offering a warm tone, factual support handling, and a clear next step.",
+      "rationale": "The draft directly mirrors the language and intent of the retrieved precedents, offering a warm tone and a clear, actionable next step.",
       "mean_score": 5.0
     },
     {
       "thread_id": "652244_652242",
-      "groundedness": 5,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent by asking for specific troubleshooting details, device type, and OS version, while maintaining a helpful, warm, and actionable tone.",
-      "mean_score": 5.0
-    },
-    {
-      "thread_id": "753024_753022",
       "groundedness": 4,
       "correctness": 4,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines elements from the precedents to address both the playback issue and offer further assistance, though it slightly modifies the DM phrasing.",
+      "rationale": "The draft effectively combines elements from the precedents (asking for feedback/details and device info) into a warm, actionable, and mostly grounded response.",
       "mean_score": 4.5
+    },
+    {
+      "thread_id": "753024_753022",
+      "groundedness": 5,
+      "correctness": 3,
+      "tone": 5,
+      "actionability": 4,
+      "rationale": "The draft matches the precedent perfectly, though asking what issues the customer is having is slightly redundant since they already stated them.",
+      "mean_score": 4.25
     },
     {
       "thread_id": "693971_693970",
@@ -1264,7 +1264,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches the retrieved precedent in wording, tone, and call to action.",
+      "rationale": "The draft closely aligns with the precedents by inviting the customer to share details via DM while maintaining a helpful, warm, and concise tone.",
       "mean_score": 5.0
     },
     {
@@ -1273,7 +1273,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately matches a provided precedent, offers a helpful and correct next step, maintains a warm and concise tone, and clearly instructs the customer to take action via DM.",
+      "rationale": "The draft accurately reflects the precedents by offering help for the specific issue, asking for more details via DM, and maintaining a warm, concise tone with a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1282,26 +1282,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft is an exact match to one of the retrieved precedents, offering a helpful, polite, and actionable next step.",
+      "rationale": "The draft accurately combines phrases directly from the retrieved precedents to provide a warm, actionable, and correct response.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1186563_1186562",
-      "groundedness": 5,
-      "correctness": 5,
+      "groundedness": 4,
+      "correctness": 4,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines elements from the provided precedents into a helpful, warm, and actionable response.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft effectively uses precedent phrasing like 'we'll go from there' and asks for a DM, though it misses the opportunity to suggest updating to iOS 11.1.1 seen in another precedent.",
+      "mean_score": 4.25
     },
     {
       "thread_id": "1961373_1961372",
-      "groundedness": 4,
+      "groundedness": 5,
       "correctness": 3,
       "tone": 3,
       "actionability": 4,
-      "rationale": "The draft combines elements from the precedents effectively, though the customer's sarcastic tone makes the empathetic greeting slightly misaligned.",
-      "mean_score": 3.5
+      "rationale": "The draft accurately uses the precedent text, but fails to handle the customer's heavy sarcasm appropriately.",
+      "mean_score": 3.75
     },
     {
       "thread_id": "460897_460896",
@@ -1309,7 +1309,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft closely aligns with the precedents by offering to look into the matter, inviting the customer to DM, and maintaining a professional, helpful, and concise tone.",
+      "rationale": "The draft accurately mirrors the precedents while tailoring the response appropriately to the customer's specific location mention.",
       "mean_score": 5.0
     },
     {
@@ -1318,7 +1318,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent for handling feedback, maintains a warm and concise tone, and provides a clear, actionable next step for the customer.",
+      "rationale": "The draft accurately combines elements from the precedents to offer help and direct the customer to DMs in a warm, actionable way.",
       "mean_score": 5.0
     },
     {
@@ -1327,7 +1327,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the provided precedents, offering a helpful, empathetic, and actionable response with a warm and concise tone.",
+      "rationale": "The draft accurately combines elements from the precedents to offer a warm, actionable, and grounded response directing the customer to DM.",
       "mean_score": 5.0
     },
     {
@@ -1345,7 +1345,7 @@
       "correctness": 5,
       "tone": 4,
       "actionability": 5,
-      "rationale": "The draft effectively combines the phrasing from the precedents to offer a helpful and actionable next step while maintaining a polite tone despite the user's hostility.",
+      "rationale": "The draft accurately reflects the precedent, provides a helpful and actionable next step, and maintains a professional tone despite the customer's hostility.",
       "mean_score": 4.75
     },
     {
@@ -1354,7 +1354,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the provided precedents by offering assistance, acknowledging the Podcasts app, and directing the customer to DMs for next steps in a warm, concise tone.",
+      "rationale": "The draft accurately reflects the precedent replies, offers helpful assistance with the app, maintains a warm and concise tone, and clearly directs the customer to DM for the next step.",
       "mean_score": 5.0
     },
     {
@@ -1363,7 +1363,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines phrasing from the precedents into a warm, helpful, and actionable response that directs the customer to DM for assistance.",
+      "rationale": "The draft seamlessly combines phrases directly from the precedents while maintaining a warm, helpful tone and providing a clear call to action.",
       "mean_score": 5.0
     },
     {
@@ -1372,7 +1372,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines phrasing from the precedents to deliver a warm, actionable, and accurate customer support response.",
+      "rationale": "The draft perfectly blends phrases from the precedents while maintaining a warm, concise tone and a clear call to action.",
       "mean_score": 5.0
     },
     {
@@ -1396,11 +1396,11 @@
     {
       "thread_id": "2146542_2146541",
       "groundedness": 5,
-      "correctness": 5,
+      "correctness": 4,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent for troubleshooting device issues and directs the customer to DM for further assistance in a warm and actionable manner.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately reflects the precedent for collecting product feedback, maintaining a warm and concise tone with a clear next step.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "330961_330960",
@@ -1408,7 +1408,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 3,
-      "rationale": "The draft accurately combines phrases from the retrieved precedents, maintains a warm and helpful tone, and correctly closes the conversation despite lacking a specific call to action (which is appropriate for a resolved issue).",
+      "rationale": "The draft perfectly matches one of the retrieved precedents with a warm, helpful tone, though actionability is inherently low as the customer's issue is already resolved.",
       "mean_score": 4.5
     },
     {
@@ -1417,7 +1417,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft is a direct and accurate reproduction of a valid precedent, offering a warm tone and a clear next step.",
+      "rationale": "The draft accurately combines elements from the precedents to offer clear, polite, and actionable next steps in DM.",
       "mean_score": 5.0
     },
     {
@@ -1426,7 +1426,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly combines phrasing directly from the provided precedents while maintaining a warm tone and clear actionability.",
+      "rationale": "The draft accurately mirrors the provided precedents, offering a warm tone and a clear, actionable next step for the customer.",
       "mean_score": 5.0
     },
     {
@@ -1435,7 +1435,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly blends phrases from the precedents to create a warm, helpful, and actionable closing response.",
+      "rationale": "The draft seamlessly combines phrases from the retrieved precedents to create a warm, helpful, and actionable sign-off.",
       "mean_score": 5.0
     },
     {
@@ -1444,7 +1444,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the provided precedents, offers a helpful next step to troubleshoot in a DM, and maintains a warm, concise tone.",
+      "rationale": "The draft accurately combines precedent phrasing while remaining warm, actionable, and correct for troubleshooting a vague failure.",
       "mean_score": 5.0
     },
     {
@@ -1453,7 +1453,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines phrases from the retrieved precedents into a helpful, warm, and actionable response without hallucinating new information.",
+      "rationale": "The draft effectively combines elements from the provided precedents into a warm, concise, and helpful closing message.",
       "mean_score": 5.0
     },
     {
@@ -1462,7 +1462,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches the provided precedent, uses a warm and concise tone, acknowledges the resolution, and offers clear future contact instructions.",
+      "rationale": "The draft accurately combines phrases from the retrieved precedents into a warm, helpful, and concise response.",
       "mean_score": 5.0
     },
     {
@@ -1480,7 +1480,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 1,
-      "rationale": "The draft combines elements seamlessly from the precedents while maintaining a warm tone, though actionability is low as no further action is needed.",
+      "rationale": "The draft seamlessly combines elements from all retrieved precedents while maintaining a warm, polite tone and correctly closing the resolved ticket without needing further actions.",
       "mean_score": 4.0
     },
     {
@@ -1489,7 +1489,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft is an exact copy of a retrieved precedent, maintaining perfect groundedness, correctness, tone, and actionability.",
+      "rationale": "The draft accurately combines phrases from the retrieved precedents, maintains a helpful and warm tone, and provides a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1498,7 +1498,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements directly from the retrieved precedents while maintaining a helpful tone and clear next steps.",
+      "rationale": "The draft perfectly mirrors the language and intent of the precedents, offering a warm tone, correct helpfulness, and a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1525,7 +1525,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines relevant elements from the precedents to offer a helpful, warm, and actionable next step.",
+      "rationale": "The draft accurately combines elements from the precedents to ask for device details in a DM with a warm, helpful, and concise tone.",
       "mean_score": 5.0
     },
     {
@@ -1533,9 +1533,9 @@
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft perfectly matches the retrieved precedent, maintains a warm and concise tone, and provides a clear next step to reach out if needed.",
-      "mean_score": 4.75
+      "actionability": 5,
+      "rationale": "The draft accurately reflects the precedents, offers appropriate closing support, maintains a warm and concise tone, and clearly tells the customer what to do next.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "209067_209069",
@@ -1543,7 +1543,7 @@
       "correctness": 4,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft directly matches the provided precedent (\"Let's discuss this further in DM.\") and maintains a warm, concise tone with a clear next step.",
+      "rationale": "The draft accurately combines phrases directly from the precedents and maintains a helpful, warm, and actionable tone.",
       "mean_score": 4.5
     },
     {
@@ -1552,7 +1552,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to provide a helpful, warm, and actionable next step for the customer.",
+      "rationale": "The draft perfectly matches one of the retrieved precedents, providing a helpful, warm, and actionable next step to move the conversation to DMs.",
       "mean_score": 5.0
     },
     {
@@ -1561,7 +1561,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the tone and structure of the precedents while directly and helpfully addressing the customer's update.",
+      "rationale": "The draft accurately mirrors the tone and substance of the precedents, offering a helpful and warm closing statement.",
       "mean_score": 5.0
     },
     {
@@ -1579,7 +1579,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 1,
-      "rationale": "The draft accurately reflects the precedents, is correct and warm, but does not provide a next step, which is appropriate for a closed-loop thank-you message.",
+      "rationale": "The draft accurately reflects the precedent responses in content, tone, and correctness, though it appropriately offers no further action since the issue is already resolved.",
       "mean_score": 4.0
     },
     {
@@ -1588,7 +1588,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the retrieved precedents to provide a relevant troubleshooting step and a clear next action with a warm tone.",
+      "rationale": "The draft accurately uses the precedent for restarting the iPhone after resetting keyboard settings, maintaining a warm, helpful tone with clear next steps.",
       "mean_score": 5.0
     },
     {
@@ -1597,17 +1597,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents into a warm, helpful, and actionable closing statement.",
+      "rationale": "The draft accurately reflects the precedents by combining polite acknowledgement with an offer for future assistance in a warm, concise, and actionable manner.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2837185_2837183",
       "groundedness": 5,
       "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines the technical explanation from one precedent with the call-to-action from another, resulting in a helpful, warm, and actionable response.",
-      "mean_score": 5.0
+      "tone": 4,
+      "actionability": 4,
+      "rationale": "The draft accurately reflects the provided technical precedent to explain why the music won't play and how to fix it.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "1299027_1299025",
@@ -1615,7 +1615,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the provided precedents, offering a helpful, polite, and actionable next step.",
+      "rationale": "The draft smoothly adapts the phrasing and structure of the precedents to fit the customer's specific music app issue while maintaining a helpful tone and clear next steps.",
       "mean_score": 5.0
     },
     {
@@ -1624,7 +1624,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft incorporates precedent phrasing (DM us) and accurate Apple ecosystem info while maintaining a helpful, concise tone.",
+      "rationale": "The draft accurately uses the DM escalation precedent while providing factually correct information and a clear next step in a warm tone.",
       "mean_score": 4.75
     },
     {
@@ -1633,7 +1633,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the retrieved precedents while providing a warm, helpful, and actionable next step for the customer.",
+      "rationale": "The draft accurately reflects the precedents by offering help and directing the customer to send a DM with a warm, concise tone and a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1642,7 +1642,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines troubleshooting questions and DM instructions from the precedents with a helpful, polite tone.",
+      "rationale": "The draft effectively combines the empathy and troubleshooting questions from the precedents while maintaining a helpful, warm, and actionable tone.",
       "mean_score": 5.0
     },
     {
@@ -1651,7 +1651,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft is directly copied from a valid precedent, providing an accurate, warm, and actionable next step for troubleshooting the iOS app crash.",
+      "rationale": "The draft accurately combines elements from the precedents to offer a helpful, warm, and actionable response asking for the iOS version.",
       "mean_score": 5.0
     },
     {
@@ -1660,7 +1660,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the troubleshooting and DM escalation pattern from the precedents while maintaining a warm, concise tone and clear next steps.",
+      "rationale": "The draft directly mirrors the precedent to offer help and direct the customer to DM, maintaining a warm and actionable approach.",
       "mean_score": 5.0
     },
     {
@@ -1669,7 +1669,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering to look into the issue and directing the customer to the appropriate iTunes Store support link.",
+      "rationale": "The draft accurately reflects the precedent of asking the customer to send a DM to investigate, maintains a warm and empathetic tone, and provides a clear, actionable next step.",
       "mean_score": 5.0
     },
     {
@@ -1687,7 +1687,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the precedents by acknowledging the issue with empathy, asking a clarifying question about the update, and instructing the customer to DM for further help.",
+      "rationale": "The draft accurately reflects the precedents by offering empathy and instructing the customer to DM for further assistance.",
       "mean_score": 5.0
     },
     {
@@ -1696,7 +1696,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines troubleshooting questions and the offer for a DM from the precedents while maintaining a warm, helpful, and actionable tone.",
+      "rationale": "The draft accurately combines the precedent elements of offering help via DM, asking for device details, and maintaining a warm, concise tone with a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1705,17 +1705,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to provide a warm, correct, and actionable response directing the customer to DM.",
+      "rationale": "The draft seamlessly combines elements from the retrieved precedents to provide a helpful, empathetic, warm, and actionable response directing the customer to DM.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1906848_1906847",
-      "groundedness": 3,
+      "groundedness": 5,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft provides a helpful and actionable troubleshooting step, though it introduces a specific URL (iforgot.apple.com) not found in the limited precedents provided.",
-      "mean_score": 4.5
+      "rationale": "The draft accurately reflects the precedent replies by offering help and directing the customer to a DM, maintaining a warm and actionable tone.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "127135_127134",
@@ -1723,7 +1723,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies by addressing the pre-order issue, directing the user to the specific support article, and offering DM follow-up in a warm, concise, and actionable manner.",
+      "rationale": "The draft accurately reflects the precedent steps for handling pre-order download issues, provides a helpful link, maintains a warm and concise tone, and offers a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1732,7 +1732,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the provided precedents to ask clarifying questions and seamlessly guide the user to DM support.",
+      "rationale": "The draft perfectly matches one of the retrieved precedents and provides a warm, actionable next step for the customer to resolve their issue via DM.",
       "mean_score": 5.0
     },
     {
@@ -1741,7 +1741,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively adapts precedent phrasing to address iTunes/playlists while maintaining a helpful, warm, and actionable tone.",
+      "rationale": "The draft adapts the empathetic structure and DM call-to-action from the precedents well, addressing the customer's specific iTunes issue warmly and clearly.",
       "mean_score": 4.75
     },
     {
@@ -1750,7 +1750,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the provided precedents to create a relevant, helpful, and well-toned response with clear next steps.",
+      "rationale": "The draft accurately uses phrasing and troubleshooting steps directly from the provided precedents while maintaining a helpful, concise tone and clear call to action.",
       "mean_score": 5.0
     },
     {
@@ -1759,7 +1759,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately uses the exact wording and troubleshooting approach from the retrieved precedent while remaining warm, helpful, and actionable.",
+      "rationale": "The draft accurately uses phrasing and troubleshooting steps directly from the provided precedents while maintaining a warm tone and clear action item.",
       "mean_score": 5.0
     },
     {
@@ -1768,17 +1768,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches a provided precedent, offers a helpful and correct next step, maintains a warm and concise tone, and clearly instructs the customer to send a DM.",
+      "rationale": "The draft accurately reflects the precedents by offering help via DM to investigate the issue, maintaining a warm and professional tone with a clear next step.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1273569_1273568",
-      "groundedness": 5,
-      "correctness": 4,
+      "groundedness": 2,
+      "correctness": 3,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately combines the system status investigation precedent with a natural call-to-action to DM for follow-up.",
-      "mean_score": 4.5
+      "rationale": "The draft hallucinates support instructions not found in the unrelated precedents, though it provides a reasonable and polite next step for a billing issue.",
+      "mean_score": 3.5
     },
     {
       "thread_id": "149947_149946",
@@ -1786,7 +1786,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents regarding automatic renewal and iTunes support while maintaining a warm, helpful, and actionable tone.",
+      "rationale": "The draft accurately reflects the precedents by explaining the auto-renewal policy and directing the customer to experts for a refund.",
       "mean_score": 5.0
     },
     {
@@ -1795,17 +1795,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements directly from the precedents into a helpful, warm, and actionable response.",
+      "rationale": "The draft adapts precedent phrasing well to fit Apple Music while maintaining a helpful tone and clear next steps.",
       "mean_score": 5.0
     },
     {
       "thread_id": "622622_622621",
-      "groundedness": 4,
-      "correctness": 4,
+      "groundedness": 5,
+      "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines elements from the precedents to show empathy and provide a clear, actionable next step with a helpful link.",
-      "mean_score": 4.5
+      "rationale": "The draft accurately combines empathetic elements and support routing from the precedents into a warm, helpful, and actionable response.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "1000099_1000097",
@@ -1813,7 +1813,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements from all retrieved precedents to provide a helpful, warm, and actionable response without hallucinating outside information.",
+      "rationale": "The draft accurately combines elements from the provided precedents with a warm, helpful tone and a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1822,7 +1822,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to provide a helpful, warm, and actionable response directing the customer to the store.",
+      "rationale": "The draft accurately reflects the precedent of advising customers to contact stores directly for in-store availability while maintaining a warm, helpful, and actionable tone.",
       "mean_score": 5.0
     },
     {
@@ -1831,7 +1831,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the retrieved precedents, provides a helpful redirection to sales support, maintains a warm and concise tone, and offers a clear next step.",
+      "rationale": "The draft accurately reflects the precedents by directing the customer to Online Sales Support, maintains a warm and concise tone, and provides a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1840,35 +1840,35 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent by asking for the country in a DM while maintaining a helpful, warm, and actionable tone.",
+      "rationale": "The draft accurately combines precedent phrasing while remaining helpful, warm, and actionable.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1365536_1365534",
       "groundedness": 5,
-      "correctness": 4,
+      "correctness": 3,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft perfectly matches one of the retrieved precedents and provides a warm, actionable next step for the customer.",
-      "mean_score": 4.5
+      "rationale": "The draft is perfectly grounded in the first precedent and maintains a warm tone, but asking for location is less helpful for a billing address issue than connecting with order support.",
+      "mean_score": 4.25
     },
     {
       "thread_id": "2004793_2004792",
-      "groundedness": 3,
-      "correctness": 3,
-      "tone": 4,
-      "actionability": 4,
-      "rationale": "The draft mixes phrases from different precedents (opening with one and asking for a DM instead of directing to sales like the iPhone X specific precedent), but provides a clear and polite next step.",
-      "mean_score": 3.5
-    },
-    {
-      "thread_id": "1535596_1535595",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
+      "actionability": 5,
+      "rationale": "The draft is a direct copy of a relevant precedent, providing a warm, accurate, and actionable next step for the frustrated customer.",
+      "mean_score": 5.0
+    },
+    {
+      "thread_id": "1535596_1535595",
+      "groundedness": 4,
+      "correctness": 4,
+      "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately mirrors the tone and referral language of the precedent replies, though the actionability is slightly limited by the missing link placeholder.",
-      "mean_score": 4.75
+      "rationale": "The draft maintains a warm, excited tone matching the customer's enthusiasm and provides a direct, actionable link to stay updated, drawing loosely from the precedent of directing users to stay updated on the iPhone X.",
+      "mean_score": 4.25
     },
     {
       "thread_id": "2092700_2092699",
@@ -1876,7 +1876,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft closely follows the retrieved precedent, provides accurate and helpful guidance, maintains a warm and concise tone, and offers a clear next step.",
+      "rationale": "The draft directly copies a high-quality precedent reply, providing accurate, warm, and actionable guidance by directing the customer to the appropriate team via a link.",
       "mean_score": 5.0
     },
     {
@@ -1885,17 +1885,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly mirrors the retrieved precedent, offering empathetic acknowledgment, troubleshooting steps, and a clear path forward via DM.",
+      "rationale": "The draft directly mirrors the first precedent, offering troubleshooting steps and directing the customer to DM if unresolved, maintaining a helpful and concise tone.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1196348_1196347",
       "groundedness": 5,
-      "correctness": 5,
+      "correctness": 3,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines elements from all retrieved precedents into a helpful, warm, and actionable response without hallucinating.",
-      "mean_score": 5.0
+      "actionability": 3,
+      "rationale": "The draft perfectly matches the provided precedent, but the precedent itself lacks the specific link or contact method needed to make it fully actionable and helpful.",
+      "mean_score": 4.0
     },
     {
       "thread_id": "2983592_2983591",
@@ -1911,9 +1911,9 @@
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft effectively combines elements from the precedents to show empathy, ask for clarifying error information, and provide a clear next step.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft effectively combines elements from the provided precedents to offer a warm, correct, and helpful response by asking clarifying questions.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "2002928_2002927",
@@ -1921,7 +1921,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to provide a warm, correct, and actionable troubleshooting response.",
+      "rationale": "The draft accurately synthesizes the precedents by congratulating the user, offering the correct activation methods, and providing a clear fallback option to DM support.",
       "mean_score": 5.0
     },
     {
@@ -1936,38 +1936,38 @@
     {
       "thread_id": "1241155_1241154",
       "groundedness": 3,
-      "correctness": 4,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft blends elements from multiple precedents (referring to the sales/online team and asking for a DM), maintaining a helpful tone and clear next steps.",
-      "mean_score": 4.25
+      "correctness": 2,
+      "tone": 4,
+      "actionability": 2,
+      "rationale": "The draft misses the actual link or contact method from the precedents, leaving the customer without a concrete next step despite a friendly tone.",
+      "mean_score": 2.75
     },
     {
       "thread_id": "2557263_2557262",
       "groundedness": 5,
       "correctness": 5,
-      "tone": 4,
+      "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the provided precedents to offer a helpful, actionable, and appropriately toned response.",
-      "mean_score": 4.75
+      "rationale": "The draft accurately mirrors the precedents by acknowledging the situation warmly and directing the customer to the sales team via a link.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "1388296_1388295",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately mirrors the provided precedents, maintains a helpful and concise tone, directs the customer to the correct team, and provides a clear next step with a link.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately mirrors the precedent and tone, though the sentence structure at the very end is slightly abrupt before the missing link.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "1596048_1596047",
-      "groundedness": 5,
-      "correctness": 5,
+      "groundedness": 4,
+      "correctness": 4,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft smoothly combines elements from the precedents into a helpful, polite, and actionable response with a clear next step.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft blends elements from the precedents well, though it references a link placeholder without providing the actual link.",
+      "mean_score": 4.25
     },
     {
       "thread_id": "2837182_2837181",
@@ -1975,7 +1975,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines elements from the precedents (Online Sales Support referral and DM offer) while maintaining a helpful, warm tone and clear next steps.",
+      "rationale": "The draft accurately combines elements from the precedents to offer a warm, actionable, and correct response directing the customer to DM for assistance.",
       "mean_score": 5.0
     },
     {
@@ -1984,53 +1984,53 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements from the precedents to provide a warm, actionable, and grounded response directing the customer to the online store.",
+      "rationale": "The draft directly adapts the precedent to provide the correct link and a helpful, warm, and actionable next step for the customer.",
       "mean_score": 5.0
     },
     {
       "thread_id": "371150_371149",
-      "groundedness": 5,
+      "groundedness": 4,
       "correctness": 3,
       "tone": 5,
       "actionability": 2,
-      "rationale": "The draft blends the tone and phrasing of the precedents well, but like the precedents, it fails to provide the actual link for the customer to take action.",
-      "mean_score": 3.75
+      "rationale": "The draft is polite and uses precedent phrasing well, but it cuts off the link where the customer can find the information, reducing its actionability and correctness.",
+      "mean_score": 3.5
     },
     {
       "thread_id": "568394_568393",
       "groundedness": 5,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines information from the retrieved precedents with a warm tone and a clear next step.",
-      "mean_score": 5.0
+      "correctness": 3,
+      "tone": 4,
+      "actionability": 2,
+      "rationale": "The draft accurately uses the precedent text, but telling a customer who already updated to iOS 11.2 that the feature requires it misses the context of the rollout timing.",
+      "mean_score": 3.5
     },
     {
       "thread_id": "557814_557812",
       "groundedness": 5,
-      "correctness": 5,
+      "correctness": 4,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to explain the rollout timing while maintaining a warm tone and a clear call to action.",
-      "mean_score": 5.0
+      "actionability": 2,
+      "rationale": "The draft accurately combines information from the precedents with a warm tone, but misses mentioning that the customer also needs to be in the US and fails to provide a next step or DM invitation.",
+      "mean_score": 4.0
     },
     {
       "thread_id": "2675743_2675741",
-      "groundedness": 4,
-      "correctness": 5,
+      "groundedness": 5,
+      "correctness": 3,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft borrows phrasing well from the precedents, provides a helpful and accurate Apple Support link, maintains a warm and concise tone, and gives clear next steps.",
-      "mean_score": 4.75
+      "actionability": 2,
+      "rationale": "The draft accurately reflects the precedent and tone, but lacks the actual link needed to make it actionable.",
+      "mean_score": 3.75
     },
     {
       "thread_id": "556945_556943",
       "groundedness": 5,
       "correctness": 4,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft properly grounds itself in the provided precedent for sharing support articles, offering a warm and actionable next step, though Apple Pay Cash specifically requires iOS 11.2 based on the other context.",
-      "mean_score": 4.75
+      "actionability": 4,
+      "rationale": "The draft borrows standard helpful phrasing from precedents while keeping a warm, concise tone, though it would be stronger with an actual link provided.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "555265_555263",
@@ -2038,7 +2038,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft perfectly mirrors the retrieved precedents, providing accurate, warm, and concise information about the rollout timing.",
+      "rationale": "The draft accurately reflects the precedents, provides the correct helpful timeline for users in the US, maintains a warm and concise tone, and clearly indicates when the feature will be available.",
       "mean_score": 4.75
     },
     {
@@ -2047,7 +2047,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately reflects the precedent, maintains a helpful and warm tone, and directly addresses the customer's question about availability.",
+      "rationale": "The draft accurately uses the precedent information to explain the rollout timeline and requirements while maintaining a helpful and warm tone.",
       "mean_score": 4.75
     },
     {
@@ -2055,18 +2055,18 @@
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the provided precedents regarding the rollout timeline, maintains a warm and concise tone, and provides a clear next step by offering direct messaging support.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately reflects the precedent, provides the correct rollout timeline, maintains a warm and concise tone, and clearly indicates when the feature will become available.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "553562_553561",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft accurately combines relevant precedent info with a warm, helpful tone and clear context on feature availability.",
-      "mean_score": 4.75
+      "actionability": 5,
+      "rationale": "The draft directly uses the approved precedent to invite the customer to DMs for further assistance with their account-specific issue.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "570925_570924",
@@ -2074,7 +2074,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent by explaining that iOS 11.2 introduces Apple Pay Cash but it isn't active yet, while maintaining a helpful tone and a clear call to action to DM if needed.",
+      "rationale": "The draft accurately reflects the precedent by explaining that iOS 11.2 introduces Apple Pay Cash but it is not active yet, while maintaining a helpful tone and a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -2083,7 +2083,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 3,
-      "rationale": "The draft accurately combines information from the precedents to explain the rollout timeline and acknowledge the customer's readiness, maintaining a warm tone though lacking a direct action step.",
+      "rationale": "The draft accurately reflects the provided precedents and maintains a warm tone, though actionability is limited since the feature is not yet rolled out.",
       "mean_score": 4.5
     },
     {
@@ -2100,9 +2100,9 @@
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines information and offers from the precedents to provide a helpful, warm, and actionable response.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately synthesizes the precedents to provide a helpful, warm, and factually correct response about Apple Pay Cash availability.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "594621_594620",
@@ -2110,7 +2110,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately reflects the precedent, is factually correct, maintains a warm and concise tone, and provides a clear timeline regarding when the feature will roll out.",
+      "rationale": "The draft is fully grounded in the retrieved precedents, factually correct, maintains a warm and concise tone, and provides a clear timeline for when the feature will be available.",
       "mean_score": 4.75
     },
     {
@@ -2119,7 +2119,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 3,
-      "rationale": "The draft effectively combines elements from the precedents to provide a well-toned, accurate response, though it lacks a proactive next step like suggesting a DM for further questions.",
+      "rationale": "The draft accurately combines information from the precedents with a warm tone, though it lacks a concrete next step like checking back next week or reaching out via DM.",
       "mean_score": 4.5
     },
     {
@@ -2137,44 +2137,44 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to offer a warm, actionable, and correct response directing the customer to iTunes support.",
+      "rationale": "The draft accurately reflects the precedents by directing the customer to iTunes Store support with a warm, concise tone and clear next step.",
       "mean_score": 5.0
     },
     {
       "thread_id": "546662_546661",
-      "groundedness": 5,
-      "correctness": 5,
+      "groundedness": 3,
+      "correctness": 3,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents regarding US availability and provides a helpful, warm tone with a clear next step.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft uses a friendly tone and provides a helpful link, but it includes a URL not found in the precedents and omits important context about US-only availability and iOS 11.2 rollout timing.",
+      "mean_score": 3.75
     },
     {
       "thread_id": "554773_554772",
       "groundedness": 5,
-      "correctness": 5,
+      "correctness": 3,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft accurately combines information from the precedents into a helpful, warm, and concise response.",
-      "mean_score": 4.75
+      "actionability": 3,
+      "rationale": "The draft accurately reflects the provided precedents, but the advice is factually outdated since the customer already stated they are on iOS 11.2 and the rollout timing in the precedent conflicts with their current access.",
+      "mean_score": 4.0
     },
     {
       "thread_id": "549695_549694",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately synthesizes the precedent replies by combining the detail about iOS 11.2 not being active yet with the rollout timeline and DM next step in a warm, concise tone.",
-      "mean_score": 5.0
+      "actionability": 3,
+      "rationale": "The draft accurately combines information from the precedents with a warm tone, though it lacks a concrete next step or call to action like the precedent's DM invitation.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "553591_553590",
       "groundedness": 5,
-      "correctness": 5,
+      "correctness": 3,
       "tone": 5,
-      "actionability": 3,
-      "rationale": "The draft directly uses a precise precedent about the iOS 11.2 rollout timeline, maintaining a helpful and warm tone, though it lacks a direct next step like moving to DM.",
-      "mean_score": 4.5
+      "actionability": 2,
+      "rationale": "The draft accurately uses the precedent regarding iOS 11.2 rollout timing, but tells a customer who already has iOS 11.2 that they require it, while missing the DM escalation step found in other precedents.",
+      "mean_score": 3.75
     },
     {
       "thread_id": "552120_552119",
@@ -2182,7 +2182,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately reflects the precedents by explaining the rollout timing for US users on iOS 11.2, maintains a warm and concise tone, and provides clear expectations, though Apple Pay Cash is ultimately controlled via a server-side rollout rather than a manual user action.",
+      "rationale": "The draft accurately reflects the precedents regarding the US rollout timing while maintaining a warm, concise, and helpful tone.",
       "mean_score": 4.75
     },
     {
@@ -2191,16 +2191,16 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately reflects the retrieved precedent, is correct and warm, though actionability is slightly limited since the feature's rollout depends on the timeline rather than a direct user action.",
+      "rationale": "The draft accurately reflects the precedent indicating the feature will roll out early next week for US users on iOS 11.2, maintaining a helpful and warm tone.",
       "mean_score": 4.75
     }
   ],
   "judge_summary": {
     "mean_groundedness": 4.898989898989899,
-    "mean_correctness": 4.873737373737374,
-    "mean_tone": 4.94949494949495,
-    "mean_actionability": 4.787878787878788,
-    "mean_overall": 4.877525252525253
+    "mean_correctness": 4.7727272727272725,
+    "mean_tone": 4.954545454545454,
+    "mean_actionability": 4.606060606060606,
+    "mean_overall": 4.808080808080808
   },
   "human_agreement": null,
   "failure_examples": [

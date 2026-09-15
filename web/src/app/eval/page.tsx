@@ -65,6 +65,38 @@ export default async function EvalDashboardPage() {
 
       <section className="mt-12">
         <h2 className="text-[12.5px] font-medium uppercase tracking-[0.08em] text-text-muted mb-4">
+          Per-intent F1 &mdash; main system
+        </h2>
+        <p className="text-[12.5px] text-text-muted mb-4">
+          One aggregate macro-F1 hides which intents the classifier actually
+          struggles with (TRD 7.2) &mdash; broken out below, worst first.
+        </p>
+        <div className="overflow-x-auto rounded-xl border border-border shadow-[var(--shadow-card)]">
+          <table className="w-full border-collapse text-[13px]">
+            <thead>
+              <tr className="border-b border-border bg-surface-2">
+                <th className="text-left font-medium px-5 py-3">Intent</th>
+                <th className="text-right font-medium px-5 py-3 font-mono">F1</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(report.intent_metrics.main.per_intent_f1)
+                .sort((a, b) => a[1] - b[1])
+                .map(([intent, f1]) => (
+                  <tr key={intent} className="border-b border-border last:border-0 bg-surface">
+                    <td className="px-5 py-3">
+                      <IntentBadge intent={intent} />
+                    </td>
+                    <td className="px-5 py-3 text-right font-mono tabular-nums">{f1.toFixed(3)}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-[12.5px] font-medium uppercase tracking-[0.08em] text-text-muted mb-4">
           Escalation decision
         </h2>
         <MetricsTable
