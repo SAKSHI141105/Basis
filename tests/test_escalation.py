@@ -36,7 +36,7 @@ def test_low_confidence_escalates():
 
 def test_low_retrieval_similarity_escalates():
     signals = EscalationSignals(
-        intent_confidence=0.9,
+        intent_confidence=0.99,
         max_retrieval_similarity=0.2,
         message="my phone is weird",
     )
@@ -60,8 +60,8 @@ def test_repeated_contact_with_worsening_sentiment_escalates():
 
 def test_confident_and_grounded_auto_handles():
     signals = EscalationSignals(
-        intent_confidence=0.9,
-        max_retrieval_similarity=0.95,
+        intent_confidence=0.99,
+        max_retrieval_similarity=0.99,
         message="how do I update my iOS software",
     )
     result = decide(signals)
@@ -71,15 +71,18 @@ def test_confident_and_grounded_auto_handles():
 def test_moderate_similarity_now_escalates_after_threshold_retuning():
     # Documents the recalibration (DECISION_LOG.md): 0.55 let almost every
     # retrieved precedent through, driving recall down to 0.146 on the real
-    # golden set. 0.8 similarity now correctly escalates under the tuned
-    # 0.90 threshold -- a "pretty good" precedent match is not "excellent."
+    # golden set. A "pretty good" 0.9 precedent match no longer clears the
+    # tuned 0.95 threshold (retuned a second time after the multilingual
+    # re-clustering changed the retrieval index's similarity distribution).
+    # High confidence here isolates the similarity check specifically.
     signals = EscalationSignals(
-        intent_confidence=0.9,
-        max_retrieval_similarity=0.8,
+        intent_confidence=0.99,
+        max_retrieval_similarity=0.9,
         message="how do I update my iOS software",
     )
     result = decide(signals)
     assert result.decision == "escalate"
+    assert "retrieval_similarity" in result.reason
 
 
 def test_detect_risk_flags_empty_for_benign_message():

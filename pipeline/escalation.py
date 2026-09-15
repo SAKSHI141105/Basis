@@ -133,15 +133,21 @@ HUMAN_REQUEST_PATTERNS = [
 # were reasonable placeholders, never calibrated against labeled data, and
 # left escalation recall at 0.146 (missing ~6 of every 7 cases that should
 # have escalated). 0.90 similarity roughly quadrupled recall (0.146 -> 0.573)
-# while also improving precision (0.480 -> 0.566) -- confidence_threshold
-# turned out to barely matter once similarity is this strict, so 0.70 is a
-# representative pick from a wide flat region of similarly-good candidates,
-# not a sharply-optimal value. Caveat, not hidden: most true_escalation
-# labels used to tune this are themselves AI-generated (see DECISION_LOG.md),
-# so this tuning optimizes agreement with a ground truth of its own
-# uncertain reliability -- a real, not fully human-verified, improvement.
-DEFAULT_CONFIDENCE_THRESHOLD = 0.70
-DEFAULT_SIMILARITY_THRESHOLD = 0.90
+# while also improving precision (0.480 -> 0.566).
+#
+# Retuned a second time after the multilingual re-clustering (DECISION_LOG.md):
+# swapping the embedding model changed the retrieval index's similarity
+# distribution enough that 0.70/0.90 was no longer near-optimal -- a fresh
+# grid search against the re-run golden set's cached escalation signals
+# (zero new API calls -- pipeline/tune_escalation_thresholds.py replays
+# decide() logic offline) found conf=0.95/sim=0.95 as the new best
+# candidate: recall 0.573 -> 0.707, precision 0.412 -> 0.433, cost-weighted
+# score 0.710 -> 0.751. Caveat, not hidden: most true_escalation labels used
+# to tune this are themselves AI-generated (see DECISION_LOG.md), so this
+# tuning optimizes agreement with a ground truth of its own uncertain
+# reliability -- a real, not fully human-verified, improvement.
+DEFAULT_CONFIDENCE_THRESHOLD = 0.95
+DEFAULT_SIMILARITY_THRESHOLD = 0.95
 DEFAULT_CONTACT_COUNT_THRESHOLD = 3
 
 
