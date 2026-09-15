@@ -95,6 +95,13 @@ No `GEMINI_API_KEY` set → the pipeline falls back to a local Ollama model for
 generation/judging (slower; see `.env.example`). This fallback is not held to
 the same reproducibility bar as the Gemini path.
 
+**Updating the committed fast-mode cache:** after a real `make eval-live`
+run (e.g. because you changed a prompt, a threshold, or want to re-verify
+against fresh API calls), run `make freeze-fast-cache` to snapshot the
+live cache into `.cache/llm_cache_golden.jsonl` — the small, committed
+file `make eval-fast` replays. Commit that file alongside the regenerated
+`artifacts/eval_report.json`/`eval_report.md` so all three stay in sync.
+
 ## Real constraints discovered building this, not assumed upfront
 
 - `gemini-3.5-flash` (the model TRD's tiering originally intended for
