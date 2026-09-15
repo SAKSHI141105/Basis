@@ -7,8 +7,8 @@ Golden set size: **198**
 | System | Accuracy | Macro-F1 |
 |---|---|---|
 | trivial | 0.051 | 0.011 |
-| simple | 0.672 | 0.670 |
-| main | 0.833 | 0.830 |
+| simple | 0.394 | 0.416 |
+| main | 0.803 | 0.807 |
 
 ## Escalation decision
 
@@ -16,15 +16,15 @@ Golden set size: **198**
 |---|---|---|---|---|
 | trivial | 0.414 | 1.000 | 0.586 | 0.805 |
 | simple | 0.750 | 0.037 | 0.070 | 0.599 |
-| main | 0.566 | 0.573 | 0.570 | 0.763 |
+| main | 0.433 | 0.707 | 0.537 | 0.751 |
 
 ## LLM judge (reply quality, 1-5)
 
-- mean_groundedness: 4.90
-- mean_correctness: 4.77
-- mean_tone: 4.95
+- mean_groundedness: 4.73
+- mean_correctness: 4.74
+- mean_tone: 4.88
 - mean_actionability: 4.61
-- mean_overall: 4.81
+- mean_overall: 4.74
 
 ## Human-agreement study
 
@@ -37,7 +37,7 @@ What would be misleading here is assuming this golden set reflects real traffic 
 ## Top failure examples
 
 - **1236865_1236864**: "iOS 11 is buggy. Please fix it. 😩"
-  - intent: true=`device_troubleshooting` pred=`general_complaint`, escalation: true=`auto_handle` pred=`escalate`
+  - intent: true=`device_troubleshooting` pred=`out_of_scope`, escalation: true=`auto_handle` pred=`escalate`
 - **2000150_2000149**: "your new IOS update is complete fucking dog shit. Ever since i downloaded this bs my phone hasnt work properly. I want the old 1 bak"
   - intent: true=`device_troubleshooting` pred=`software_update_bug`, escalation: true=`escalate` pred=`auto_handle`
 - **2406550_2406548**: "My iPhone 6 went dead while I was transferring it to a new iCloud account? Any obvious reasons as to why this might have happened? Never seen an iPhone going dead and it was supposed to be 2 years old (bought it 2 years ago). Thanks"

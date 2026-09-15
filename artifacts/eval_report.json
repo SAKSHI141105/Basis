@@ -131,49 +131,49 @@
       ]
     },
     "simple": {
-      "accuracy": 0.6717171717171717,
-      "macro_f1": 0.6699569893368343,
+      "accuracy": 0.3939393939393939,
+      "macro_f1": 0.4155586148001825,
       "per_intent_f1": {
-        "apple_id_account_access": 0.9090909090909091,
-        "billing_subscription": 0.6486486486486487,
-        "device_troubleshooting": 0.6666666666666666,
-        "feature_how_to": 0.717948717948718,
-        "general_complaint": 0.8372093023255814,
-        "out_of_scope": 0.06060606060606061,
-        "positive_feedback": 0.8,
-        "repair_order_status": 0.9767441860465116,
-        "software_update_bug": 0.4126984126984127
+        "apple_id_account_access": 0.8571428571428571,
+        "billing_subscription": 0.0,
+        "device_troubleshooting": 0.19047619047619047,
+        "feature_how_to": 0.7027027027027027,
+        "general_complaint": 0.0,
+        "out_of_scope": 0.13675213675213677,
+        "positive_feedback": 0.875,
+        "repair_order_status": 0.5517241379310345,
+        "software_update_bug": 0.4262295081967213
       },
       "confusion_matrix": [
         [
-          20,
-          2,
+          18,
           0,
           0,
           0,
-          1,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          12,
-          1,
-          1,
-          0,
-          1,
-          0,
-          0,
-          0
-        ],
-        [
           0,
           5,
-          18,
-          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
           0,
           4,
+          0,
+          0,
+          11,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          1,
+          0,
+          23,
           0,
           0,
           4
@@ -182,65 +182,65 @@
           0,
           0,
           0,
-          14,
+          13,
           0,
-          3,
+          4,
           0,
           0,
           0
         ],
         [
-          0,
-          0,
-          0,
-          0,
-          18,
-          1,
-          0,
-          0,
-          2
-        ],
-        [
-          0,
-          0,
-          1,
-          0,
-          0,
-          1,
-          5,
-          0,
-          3
-        ],
-        [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          16,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
           0,
           0,
           0,
           0,
           0,
           21,
+          0,
+          0,
           0
         ],
         [
           0,
-          3,
-          2,
-          6,
-          4,
-          12,
+          0,
           1,
+          0,
+          0,
+          8,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          2,
+          14,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          12,
+          0,
+          8,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          6,
+          0,
+          21,
+          0,
           0,
           13
         ]
@@ -258,18 +258,18 @@
       ]
     },
     "main": {
-      "accuracy": 0.8333333333333334,
-      "macro_f1": 0.8298352625835267,
+      "accuracy": 0.803030303030303,
+      "macro_f1": 0.8072528678414849,
       "per_intent_f1": {
         "apple_id_account_access": 0.9565217391304348,
-        "billing_subscription": 0.896551724137931,
-        "device_troubleshooting": 0.78125,
-        "feature_how_to": 0.75,
-        "general_complaint": 0.8,
-        "out_of_scope": 0.631578947368421,
-        "positive_feedback": 0.9142857142857143,
-        "repair_order_status": 0.9545454545454546,
-        "software_update_bug": 0.7837837837837838
+        "billing_subscription": 0.72,
+        "device_troubleshooting": 0.746268656716418,
+        "feature_how_to": 0.7692307692307693,
+        "general_complaint": 0.8181818181818182,
+        "out_of_scope": 0.7142857142857143,
+        "positive_feedback": 0.9411764705882353,
+        "repair_order_status": 0.9130434782608695,
+        "software_update_bug": 0.6865671641791045
       },
       "confusion_matrix": [
         [
@@ -285,8 +285,8 @@
         ],
         [
           0,
-          13,
-          2,
+          9,
+          6,
           0,
           0,
           0,
@@ -298,12 +298,12 @@
           0,
           0,
           25,
-          2,
-          2,
-          0,
-          0,
           1,
-          2
+          1,
+          1,
+          0,
+          3,
+          1
         ],
         [
           0,
@@ -330,11 +330,11 @@
         [
           0,
           0,
-          1,
           0,
-          2,
-          6,
-          1,
+          0,
+          0,
+          10,
+          0,
           0,
           0
         ],
@@ -365,11 +365,11 @@
           0,
           3,
           6,
-          2,
-          1,
+          4,
+          5,
           0,
           0,
-          29
+          23
         ]
       ],
       "labels": [
@@ -403,23 +403,23 @@
       "false_escalate_count": 1
     },
     "main": {
-      "precision": 0.5662650602409639,
-      "recall": 0.573170731707317,
-      "f1": 0.5696969696969697,
-      "cost_weighted_score": 0.7626262626262627,
-      "false_auto_handle_count": 35,
-      "false_escalate_count": 36
+      "precision": 0.43283582089552236,
+      "recall": 0.7073170731707317,
+      "f1": 0.5370370370370371,
+      "cost_weighted_score": 0.7508417508417509,
+      "false_auto_handle_count": 24,
+      "false_escalate_count": 76
     }
   },
   "judge_scores": [
     {
       "thread_id": "1236865_1236864",
-      "groundedness": 5,
+      "groundedness": 4,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines phrasing from the precedents into a helpful, warm, and actionable response directing the user to DM.",
-      "mean_score": 5.0
+      "rationale": "The draft accurately reflects the precedent replies by asking for a DM with more details, while translating the sentiment appropriately and maintaining a warm, actionable, and correct support tone.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "2000150_2000149",
@@ -427,7 +427,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately synthesizes the precedents with an empathetic, helpful tone, clear next steps, and no hallucinations.",
+      "rationale": "The draft accurately reflects the precedents by acknowledging the issue, offering help, and asking the user to provide more details in a direct message.",
       "mean_score": 5.0
     },
     {
@@ -436,7 +436,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering help, explaining the situation, and directing the customer to DM.",
+      "rationale": "The draft accurately reflects the empathetic and direct phrasing of the precedents while providing a clear call to action and helpful tone.",
       "mean_score": 5.0
     },
     {
@@ -445,7 +445,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to offer help with the update and direct the user to DMs for troubleshooting.",
+      "rationale": "The draft accurately reflects the precedent replies by offering assistance and directing the user to DMs in a warm, concise manner.",
       "mean_score": 5.0
     },
     {
@@ -454,26 +454,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to thank the user, ask to move to DMs, and offer a closer look with a warm and actionable tone.",
+      "rationale": "The draft accurately translates the precedent of thanking the customer and asking them to send a DM for further assistance into natural Spanish while maintaining a warm, helpful tone and a clear next step.",
       "mean_score": 5.0
     },
     {
       "thread_id": "84232_84230",
       "groundedness": 5,
-      "correctness": 4,
-      "tone": 4,
+      "correctness": 5,
+      "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines phrases from the retrieved precedents and provides a helpful, actionable link while maintaining a polite tone despite the customer's profanity.",
-      "mean_score": 4.5
+      "rationale": "The draft accurately translates and adapts the precedent response into Spanish while maintaining high correctness, tone, and actionability.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "1954404_1954403",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies by offering help and directing the customer to DM, maintaining a warm and actionable tone.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately translates the precedent response into Spanish while maintaining the correct information, warm tone, and actionable guidance.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "1416949_1416947",
@@ -481,7 +481,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies by offering empathy and a clear call-to-action to send a DM while maintaining a helpful, warm, and concise brand tone.",
+      "rationale": "The draft accurately reflects the empathetic and DM-routing structure of the precedents while addressing the customer's specific issue appropriately.",
       "mean_score": 5.0
     },
     {
@@ -490,17 +490,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the empathetic and direct style of the precedents, correctly identifies the device and issue, maintains a warm and concise brand tone, and provides a clear, actionable next step via DM.",
+      "rationale": "The draft accurately adapts the precedent templates to French while maintaining a warm, helpful tone and a clear call to action.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2794401_2794400",
-      "groundedness": 5,
-      "correctness": 5,
+      "groundedness": 4,
+      "correctness": 4,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft closely aligns with the provided precedents by acknowledging the app issue and directing the customer to DM for further assistance in a warm, actionable manner.",
-      "mean_score": 5.0
+      "rationale": "The draft matches the warm, action-oriented tone of the precedents by inviting the customer to DM for further help, though it is written in German while the precedents and prompt are in English.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "1623356_1623355",
@@ -508,26 +508,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately adapts the precedent structure and troubleshooting steps to address the customer's specific movie loading issue while maintaining a warm, helpful, and actionable tone.",
+      "rationale": "The draft accurately adapts the phrasing and structure of the precedents to address the customer's specific movie-loading issue while maintaining a helpful tone and clear next steps.",
       "mean_score": 5.0
     },
     {
       "thread_id": "366045_366044",
+      "groundedness": 3,
+      "correctness": 5,
+      "tone": 5,
+      "actionability": 5,
+      "rationale": "The draft translates the helpful troubleshooting offer from the precedents into Spanish, though it slightly exceeds the exact English-only precedent text.",
+      "mean_score": 4.5
+    },
+    {
+      "thread_id": "498559_498558",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches one of the retrieved precedents, offering a helpful, warm, and actionable next step.",
+      "rationale": "The draft accurately translates the sentiment and call-to-action of the precedents into Spanish while maintaining a warm, helpful tone and clear next steps.",
       "mean_score": 5.0
-    },
-    {
-      "thread_id": "498559_498558",
-      "groundedness": 4,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft borrows the empathetic and proactive phrasing of the precedents while directly addressing both customer issues and providing a clear call to action.",
-      "mean_score": 4.75
     },
     {
       "thread_id": "1740795_1740794",
@@ -535,7 +535,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements from the precedents to offer a helpful, warm, and actionable response without hallucinating.",
+      "rationale": "The draft accurately reflects the precedent of offering empathetic help and asking for more details about the issue, successfully translated into Spanish.",
       "mean_score": 5.0
     },
     {
@@ -544,7 +544,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft directly uses approved precedent phrasing to offer a helpful next step while maintaining a warm, professional tone.",
+      "rationale": "The draft accurately combines elements from the provided precedents in Spanish, maintaining a helpful tone and clear call to action.",
       "mean_score": 5.0
     },
     {
@@ -553,17 +553,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to address the phone issue empathetically and provides a clear next step via DM.",
+      "rationale": "The draft accurately reflects the precedent templates by offering empathetic acknowledgment and directing the customer to DMs for further assistance.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2555435_2555434",
-      "groundedness": 5,
+      "groundedness": 4,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by directing the customer to DMs for assistance, maintains a warm and concise tone, and provides a clear, actionable next step.",
-      "mean_score": 5.0
+      "rationale": "The draft effectively combines the welcoming tone and DM call-to-action from precedents while accurately guiding the customer to support for their repairs.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "2971294_2971296",
@@ -571,7 +571,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent responses, maintains a warm and concise tone, and provides a clear next step for the customer.",
+      "rationale": "The draft accurately reflects the precedent of asking the customer to send a direct message (DM) for further troubleshooting while maintaining a warm, helpful, and concise tone in Spanish.",
       "mean_score": 5.0
     },
     {
@@ -580,7 +580,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent of directing customers to the Apple Store directly, maintains a helpful and warm tone, and provides a clear next step.",
+      "rationale": "The draft accurately reflects the precedent of directing return/purchase-related inquiries to the online store team in a warm, helpful, and actionable manner.",
       "mean_score": 5.0
     },
     {
@@ -589,26 +589,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering assistance and directing the customer to a DM, maintaining a warm and concise tone with a clear next step.",
+      "rationale": "The draft smoothly combines elements from the precedents into a helpful, warm, and actionable response that correctly directs the customer to DMs.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1756245_1756244",
       "groundedness": 5,
-      "correctness": 4,
+      "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft accurately adapts the precedent by offering empathy and a clear call to action to move to DMs.",
-      "mean_score": 4.5
+      "actionability": 5,
+      "rationale": "The draft accurately combines elements from the precedents into a helpful, warm, and actionable Spanish response.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "2001209_2001208",
       "groundedness": 5,
-      "correctness": 3,
+      "correctness": 5,
       "tone": 5,
-      "actionability": 2,
-      "rationale": "The draft uses valid precedent and a warm tone, but cuts off right before providing the actual workaround steps, leaving the customer without a concrete solution.",
-      "mean_score": 3.75
+      "actionability": 5,
+      "rationale": "The draft perfectly blends phrases from the provided precedents while maintaining a warm, helpful tone and providing a clear call to action.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "2072314_2072313",
@@ -616,7 +616,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent by asking for the iOS version and more details via DM while maintaining a helpful tone and clear next steps.",
+      "rationale": "The draft accurately combines phrasing from the precedents to ask for the iOS version via DM in a warm and actionable way.",
       "mean_score": 5.0
     },
     {
@@ -625,17 +625,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines empathetic framing and clarifying questions adapted from the provided precedents while maintaining a helpful, concise tone and clear next steps.",
+      "rationale": "The draft accurately translates the primary precedent into Spanish while maintaining a warm, helpful, and actionable tone.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2114729_2114728",
-      "groundedness": 5,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent by asking the customer to move to DM for more details, maintains a calm and helpful tone despite the profanity, and provides a clear next step.",
-      "mean_score": 5.0
+      "groundedness": 1,
+      "correctness": 1,
+      "tone": 1,
+      "actionability": 1,
+      "rationale": "The draft repeats profanity, fails to match any helpful precedent, and offers no solution or professional customer service tone.",
+      "mean_score": 1.0
     },
     {
       "thread_id": "1732571_1732570",
@@ -643,7 +643,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the precedents by offering help and asking for a DM with details, while nicely adapting the language to fit both of the customer's devices.",
+      "rationale": "The draft accurately translates and combines the core messaging of the precedents into a warm, actionable Spanish response.",
       "mean_score": 5.0
     },
     {
@@ -652,17 +652,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent responses by expressing a desire to help and directing the customer to DM for further investigation.",
+      "rationale": "The draft accurately synthesizes the precedent responses by expressing empathy, asking for details via DM, and maintaining a helpful, warm brand tone.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1449167_1449166",
       "groundedness": 5,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately mirrors the precedents by offering help and asking for a DM, maintaining a warm and professional tone despite the customer's profanity.",
-      "mean_score": 5.0
+      "correctness": 4,
+      "tone": 4,
+      "actionability": 3,
+      "rationale": "The draft accurately reflects the precedent and maintains a professional tone despite the customer's profanity, though the actual steps are omitted.",
+      "mean_score": 4.0
     },
     {
       "thread_id": "2205840_2205838",
@@ -670,7 +670,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by acknowledging the issue and directing the customer to DM for further help while maintaining a warm, actionable, and concise tone.",
+      "rationale": "The draft accurately reflects the precedents by validating the customer's concern about battery life and inviting them to DM for further assistance in a warm, actionable tone.",
       "mean_score": 5.0
     },
     {
@@ -679,7 +679,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by acknowledging the battery concern and directing the customer to DM for further help with a warm, concise tone.",
+      "rationale": "The draft accurately reflects the precedent of offering help with battery drain in DM while maintaining a warm tone and clear next steps.",
       "mean_score": 5.0
     },
     {
@@ -688,7 +688,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft directly uses phrases from the precedents, offers a helpful and warm response, and provides a clear next step by moving the conversation to DM.",
+      "rationale": "The draft accurately reflects the precedents by addressing the issue warmly, asking to continue via DM, and maintaining a helpful and concise brand voice.",
       "mean_score": 5.0
     },
     {
@@ -697,26 +697,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by acknowledging the issue with empathy and directing the customer to DM for further assistance.",
+      "rationale": "The draft accurately translates and adapts the precedent response into French while maintaining a helpful tone and a clear call to action.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2054361_2054360",
-      "groundedness": 4,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft effectively combines elements from the precedents to address both the iPhone and iPad mentions while maintaining a helpful, warm, and actionable tone.",
-      "mean_score": 4.75
-    },
-    {
-      "thread_id": "1993564_1993563",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent responses by asking for device information in a DM while maintaining a helpful tone and clear next steps.",
+      "rationale": "The draft accurately combines elements from the precedents to address the iOS 11 issues while prompting for necessary details in a warm, concise manner.",
       "mean_score": 5.0
+    },
+    {
+      "thread_id": "1993564_1993563",
+      "groundedness": 1,
+      "correctness": 1,
+      "tone": 1,
+      "actionability": 1,
+      "rationale": "The draft merely parrots the customer's message instead of providing a helpful support response based on the precedents.",
+      "mean_score": 1.0
     },
     {
       "thread_id": "2080137_2080136",
@@ -724,26 +724,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines elements from the precedents to offer a warm, correct, and actionable response asking for the iOS version via DM.",
+      "rationale": "The draft accurately combines elements from the precedents into a helpful, warm, and actionable response without hallucinating.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1815209_1815208",
-      "groundedness": 5,
+      "groundedness": 4,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the first precedent while being helpful, warm, concise, and providing a clear next step.",
-      "mean_score": 5.0
+      "rationale": "The draft effectively combines the direct messaging approach from the first precedent with a warm, actionable tone, though it slightly expands on the exact phrasing.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "1445545_1445544",
       "groundedness": 5,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft directly uses a retrieved precedent, offers a helpful and actionable next step in DMs, and maintains a warm, concise tone.",
-      "mean_score": 5.0
+      "correctness": 2,
+      "tone": 4,
+      "actionability": 2,
+      "rationale": "The draft accurately reflects the precedent and has a good tone, but it cuts off before providing the actual workaround steps, leaving the customer with no concrete action.",
+      "mean_score": 3.25
     },
     {
       "thread_id": "2980232_2980231",
@@ -751,7 +751,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft closely follows the precedent replies, offering empathetic assistance and a clear call to action to continue via DM.",
+      "rationale": "The draft accurately combines information from the precedents (stating iOS 10 is not supported and asking for a DM) with a warm tone, correct facts, and clear actionability.",
       "mean_score": 5.0
     },
     {
@@ -760,26 +760,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately synthesizes language from the precedents while maintaining a warm, helpful tone and providing a clear, actionable next step.",
+      "rationale": "The draft accurately adapts the precedent to offer help and request a DM in Spanish, matching the required tone and action steps.",
       "mean_score": 5.0
     },
     {
       "thread_id": "413744_413743",
-      "groundedness": 5,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft perfectly matches a provided precedent response, maintaining high helpfulness, a calm professional tone despite abuse, and a clear next step.",
-      "mean_score": 5.0
+      "groundedness": 1,
+      "correctness": 1,
+      "tone": 1,
+      "actionability": 1,
+      "rationale": "The draft simply echoes the customer's abusive message instead of providing a helpful support response based on precedents.",
+      "mean_score": 1.0
     },
     {
       "thread_id": "1649013_1649012",
-      "groundedness": 5,
-      "correctness": 3,
-      "tone": 4,
-      "actionability": 2,
-      "rationale": "The draft perfectly matches the precedent and maintains a good tone, but stops abruptly without providing the actual workaround steps.",
-      "mean_score": 3.5
+      "groundedness": 4,
+      "correctness": 5,
+      "tone": 5,
+      "actionability": 5,
+      "rationale": "The draft closely aligns with the precedent offering help and asking to move to DMs, while maintaining an appropriately warm and actionable tone in Spanish.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "1516133_1516132",
@@ -787,7 +787,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines elements from the precedents to offer a warm, actionable, and accurate response without hallucinating unauthorized troubleshooting steps.",
+      "rationale": "The draft effectively synthesizes the precedents by offering to look into the battery issue and asking for the iPhone model and iOS version via DM in a warm and actionable manner.",
       "mean_score": 5.0
     },
     {
@@ -796,34 +796,34 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies by offering assistance and directing the customer to DM for further support, maintaining a warm and actionable tone.",
+      "rationale": "The draft perfectly matches one of the provided precedents, is factually appropriate, maintains a warm and concise tone, and gives a clear next step.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2014852_2014851",
-      "groundedness": 4,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft closely follows the precedent by including the workaround link from a similar context and offering a DM follow-up, maintaining a helpful and warm tone.",
-      "mean_score": 4.75
-    },
-    {
-      "thread_id": "2283809_2283811",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
+      "actionability": 5,
+      "rationale": "The draft accurately combines elements from the provided precedents, offering a helpful workaround link, a warm tone, and a clear next step.",
+      "mean_score": 5.0
+    },
+    {
+      "thread_id": "2283809_2283811",
+      "groundedness": 4,
+      "correctness": 4,
+      "tone": 3,
       "actionability": 4,
-      "rationale": "The draft accurately combines elements from the precedents to warn the user about phishing with a warm, concise tone, though it slightly tweaks the phrasing for the action step.",
-      "mean_score": 4.75
+      "rationale": "The draft borrows well from precedents and provides a clear next step, though the phrasing 'Has a reason to question' is slightly awkward.",
+      "mean_score": 3.75
     },
     {
       "thread_id": "670636_670635",
       "groundedness": 5,
       "correctness": 5,
-      "tone": 4,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent responses by identifying the potential phishing attempt and directing the user to helpful resources with a clear, concise tone.",
+      "tone": 5,
+      "actionability": 4,
+      "rationale": "The draft accurately translates the sentiment and content of the precedent replies into Spanish while maintaining a warm, helpful tone and pointing the user toward relevant resources.",
       "mean_score": 4.75
     },
     {
@@ -832,44 +832,44 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to provide a helpful, safe, and actionable response in the correct brand tone.",
+      "rationale": "The draft perfectly matches the retrieved precedent, offering a warm, actionable next step to verify the suspicious email.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1594932_1594930",
       "groundedness": 5,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft is a direct and exact match to the provided precedent reply, making it fully grounded, correct, well-toned, and actionable.",
-      "mean_score": 5.0
-    },
-    {
-      "thread_id": "853177_853175",
-      "groundedness": 4,
       "correctness": 4,
       "tone": 5,
       "actionability": 3,
-      "rationale": "The draft adopts language closely matching the provided phishing-confirmation precedents, but trails off without actually providing the promised information or next steps on how to report it.",
-      "mean_score": 4.0
-    },
-    {
-      "thread_id": "1172244_1172246",
-      "groundedness": 4,
-      "correctness": 4,
-      "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft borrows phrasing well from the precedents to offer a helpful, warm, and actionable next step for the customer.",
+      "rationale": "The draft translates the precedent well and maintains a good tone, but lacks a complete sentence or link at the end for full actionability.",
       "mean_score": 4.25
     },
     {
-      "thread_id": "660458_660457",
+      "thread_id": "853177_853175",
+      "groundedness": 5,
+      "correctness": 5,
+      "tone": 5,
+      "actionability": 4,
+      "rationale": "The draft accurately translates and adapts the precedent for identifying a phishing email while maintaining a warm tone, though it could ideally include the reporting link for complete actionability.",
+      "mean_score": 4.75
+    },
+    {
+      "thread_id": "1172244_1172246",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents, provides helpful and correct information with a link, maintains a warm and concise tone, and gives a clear next step.",
+      "rationale": "The draft accurately adapts the retrieved precedent into fluent Spanish while providing a helpful link, warm tone, and clear next step.",
       "mean_score": 5.0
+    },
+    {
+      "thread_id": "660458_660457",
+      "groundedness": 5,
+      "correctness": 4,
+      "tone": 5,
+      "actionability": 4,
+      "rationale": "The draft accurately reflects the precedent and maintains a warm, concise tone while directing the customer to a helpful resource.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "1685198_1685197",
@@ -877,7 +877,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to provide a helpful, warm, and actionable response without hallucinating.",
+      "rationale": "The draft perfectly matches a provided precedent, offering a warm tone and a clear, actionable next step for handling a potential phishing email.",
       "mean_score": 5.0
     },
     {
@@ -886,7 +886,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies by showing empathy and directing the customer to send a DM for further assistance.",
+      "rationale": "The draft accurately combines the security tone and troubleshooting link from precedent 2 with the direct message offer from precedent 1, resulting in a helpful, warm, and actionable response.",
       "mean_score": 5.0
     },
     {
@@ -894,18 +894,18 @@
       "groundedness": 5,
       "correctness": 4,
       "tone": 5,
-      "actionability": 3,
-      "rationale": "The draft perfectly matches a provided precedent and has a warm tone, but lacks a direct link to the referenced guide.",
-      "mean_score": 4.25
+      "actionability": 4,
+      "rationale": "The draft accurately reflects the first precedent while being warm, concise, and directing the user on what to do next.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "109020_109019",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft directly uses phrasing and troubleshooting steps from the retrieved precedents while maintaining a helpful, concise tone.",
-      "mean_score": 4.75
+      "actionability": 5,
+      "rationale": "The draft accurately combines elements from the provided precedents in French while maintaining a helpful tone and a clear call to action.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "449466_449465",
@@ -913,26 +913,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft closely aligns with the precedents by confirming the email is fake, directing the customer to the phishing page, and maintaining a warm, concise tone.",
+      "rationale": "The draft accurately combines elements from the precedents into a warm, concise, and correct response, though it slightly misses including a reporting email address or DM instruction.",
       "mean_score": 4.75
     },
     {
       "thread_id": "483198_483197",
       "groundedness": 5,
-      "correctness": 5,
+      "correctness": 4,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the tone and instructions of the precedents by offering help and directing the customer to DM.",
-      "mean_score": 5.0
+      "rationale": "The draft accurately reflects the precedent, maintains a warm and concise tone, and provides a clear, actionable next step by asking the customer to send a DM.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "1898268_1898267",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents into a helpful, warm, and actionable response directing the user to DMs.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately reflects the provided precedents in Spanish, maintaining a helpful, concise tone and directing the user to further information.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "2304617_2304616",
@@ -940,7 +940,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering help and asking for details about the issue in a warm, concise manner.",
+      "rationale": "The draft accurately reflects the precedent of offering guidance via direct message while maintaining a warm, helpful, and actionable tone in Spanish.",
       "mean_score": 5.0
     },
     {
@@ -948,27 +948,27 @@
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately synthesizes the precedents with a warm, concise tone, validates the customer's concern, and provides a clear next step.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft is well-grounded in precedents, helpful, polite, and provides a clear next step, though a link to the resource would make it fully actionable.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "711664_711663",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft is directly lifted from a valid precedent, maintains a warm and concise tone, and validates the customer's concern with a clear path forward.",
-      "mean_score": 4.75
+      "actionability": 5,
+      "rationale": "The draft accurately mirrors the precedents by confirming the email is a phishing attempt, maintains a warm and concise tone, and provides a direct, actionable link to handle fraudulent messages.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "2955499_2955498",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft closely follows the precedent language, provides a helpful and correct safety resource, maintains a warm and concise tone, and offers a clear next step.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately combines elements from the provided precedents to create a well-toned, helpful, and safe response, though it slightly lacks a hyperlink for the 'learn more here' action.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "2805964_2805963",
@@ -976,7 +976,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent by praising the catch and providing a helpful, actionable reporting link in a warm tone.",
+      "rationale": "The draft accurately reflects the precedent steps for reporting phishing, provides a helpful resource link, maintains a warm and concise tone, and offers clear next steps in Spanish.",
       "mean_score": 5.0
     },
     {
@@ -985,7 +985,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent responses by confirming the email is fake and providing a helpful link for further assistance.",
+      "rationale": "The draft accurately translates the phishing warning precedent into German while maintaining a helpful, warm, and actionable tone.",
       "mean_score": 5.0
     },
     {
@@ -994,7 +994,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines relevant precedents to directly address the user's phishing concern with a helpful and actionable link in a warm, concise tone.",
+      "rationale": "The draft accurately mirrors the tone and content of the precedents while providing a helpful, actionable link in Spanish.",
       "mean_score": 5.0
     },
     {
@@ -1003,17 +1003,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to provide a secure, helpful, well-toned, and actionable response regarding a potential phishing email.",
+      "rationale": "The draft accurately reflects the precedents in Spanish, maintaining a helpful, warm tone while offering clear safety advice and actionable steps.",
       "mean_score": 5.0
     },
     {
       "thread_id": "620187_620186",
-      "groundedness": 5,
-      "correctness": 5,
+      "groundedness": 4,
+      "correctness": 4,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines troubleshooting steps and a DM fallback from the precedents into a warm, clear, and actionable response.",
-      "mean_score": 5.0
+      "rationale": "The draft effectively adapts the empathetic phrasing and call-to-action from the precedents to fit a messaging issue instead of a music issue.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "989698_989696",
@@ -1021,7 +1021,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent for moving the conversation to a DM while maintaining a warm, helpful tone and providing a clear next step.",
+      "rationale": "The draft accurately reflects the precedents by showing empathy for the importance of photos and inviting the customer to DM for assistance.",
       "mean_score": 5.0
     },
     {
@@ -1030,7 +1030,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies by offering help via DM while adapting the text smoothly to address downloading apps instead of updating.",
+      "rationale": "The draft accurately synthesizes elements from the retrieved precedents into a helpful, warm, and actionable French response.",
       "mean_score": 5.0
     },
     {
@@ -1039,17 +1039,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines relevant elements from the precedents to provide a helpful, polite, and actionable response.",
+      "rationale": "The draft accurately reflects the precedent of offering help via DM while matching the warm, concise tone and addressing the customer's specific iMessage issue.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2441834_2441832",
       "groundedness": 5,
-      "correctness": 5,
+      "correctness": 4,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by directing the customer to DM for help while maintaining a warm, actionable, and correct support approach.",
-      "mean_score": 5.0
+      "rationale": "The draft closely aligns with precedent patterns by offering help and inviting the customer to DM, though it addresses iMessage instead of music due to the customer's specific issue.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "1391216_1391215",
@@ -1057,7 +1057,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the language and instructions from the provided precedents while offering a warm, clear, and actionable next step for the customer.",
+      "rationale": "The draft accurately mirrors the Spanish translation of the appropriate precedent, maintains a warm and helpful tone, and provides a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1066,26 +1066,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering empathy and inviting the customer to DM, while directly addressing the specific photo and iCloud backup issue mentioned.",
+      "rationale": "The draft accurately reflects the empathetic tone and direct call to action found in the precedent replies.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1623857_1623856",
       "groundedness": 5,
-      "correctness": 5,
+      "correctness": 4,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly adopts the exact phrasing and request from precedent thread 1983098_1983097, ensuring it is grounded, helpful, warm, and actionable.",
-      "mean_score": 5.0
+      "rationale": "The draft directly uses the exact phrasing from one of the retrieved precedents to maintain a warm and actionable customer service tone.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "1938597_1938596",
-      "groundedness": 5,
-      "correctness": 5,
+      "groundedness": 4,
+      "correctness": 4,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent by offering troubleshooting steps and directing the customer to DM if needed, maintaining a warm tone and clear next steps.",
-      "mean_score": 5.0
+      "rationale": "The draft blends elements from multiple precedents well to address the customer's group text issue while maintaining a helpful, warm, and actionable tone.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "2309238_2309237",
@@ -1093,7 +1093,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents into a helpful, concise, warm, and actionable response.",
+      "rationale": "The draft accurately mirrors the DM escalation precedent while maintaining a warm, actionable, and correct tone in Spanish.",
       "mean_score": 5.0
     },
     {
@@ -1102,7 +1102,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements from the precedents to offer a warm, actionable, and accurate response to the customer's issue.",
+      "rationale": "The draft accurately mirrors the precedents in content, tone, and call to action while seamlessly translating them into Spanish.",
       "mean_score": 5.0
     },
     {
@@ -1111,26 +1111,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches a precedent response, offers a helpful next step to resolve the issue, maintains a warm and concise tone, and clearly directs the customer to DM support.",
+      "rationale": "The draft accurately reflects the precedent responses by offering empathy and a clear, actionable next step to continue the conversation in DM.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1943709_1943708",
-      "groundedness": 5,
+      "groundedness": 4,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the precedents by offering help, asking for the device via DM, and maintaining a warm, actionable tone.",
-      "mean_score": 5.0
+      "rationale": "The draft adapts the precedent phrases effectively to address messages instead of photos while maintaining the same helpful and concise structure.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "1693444_1693443",
-      "groundedness": 5,
-      "correctness": 5,
+      "groundedness": 4,
+      "correctness": 4,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies by asking for a DM and the device type in a warm, actionable, and correct manner.",
-      "mean_score": 5.0
+      "rationale": "The draft captures the empathetic and direct messaging style of the precedents, though it adapts the topic from photos to messages to fit the customer's specific issue.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "2040287_2040286",
@@ -1138,7 +1138,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately synthesizes the precedent replies by asking about the headphone origin and directing the customer to DM, while maintaining a helpful tone and clear next steps.",
+      "rationale": "The draft accurately reflects the precedents by inviting the customer to DM for a review, maintains a warm and concise tone, and provides a clear next step in Spanish.",
       "mean_score": 5.0
     },
     {
@@ -1147,7 +1147,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by expressing empathy, acknowledging the importance of photos, and providing a clear, actionable next step to continue the conversation in DMs.",
+      "rationale": "The draft accurately translates the empathetic sentiment and direct-message call-to-action from the precedents into a warm, helpful, and actionable Spanish response.",
       "mean_score": 5.0
     },
     {
@@ -1156,17 +1156,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly mirrors the precedent reply by offering help and asking a clarifying question about the issue.",
+      "rationale": "The draft accurately combines elements from the precedents into a warm, helpful, and actionable response in Spanish.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1243398_1243397",
-      "groundedness": 5,
+      "groundedness": 4,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent support strategies by offering assistance and directing the customer to DM for further help with a warm and concise tone.",
-      "mean_score": 5.0
+      "rationale": "The draft accurately reflects the precedent of asking for a DM with details while offering a warm, helpful tone and a clear next step, though it translates the prompt into Spanish.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "967957_967956",
@@ -1174,7 +1174,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches a provided precedent, offers appropriate help for a safety issue, maintains a warm and concise tone, and gives a clear next step.",
+      "rationale": "The draft smoothly combines elements from the precedents into a helpful, empathetic, and clear response.",
       "mean_score": 5.0
     },
     {
@@ -1183,7 +1183,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering to investigate via DM while maintaining a warm, empathetic, and actionable customer support tone.",
+      "rationale": "The draft effectively combines elements from the precedents to offer help, maintain a warm and concise tone, and provide a clear, actionable next step via DM.",
       "mean_score": 5.0
     },
     {
@@ -1192,7 +1192,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent of asking the customer for a DM while maintaining a warm, helpful, and actionable tone.",
+      "rationale": "The draft perfectly matches the provided precedent by offering assistance and directing the user to send a DM.",
       "mean_score": 5.0
     },
     {
@@ -1201,7 +1201,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements directly from the precedents to create a warm, empathetic, and actionable response.",
+      "rationale": "The draft accurately combines elements from the precedents into a helpful, warm, and actionable response.",
       "mean_score": 5.0
     },
     {
@@ -1210,7 +1210,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies by offering help and directing the customer to DMs in a warm, concise manner with a clear next step.",
+      "rationale": "The draft accurately mirrors the DM-routing precedent, translates it appropriately to the customer's language, maintains a calm and helpful tone, and provides a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1219,17 +1219,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately uses phrasing from the precedents, provides a helpful and empathetic response, maintains a warm and concise brand tone, and gives a clear call to action.",
+      "rationale": "The draft accurately reflects the precedent of moving the conversation to DMs, maintains a warm and empathetic Spanish tone, and provides a clear next step.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2641026_2641024",
-      "groundedness": 4,
+      "groundedness": 5,
       "correctness": 4,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines the empathetic acknowledgment from the precedents with the actionable DM request from thread 489714_489713.",
-      "mean_score": 4.5
+      "rationale": "The draft closely follows the precedent by offering help and asking for a DM with details, though it doesn't address the specific technical questions due to the nature of the support workflow.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "974463_1875343",
@@ -1237,26 +1237,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft directly mirrors the language and intent of the retrieved precedents, offering a warm tone and a clear, actionable next step.",
+      "rationale": "The draft accurately mirrors the provided precedents with a warm, concise tone and a clear, actionable next step.",
       "mean_score": 5.0
     },
     {
       "thread_id": "652244_652242",
-      "groundedness": 4,
-      "correctness": 4,
+      "groundedness": 5,
+      "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines elements from the precedents (asking for feedback/details and device info) into a warm, actionable, and mostly grounded response.",
-      "mean_score": 4.5
+      "rationale": "The draft seamlessly combines elements from the precedents into a helpful, warm, and actionable response without introducing any hallucinations.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "753024_753022",
       "groundedness": 5,
-      "correctness": 3,
+      "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft matches the precedent perfectly, though asking what issues the customer is having is slightly redundant since they already stated them.",
-      "mean_score": 4.25
+      "actionability": 5,
+      "rationale": "The draft accurately reflects the precedents by acknowledging the issue empathetically and directing the customer to DM for support, all in a warm and actionable manner.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "693971_693970",
@@ -1264,7 +1264,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft closely aligns with the precedents by inviting the customer to share details via DM while maintaining a helpful, warm, and concise tone.",
+      "rationale": "The draft perfectly matches a provided precedent, offering a warm and actionable response to de-escalate the customer's legal threat.",
       "mean_score": 5.0
     },
     {
@@ -1273,7 +1273,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering help for the specific issue, asking for more details via DM, and maintaining a warm, concise tone with a clear next step.",
+      "rationale": "The draft accurately reflects the precedent replies by offering help, asking for specific details, and requesting a direct message, while maintaining a warm and actionable tone in Spanish.",
       "mean_score": 5.0
     },
     {
@@ -1282,26 +1282,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines phrases directly from the retrieved precedents to provide a warm, actionable, and correct response.",
+      "rationale": "The draft perfectly mirrors the retrieved precedent replies in wording, tone, and call-to-action.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1186563_1186562",
-      "groundedness": 4,
-      "correctness": 4,
+      "groundedness": 5,
+      "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft effectively uses precedent phrasing like 'we'll go from there' and asks for a DM, though it misses the opportunity to suggest updating to iOS 11.1.1 seen in another precedent.",
-      "mean_score": 4.25
+      "actionability": 5,
+      "rationale": "The draft perfectly mirrors the provided precedent, offering a warm tone, a diagnostic question, and a clear call to action.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "1961373_1961372",
       "groundedness": 5,
-      "correctness": 3,
-      "tone": 3,
+      "correctness": 4,
+      "tone": 4,
       "actionability": 4,
-      "rationale": "The draft accurately uses the precedent text, but fails to handle the customer's heavy sarcasm appropriately.",
-      "mean_score": 3.75
+      "rationale": "The draft accurately uses the precedent to provide a helpful support link, though dealing with the customer's sarcasm is inherently tricky.",
+      "mean_score": 4.25
     },
     {
       "thread_id": "460897_460896",
@@ -1309,7 +1309,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the precedents while tailoring the response appropriately to the customer's specific location mention.",
+      "rationale": "The draft perfectly blends the empathetic sentiment and call-to-action phrases from the retrieved precedents with a warm, professional, and actionable response.",
       "mean_score": 5.0
     },
     {
@@ -1318,7 +1318,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to offer help and direct the customer to DMs in a warm, actionable way.",
+      "rationale": "The draft perfectly mirrors the retrieved precedent to offer help, ask for specifics, and direct the customer to DMs.",
       "mean_score": 5.0
     },
     {
@@ -1327,7 +1327,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to offer a warm, actionable, and grounded response directing the customer to DM.",
+      "rationale": "The draft accurately translates and adapts the provided precedents into natural French while maintaining a helpful tone and clear call to action.",
       "mean_score": 5.0
     },
     {
@@ -1336,26 +1336,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft is an exact match to one of the retrieved precedents, offering a helpful, polite, and actionable next step.",
+      "rationale": "The draft seamlessly combines elements from the provided precedents into a warm, helpful, and actionable response without introducing any new or ungrounded claims.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2110802_2699034",
       "groundedness": 5,
       "correctness": 5,
-      "tone": 4,
+      "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent, provides a helpful and actionable next step, and maintains a professional tone despite the customer's hostility.",
-      "mean_score": 4.75
+      "rationale": "The draft perfectly mirrors the provided precedent, maintains a professional and helpful tone despite the user's hostility, and gives a clear next step.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "56944_56943",
-      "groundedness": 5,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies, offers helpful assistance with the app, maintains a warm and concise tone, and clearly directs the customer to DM for the next step.",
-      "mean_score": 5.0
+      "groundedness": 4,
+      "correctness": 4,
+      "tone": 4,
+      "actionability": 3,
+      "rationale": "The draft closely mirrors the precedent of acknowledging feedback and providing a link to share more, though it misses the opportunity to ask for specific issues or offer DM support found in other precedents.",
+      "mean_score": 3.75
     },
     {
       "thread_id": "2020765_2020764",
@@ -1363,7 +1363,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines phrases directly from the precedents while maintaining a warm, helpful tone and providing a clear call to action.",
+      "rationale": "The draft seamlessly combines phrases from the retrieved precedents while maintaining a helpful, warm, and actionable tone.",
       "mean_score": 5.0
     },
     {
@@ -1372,17 +1372,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly blends phrases from the precedents while maintaining a warm, concise tone and a clear call to action.",
+      "rationale": "The draft seamlessly combines elements from the precedents into a warm, concise, and actionable response directing the customer to DMs.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2774393_2774392",
-      "groundedness": 5,
-      "correctness": 5,
-      "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft perfectly mirrors the precedent reply by offering a helpful, polite tone and directing the customer to DM for further troubleshooting.",
-      "mean_score": 5.0
+      "groundedness": 1,
+      "correctness": 1,
+      "tone": 1,
+      "actionability": 1,
+      "rationale": "The draft simply repeats the customer's complaint instead of providing a helpful support response based on the precedents.",
+      "mean_score": 1.0
     },
     {
       "thread_id": "2185439_2185438",
@@ -1390,26 +1390,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately synthesizes language from the precedents, offering a warm tone and a clear, actionable next step to resolve the issue.",
+      "rationale": "The draft accurately mirrors the precedents in Spanish while maintaining a warm, actionable tone and a clear next step.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2146542_2146541",
       "groundedness": 5,
-      "correctness": 4,
+      "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft accurately reflects the precedent for collecting product feedback, maintaining a warm and concise tone with a clear next step.",
-      "mean_score": 4.5
+      "actionability": 5,
+      "rationale": "The draft accurately reflects the feedback precedent in Spanish, maintains a helpful and concise tone, and provides a clear next step.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "330961_330960",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 3,
-      "rationale": "The draft perfectly matches one of the retrieved precedents with a warm, helpful tone, though actionability is inherently low as the customer's issue is already resolved.",
-      "mean_score": 4.5
+      "actionability": 5,
+      "rationale": "The draft accurately translates and synthesizes the warm, helpful tone and next-step actions found in the retrieved precedents into Spanish.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "1765059_1765061",
@@ -1417,7 +1417,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to offer clear, polite, and actionable next steps in DM.",
+      "rationale": "The draft perfectly matches a provided precedent, offering a helpful, warm, and actionable next step to resolve the customer's issue.",
       "mean_score": 5.0
     },
     {
@@ -1426,7 +1426,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the provided precedents, offering a warm tone and a clear, actionable next step for the customer.",
+      "rationale": "The draft accurately reflects the precedents in Spanish while maintaining a warm tone and providing a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1434,18 +1434,18 @@
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft seamlessly combines phrases from the retrieved precedents to create a warm, helpful, and actionable sign-off.",
-      "mean_score": 5.0
+      "actionability": 2,
+      "rationale": "The draft accurately reflects the friendly sentiment of the precedents in Spanish, though like the precedents it offers no concrete further action since none is needed.",
+      "mean_score": 4.25
     },
     {
       "thread_id": "2111422_2111424",
-      "groundedness": 5,
+      "groundedness": 4,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines precedent phrasing while remaining warm, actionable, and correct for troubleshooting a vague failure.",
-      "mean_score": 5.0
+      "rationale": "The draft accurately reflects the precedent of moving the conversation to DMs while adding a natural, helpful, and warm tone in Spanish.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "1458847_1458849",
@@ -1453,7 +1453,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines elements from the provided precedents into a warm, concise, and helpful closing message.",
+      "rationale": "The draft accurately reflects the precedents in Spanish, maintaining a warm and professional tone while offering clear next steps.",
       "mean_score": 5.0
     },
     {
@@ -1462,7 +1462,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines phrases from the retrieved precedents into a warm, helpful, and concise response.",
+      "rationale": "The draft is a direct Spanish translation of standard precedent replies, maintaining the warm tone, accurate meaning, and clear call to action.",
       "mean_score": 5.0
     },
     {
@@ -1471,7 +1471,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches one of the retrieved precedents, offering a warm tone, correct handling of positive feedback, and a clear next step.",
+      "rationale": "The draft accurately mirrors the tone and intent of the precedents while crafting a natural, warm, and helpful closing response.",
       "mean_score": 5.0
     },
     {
@@ -1479,18 +1479,18 @@
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 1,
-      "rationale": "The draft seamlessly combines elements from all retrieved precedents while maintaining a warm, polite tone and correctly closing the resolved ticket without needing further actions.",
-      "mean_score": 4.0
+      "actionability": 5,
+      "rationale": "The draft accurately reflects the precedent replies, maintains a warm and concise tone, and offers a clear next step for future support.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "2483759_2483758",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines phrases from the retrieved precedents, maintains a helpful and warm tone, and provides a clear next step.",
-      "mean_score": 5.0
+      "actionability": 2,
+      "rationale": "The draft perfectly matches the first precedent, maintaining a warm, correct, and concise tone, though it lacks an explicit next step like the other precedents.",
+      "mean_score": 4.25
     },
     {
       "thread_id": "107364_107366",
@@ -1498,7 +1498,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly mirrors the language and intent of the precedents, offering a warm tone, correct helpfulness, and a clear next step.",
+      "rationale": "The draft accurately translates the sentiment and content of the precedent replies into natural Spanish while maintaining high helpfulness and a warm tone.",
       "mean_score": 5.0
     },
     {
@@ -1507,7 +1507,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly combines phrases from the retrieved precedents while maintaining a warm tone and a clear next step.",
+      "rationale": "The draft is a well-translated, warm, and actionable Spanish equivalent of the provided English precedents.",
       "mean_score": 5.0
     },
     {
@@ -1516,7 +1516,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft directly mirrors an approved precedent reply, offering a warm, helpful, and actionable closing to the customer's positive update.",
+      "rationale": "The draft accurately reflects the precedents in Spanish while maintaining a warm, helpful, and actionable tone.",
       "mean_score": 5.0
     },
     {
@@ -1525,7 +1525,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to ask for device details in a DM with a warm, helpful, and concise tone.",
+      "rationale": "The draft perfectly matches a provided precedent, offers a helpful next step, maintains a warm and concise tone, and clearly directs the customer to take action via DM.",
       "mean_score": 5.0
     },
     {
@@ -1534,17 +1534,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents, offers appropriate closing support, maintains a warm and concise tone, and clearly tells the customer what to do next.",
+      "rationale": "The draft accurately reflects the precedents in Spanish, maintaining a warm and concise tone while providing a clear next step.",
       "mean_score": 5.0
     },
     {
       "thread_id": "209067_209069",
       "groundedness": 5,
-      "correctness": 4,
+      "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft accurately combines phrases directly from the precedents and maintains a helpful, warm, and actionable tone.",
-      "mean_score": 4.5
+      "actionability": 5,
+      "rationale": "The draft is a direct, accurate Spanish translation of the first precedent, maintaining high tone, actionability, and groundedness.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "1628910_1628912",
@@ -1552,7 +1552,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches one of the retrieved precedents, providing a helpful, warm, and actionable next step to move the conversation to DMs.",
+      "rationale": "The draft accurately reflects the precedent of asking the customer to send a DM for further assistance while maintaining a warm, concise tone and a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1561,7 +1561,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the tone and substance of the precedents, offering a helpful and warm closing statement.",
+      "rationale": "The draft accurately reflects the precedents in Spanish, maintaining a warm tone and a clear call to action.",
       "mean_score": 5.0
     },
     {
@@ -1570,17 +1570,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft is an exact match to one of the retrieved precedents, offering a warm, helpful, and actionable closing to the resolved issue.",
+      "rationale": "The draft accurately reflects the precedents in Spanish, maintaining a warm, helpful, and concise tone with a clear next step.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1605507_1605506",
-      "groundedness": 5,
+      "groundedness": 3,
       "correctness": 5,
       "tone": 5,
       "actionability": 1,
-      "rationale": "The draft accurately reflects the precedent responses in content, tone, and correctness, though it appropriately offers no further action since the issue is already resolved.",
-      "mean_score": 4.0
+      "rationale": "The draft translates the warm acknowledgment of the precedents into Spanish, maintaining helpfulness and tone, though actionability is inherently N/A for a closing pleasantry.",
+      "mean_score": 3.5
     },
     {
       "thread_id": "382425_382424",
@@ -1588,7 +1588,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately uses the precedent for restarting the iPhone after resetting keyboard settings, maintaining a warm, helpful tone with clear next steps.",
+      "rationale": "The draft accurately reflects the precedent of asking the customer to send a DM for closer help, translated smoothly into Spanish with a warm, actionable, and correct tone.",
       "mean_score": 5.0
     },
     {
@@ -1596,18 +1596,18 @@
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by combining polite acknowledgement with an offer for future assistance in a warm, concise, and actionable manner.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately reflects the precedent of offering further help in a warm, polite tone, though it is in Spanish while the customer spoke English.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "2837185_2837183",
       "groundedness": 5,
       "correctness": 5,
-      "tone": 4,
-      "actionability": 4,
-      "rationale": "The draft accurately reflects the provided technical precedent to explain why the music won't play and how to fix it.",
-      "mean_score": 4.5
+      "tone": 5,
+      "actionability": 5,
+      "rationale": "The draft accurately reflects the precedents by inviting a DM for more details, maintains a warm and concise tone, and provides a clear next step for resolving the technical issue.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "1299027_1299025",
@@ -1615,17 +1615,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft smoothly adapts the phrasing and structure of the precedents to fit the customer's specific music app issue while maintaining a helpful tone and clear next steps.",
+      "rationale": "The draft is a direct and accurate translation into French of a retrieved precedent, maintaining the warm tone, correct troubleshooting step, and clear action item.",
       "mean_score": 5.0
     },
     {
       "thread_id": "506469_506467",
-      "groundedness": 4,
+      "groundedness": 3,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately uses the DM escalation precedent while providing factually correct information and a clear next step in a warm tone.",
-      "mean_score": 4.75
+      "rationale": "The draft accurately explains the Apple Music individual plan limitation and asks for a direct message, matching the helpful tone of the precedents despite being in Spanish.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "1900089_1900086",
@@ -1633,7 +1633,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering help and directing the customer to send a DM with a warm, concise tone and a clear next step.",
+      "rationale": "The draft perfectly matches one of the retrieved precedents, offering a helpful, warm, and actionable next step.",
       "mean_score": 5.0
     },
     {
@@ -1642,7 +1642,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft effectively combines the empathy and troubleshooting questions from the precedents while maintaining a helpful, warm, and actionable tone.",
+      "rationale": "The draft accurately reflects the precedent of inviting the user to DM for further review, maintains a warm and concise tone, and provides a clear next step in Spanish.",
       "mean_score": 5.0
     },
     {
@@ -1651,7 +1651,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to offer a helpful, warm, and actionable response asking for the iOS version.",
+      "rationale": "The draft accurately reflects the precedents by acknowledging the issue, offering help, and directing the customer to DM for further troubleshooting.",
       "mean_score": 5.0
     },
     {
@@ -1660,7 +1660,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft directly mirrors the precedent to offer help and direct the customer to DM, maintaining a warm and actionable approach.",
+      "rationale": "The draft accurately reflects the precedent replies, provides a helpful and concise next step, maintains a warm tone, and clearly instructs the customer to send a DM.",
       "mean_score": 5.0
     },
     {
@@ -1669,26 +1669,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent of asking the customer to send a DM to investigate, maintains a warm and empathetic tone, and provides a clear, actionable next step.",
+      "rationale": "The draft accurately reflects the precedents by acknowledging the issue, offering help with the Apple Music student membership, and directing the customer to a DM.",
       "mean_score": 5.0
     },
     {
       "thread_id": "592241_592240",
       "groundedness": 5,
-      "correctness": 3,
-      "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft directly uses a retrieved precedent, maintaining a warm tone and asking a relevant troubleshooting question, though the connection between Snapchat audio interruption and earphones is slightly ambiguous.",
-      "mean_score": 4.25
-    },
-    {
-      "thread_id": "331720_331719",
-      "groundedness": 5,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering empathy and instructing the customer to DM for further assistance.",
+      "rationale": "The draft accurately combines troubleshooting steps and empathetic phrasing from the precedents into a clear, helpful, and well-toned response.",
       "mean_score": 5.0
+    },
+    {
+      "thread_id": "331720_331719",
+      "groundedness": 4,
+      "correctness": 4,
+      "tone": 5,
+      "actionability": 5,
+      "rationale": "The draft captures the empathetic tone and call-to-action (DM) of the precedents while addressing the customer's specific issue appropriately in Spanish.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "33351_33350",
@@ -1696,7 +1696,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines the precedent elements of offering help via DM, asking for device details, and maintaining a warm, concise tone with a clear next step.",
+      "rationale": "The draft effectively combines the clarifying question and DM request from the precedents into a natural, helpful, and polite Spanish response.",
       "mean_score": 5.0
     },
     {
@@ -1705,7 +1705,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft seamlessly combines elements from the retrieved precedents to provide a helpful, empathetic, warm, and actionable response directing the customer to DM.",
+      "rationale": "The draft accurately combines elements from the precedents to provide a warm, correct, and actionable next step for the customer.",
       "mean_score": 5.0
     },
     {
@@ -1714,7 +1714,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent replies by offering help and directing the customer to a DM, maintaining a warm and actionable tone.",
+      "rationale": "The draft accurately reflects the precedents by offering assistance and directing the customer to DMs, maintaining a warm and actionable tone in Spanish.",
       "mean_score": 5.0
     },
     {
@@ -1723,7 +1723,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent steps for handling pre-order download issues, provides a helpful link, maintains a warm and concise tone, and offers a clear next step.",
+      "rationale": "The draft accurately reflects the precedent by offering help, providing a relevant support link, and inviting the customer to DM if they need further assistance.",
       "mean_score": 5.0
     },
     {
@@ -1732,17 +1732,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft perfectly matches one of the retrieved precedents and provides a warm, actionable next step for the customer to resolve their issue via DM.",
+      "rationale": "The draft is a direct Spanish translation of the first precedent, maintaining high groundedness, helpfulness, a warm brand tone, and clear actionability.",
       "mean_score": 5.0
     },
     {
       "thread_id": "2069699_2069698",
-      "groundedness": 4,
+      "groundedness": 5,
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft adapts the empathetic structure and DM call-to-action from the precedents well, addressing the customer's specific iTunes issue warmly and clearly.",
-      "mean_score": 4.75
+      "rationale": "The draft accurately mirrors the precedents by acknowledging the importance of the music, maintaining a warm and professional tone, and providing a clear, actionable next step to DM the device and software version.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "903729_903731",
@@ -1750,7 +1750,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately uses phrasing and troubleshooting steps directly from the provided precedents while maintaining a helpful, concise tone and clear call to action.",
+      "rationale": "The draft accurately reflects the precedent replies by showing empathy and suggesting a restart of the iPhone as a first troubleshooting step.",
       "mean_score": 5.0
     },
     {
@@ -1759,7 +1759,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately uses phrasing and troubleshooting steps directly from the provided precedents while maintaining a warm tone and clear action item.",
+      "rationale": "The draft is a direct and accurate Spanish translation of the first precedent, maintaining the exact helpful tone, grounded instructions, and clear next steps.",
       "mean_score": 5.0
     },
     {
@@ -1768,26 +1768,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by offering help via DM to investigate the issue, maintaining a warm and professional tone with a clear next step.",
+      "rationale": "The draft accurately reflects the precedent of offering help and directing the user to a DM link, maintaining a warm and professional tone while providing a clear next step in Spanish.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1273569_1273568",
       "groundedness": 2,
-      "correctness": 3,
+      "correctness": 4,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft hallucinates support instructions not found in the unrelated precedents, though it provides a reasonable and polite next step for a billing issue.",
-      "mean_score": 3.5
+      "actionability": 5,
+      "rationale": "The draft shifts the next step to a direct message instead of using the provided article precedent, though it provides a warm and actionable response in Spanish.",
+      "mean_score": 4.0
     },
     {
       "thread_id": "149947_149946",
-      "groundedness": 5,
-      "correctness": 5,
+      "groundedness": 4,
+      "correctness": 4,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by explaining the auto-renewal policy and directing the customer to experts for a refund.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft captures the refund and verification aspects of the precedents well, using a warm and actionable tone, though it is written in Spanish while the customer and precedents are in English.",
+      "mean_score": 4.25
     },
     {
       "thread_id": "109039_109040",
@@ -1795,7 +1795,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft adapts precedent phrasing well to fit Apple Music while maintaining a helpful tone and clear next steps.",
+      "rationale": "The draft accurately combines elements from the precedents into a helpful, warm, and actionable response that guides the customer on what to do next.",
       "mean_score": 5.0
     },
     {
@@ -1804,7 +1804,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines empathetic elements and support routing from the precedents into a warm, helpful, and actionable response.",
+      "rationale": "The draft accurately reflects the precedent of directing the customer to a Sales Advisor, is helpful, maintains a warm and concise tone, and provides a clear next step.",
       "mean_score": 5.0
     },
     {
@@ -1813,7 +1813,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines elements from the provided precedents with a warm, helpful tone and a clear next step.",
+      "rationale": "The draft accurately reflects the precedent replies by offering help and instructing the customer to send a DM.",
       "mean_score": 5.0
     },
     {
@@ -1822,7 +1822,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent of advising customers to contact stores directly for in-store availability while maintaining a warm, helpful, and actionable tone.",
+      "rationale": "The draft accurately reflects the precedent by directing the customer to the online sales support team while maintaining a warm, helpful, and actionable tone in Spanish.",
       "mean_score": 5.0
     },
     {
@@ -1831,7 +1831,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by directing the customer to Online Sales Support, maintains a warm and concise tone, and provides a clear next step.",
+      "rationale": "The draft accurately reflects the precedent of asking the customer to DM for further help while maintaining a warm, empathetic, and actionable tone in Spanish.",
       "mean_score": 5.0
     },
     {
@@ -1840,17 +1840,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately combines precedent phrasing while remaining helpful, warm, and actionable.",
+      "rationale": "The draft accurately mirrors the tone, next steps, and phrasing of the precedents while tailoring the opening slightly to the customer's specific issue.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1365536_1365534",
-      "groundedness": 5,
+      "groundedness": 2,
       "correctness": 3,
-      "tone": 5,
+      "tone": 4,
       "actionability": 4,
-      "rationale": "The draft is perfectly grounded in the first precedent and maintains a warm tone, but asking for location is less helpful for a billing address issue than connecting with order support.",
-      "mean_score": 4.25
+      "rationale": "The draft misses the specific precedent instruction to ask for the customer's country, though it correctly directs them to DMs for help.",
+      "mean_score": 3.25
     },
     {
       "thread_id": "2004793_2004792",
@@ -1858,26 +1858,26 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft is a direct copy of a relevant precedent, providing a warm, accurate, and actionable next step for the frustrated customer.",
+      "rationale": "The draft is a direct Spanish translation of the precedent's offer to help quickly via a direct message asking for the customer's country.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1535596_1535595",
-      "groundedness": 4,
-      "correctness": 4,
+      "groundedness": 5,
+      "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft maintains a warm, excited tone matching the customer's enthusiasm and provides a direct, actionable link to stay updated, drawing loosely from the precedent of directing users to stay updated on the iPhone X.",
-      "mean_score": 4.25
+      "rationale": "The draft closely follows the precedents by expressing understanding and directing the customer to the Online Sales Support Team, though it cuts off slightly right before the hyperlink placeholder.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "2092700_2092699",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft directly copies a high-quality precedent reply, providing accurate, warm, and actionable guidance by directing the customer to the appropriate team via a link.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately reflects the precedent of directing purchase and availability questions to online sales support, maintaining a helpful tone and clear next steps, though it omits the actual link placeholder present in the source.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "2003017_2003016",
@@ -1885,35 +1885,35 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft directly mirrors the first precedent, offering troubleshooting steps and directing the customer to DM if unresolved, maintaining a helpful and concise tone.",
+      "rationale": "The draft accurately reflects the precedents by offering to take a closer look via DM, maintains a helpful and empathetic tone, and provides a clear next step for the customer.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1196348_1196347",
-      "groundedness": 5,
-      "correctness": 3,
+      "groundedness": 4,
+      "correctness": 4,
       "tone": 5,
-      "actionability": 3,
-      "rationale": "The draft perfectly matches the provided precedent, but the precedent itself lacks the specific link or contact method needed to make it fully actionable and helpful.",
-      "mean_score": 4.0
+      "actionability": 4,
+      "rationale": "The draft borrows the sales team referral from the precedents and maintains a helpful tone, though it omits a placeholder link for 'here'.",
+      "mean_score": 4.25
     },
     {
       "thread_id": "2983592_2983591",
       "groundedness": 5,
-      "correctness": 5,
+      "correctness": 3,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft accurately reflects the precedent by providing the correct information about the release date while maintaining a warm and professional tone, though it could ideally include a link for staying updated.",
-      "mean_score": 4.75
+      "actionability": 2,
+      "rationale": "The draft is perfectly grounded in the first precedent and has a great tone, but lacks a concrete next step or answer regarding the release date.",
+      "mean_score": 3.75
     },
     {
       "thread_id": "1543319_1543318",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft effectively combines elements from the provided precedents to offer a warm, correct, and helpful response by asking clarifying questions.",
-      "mean_score": 4.75
+      "actionability": 5,
+      "rationale": "The draft perfectly matches a provided precedent, provides accurate support guidance, maintains a warm and concise tone, and gives a clear, actionable next step.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "2002928_2002927",
@@ -1921,7 +1921,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately synthesizes the precedents by congratulating the user, offering the correct activation methods, and providing a clear fallback option to DM support.",
+      "rationale": "The draft accurately mirrors the tone and instructions of the precedents by offering tailored help and directing the customer to DM their current country.",
       "mean_score": 5.0
     },
     {
@@ -1930,17 +1930,17 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately matches one of the provided precedents word-for-word and provides a warm, actionable next step for the customer.",
+      "rationale": "The draft accurately reflects the precedent replies, provides correct and actionable guidance, and maintains a warm, professional tone.",
       "mean_score": 5.0
     },
     {
       "thread_id": "1241155_1241154",
-      "groundedness": 3,
-      "correctness": 2,
-      "tone": 4,
-      "actionability": 2,
-      "rationale": "The draft misses the actual link or contact method from the precedents, leaving the customer without a concrete next step despite a friendly tone.",
-      "mean_score": 2.75
+      "groundedness": 4,
+      "correctness": 5,
+      "tone": 5,
+      "actionability": 5,
+      "rationale": "The draft aligns well with the precedent of directing the customer to the sales team, maintaining a helpful and actionable tone.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "2557263_2557262",
@@ -1948,7 +1948,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately mirrors the precedents by acknowledging the situation warmly and directing the customer to the sales team via a link.",
+      "rationale": "The draft closely follows the precedent by offering to take a closer look via DM and asking for the customer's location, maintaining a helpful and empathetic tone.",
       "mean_score": 5.0
     },
     {
@@ -1956,27 +1956,27 @@
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft accurately mirrors the precedent and tone, though the sentence structure at the very end is slightly abrupt before the missing link.",
-      "mean_score": 4.75
+      "actionability": 5,
+      "rationale": "The draft accurately mirrors the structure and guidance of the precedent replies while maintaining a helpful, polite tone and providing a clear next step.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "1596048_1596047",
-      "groundedness": 4,
-      "correctness": 4,
-      "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft blends elements from the precedents well, though it references a link placeholder without providing the actual link.",
-      "mean_score": 4.25
-    },
-    {
-      "thread_id": "2837182_2837181",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to offer a warm, actionable, and correct response directing the customer to DM for assistance.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately reflects the precedent responses by directing the customer to the sales team, though it slightly omits the actual link placeholder.",
+      "mean_score": 4.75
+    },
+    {
+      "thread_id": "2837182_2837181",
+      "groundedness": 3,
+      "correctness": 4,
+      "tone": 5,
+      "actionability": 4,
+      "rationale": "The draft is warm and actionable, but translates the response into Spanish despite precedents being in English and lacking the specific country-location request.",
+      "mean_score": 4.0
     },
     {
       "thread_id": "1298605_1298604",
@@ -1984,52 +1984,52 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft directly adapts the precedent to provide the correct link and a helpful, warm, and actionable next step for the customer.",
+      "rationale": "The draft accurately reflects the precedent for handling pre-order inquiries by directing the customer to the online store with a warm and actionable tone.",
       "mean_score": 5.0
     },
     {
       "thread_id": "371150_371149",
-      "groundedness": 4,
+      "groundedness": 3,
       "correctness": 3,
       "tone": 5,
-      "actionability": 2,
-      "rationale": "The draft is polite and uses precedent phrasing well, but it cuts off the link where the customer can find the information, reducing its actionability and correctness.",
-      "mean_score": 3.5
+      "actionability": 5,
+      "rationale": "The draft offers a helpful next step aligned with the precedent of redirecting the user for order/availability help, though it is written in Hebrew despite the English precedent.",
+      "mean_score": 4.0
     },
     {
       "thread_id": "568394_568393",
-      "groundedness": 5,
+      "groundedness": 3,
       "correctness": 3,
-      "tone": 4,
+      "tone": 5,
       "actionability": 2,
-      "rationale": "The draft accurately uses the precedent text, but telling a customer who already updated to iOS 11.2 that the feature requires it misses the context of the rollout timing.",
-      "mean_score": 3.5
+      "rationale": "The draft captures the general US rollout mentioned in the precedents, but misses specific rollout timing and eligibility details while offering no concrete next steps.",
+      "mean_score": 3.25
     },
     {
       "thread_id": "557814_557812",
       "groundedness": 5,
-      "correctness": 4,
+      "correctness": 5,
       "tone": 5,
-      "actionability": 2,
-      "rationale": "The draft accurately combines information from the precedents with a warm tone, but misses mentioning that the customer also needs to be in the US and fails to provide a next step or DM invitation.",
-      "mean_score": 4.0
+      "actionability": 5,
+      "rationale": "The draft accurately reflects the precedents regarding U.S. availability and rollout, provides a helpful link, and maintains a warm, actionable, and concise tone.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "2675743_2675741",
       "groundedness": 5,
-      "correctness": 3,
+      "correctness": 5,
       "tone": 5,
-      "actionability": 2,
-      "rationale": "The draft accurately reflects the precedent and tone, but lacks the actual link needed to make it actionable.",
-      "mean_score": 3.75
+      "actionability": 5,
+      "rationale": "The draft accurately uses the precedent's language to move the conversation to DMs, maintaining a helpful, warm, and actionable tone.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "556945_556943",
-      "groundedness": 5,
+      "groundedness": 4,
       "correctness": 4,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft borrows standard helpful phrasing from precedents while keeping a warm, concise tone, though it would be stronger with an actual link provided.",
+      "actionability": 5,
+      "rationale": "The draft accurately reflects the precedents by directing the customer to setup instructions and offering a DM for further help while maintaining a warm, concise, and actionable tone.",
       "mean_score": 4.5
     },
     {
@@ -2038,7 +2038,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately reflects the precedents, provides the correct helpful timeline for users in the US, maintains a warm and concise tone, and clearly indicates when the feature will be available.",
+      "rationale": "The draft accurately reflects the precedents regarding the rollout timeline, maintains a warm and helpful tone, and directly addresses the customer's confusion.",
       "mean_score": 4.75
     },
     {
@@ -2047,7 +2047,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately uses the precedent information to explain the rollout timeline and requirements while maintaining a helpful and warm tone.",
+      "rationale": "The draft accurately synthesizes the precedent replies to directly address the user's question with correct, warm, and helpful information.",
       "mean_score": 4.75
     },
     {
@@ -2056,7 +2056,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately reflects the precedent, provides the correct rollout timeline, maintains a warm and concise tone, and clearly indicates when the feature will become available.",
+      "rationale": "The draft accurately combines information from the retrieved precedents to directly and warmly address the customer's issue about Apple Pay Cash rollout.",
       "mean_score": 4.75
     },
     {
@@ -2064,27 +2064,27 @@
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft directly uses the approved precedent to invite the customer to DMs for further assistance with their account-specific issue.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft directly uses the exact phrasing and information from the retrieved precedents to accurately address the customer's iOS 11.2 Apple Pay Cash question with a warm and concise tone.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "570925_570924",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately reflects the precedent by explaining that iOS 11.2 introduces Apple Pay Cash but it is not active yet, while maintaining a helpful tone and a clear next step.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately translates and adapts the retrieved precedents into Spanish while maintaining a warm, helpful tone and clear factual information.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "554726_554725",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 3,
-      "rationale": "The draft accurately reflects the provided precedents and maintains a warm tone, though actionability is limited since the feature is not yet rolled out.",
-      "mean_score": 4.5
+      "actionability": 4,
+      "rationale": "The draft accurately reflects the precedents in Spanish, addressing the rollout timing and iOS requirement warmly and concisely.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "539889_539888",
@@ -2092,7 +2092,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately uses precedent to explain the rollout timeline for iOS 11.2 features with a warm tone, though it could explicitly mention the US requirement already stated by the user.",
+      "rationale": "The draft accurately reflects the precedent and provides a direct, helpful, and appropriately toned answer to the customer's question.",
       "mean_score": 4.75
     },
     {
@@ -2101,35 +2101,35 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately synthesizes the precedents to provide a helpful, warm, and factually correct response about Apple Pay Cash availability.",
+      "rationale": "The draft accurately reflects the retrieved precedent regarding iOS 11.2 and the rollout timing in Spanish while maintaining a helpful and professional tone.",
       "mean_score": 4.75
     },
     {
       "thread_id": "594621_594620",
-      "groundedness": 5,
-      "correctness": 5,
+      "groundedness": 3,
+      "correctness": 2,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft is fully grounded in the retrieved precedents, factually correct, maintains a warm and concise tone, and provides a clear timeline for when the feature will be available.",
-      "mean_score": 4.75
+      "actionability": 3,
+      "rationale": "The draft translates a precedent well, but is factually incorrect for this customer because the customer already has iOS 11.2 installed, making the rollout timing the actual answer rather than the iOS requirement.",
+      "mean_score": 3.25
     },
     {
       "thread_id": "583641_583640",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 3,
-      "rationale": "The draft accurately combines information from the precedents with a warm tone, though it lacks a concrete next step like checking back next week or reaching out via DM.",
-      "mean_score": 4.5
+      "actionability": 4,
+      "rationale": "The draft perfectly matches the retrieved precedents, provides accurate context about the rollout timeline, maintains a warm and concise tone, and lets the customer know when to expect the feature.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "553485_553484",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 5,
-      "rationale": "The draft accurately combines elements from the precedents to provide a warm, correct, and actionable response asking for the customer's location.",
-      "mean_score": 5.0
+      "actionability": 4,
+      "rationale": "The draft accurately combines information from the precedents to provide a helpful, warm, and timely response regarding the rollout of Apple Pay Cash.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "1899440_1899439",
@@ -2137,44 +2137,44 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 5,
-      "rationale": "The draft accurately reflects the precedents by directing the customer to iTunes Store support with a warm, concise tone and clear next step.",
+      "rationale": "The draft accurately reflects the precedents by offering empathetic support and directing the customer to DM via a link, maintaining a warm and actionable tone in Spanish.",
       "mean_score": 5.0
     },
     {
       "thread_id": "546662_546661",
-      "groundedness": 3,
-      "correctness": 3,
+      "groundedness": 5,
+      "correctness": 5,
       "tone": 5,
-      "actionability": 4,
-      "rationale": "The draft uses a friendly tone and provides a helpful link, but it includes a URL not found in the precedents and omits important context about US-only availability and iOS 11.2 rollout timing.",
-      "mean_score": 3.75
+      "actionability": 5,
+      "rationale": "The draft accurately reflects the precedents regarding US availability and iOS 11.2, provides a helpful link, and maintains a warm, professional, and actionable tone in French.",
+      "mean_score": 5.0
     },
     {
       "thread_id": "554773_554772",
       "groundedness": 5,
-      "correctness": 3,
+      "correctness": 5,
       "tone": 5,
-      "actionability": 3,
-      "rationale": "The draft accurately reflects the provided precedents, but the advice is factually outdated since the customer already stated they are on iOS 11.2 and the rollout timing in the precedent conflicts with their current access.",
-      "mean_score": 4.0
+      "actionability": 4,
+      "rationale": "The draft accurately reflects the precedent replies, provides correct information regarding the rollout, uses a warm and concise tone, and lets the customer know they are all set since they already have iOS 11.2.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "549695_549694",
       "groundedness": 5,
       "correctness": 5,
       "tone": 5,
-      "actionability": 3,
-      "rationale": "The draft accurately combines information from the precedents with a warm tone, though it lacks a concrete next step or call to action like the precedent's DM invitation.",
-      "mean_score": 4.5
+      "actionability": 4,
+      "rationale": "The draft accurately translates the precedent for the US rollout of iOS 11.2 features into Spanish with a helpful, warm, and concise tone.",
+      "mean_score": 4.75
     },
     {
       "thread_id": "553591_553590",
       "groundedness": 5,
-      "correctness": 3,
+      "correctness": 5,
       "tone": 5,
-      "actionability": 2,
-      "rationale": "The draft accurately uses the precedent regarding iOS 11.2 rollout timing, but tells a customer who already has iOS 11.2 that they require it, while missing the DM escalation step found in other precedents.",
-      "mean_score": 3.75
+      "actionability": 3,
+      "rationale": "The draft accurately reflects the precedents and is helpful, but lacks a concrete next step or direction for the customer regarding the rollout timing.",
+      "mean_score": 4.5
     },
     {
       "thread_id": "552120_552119",
@@ -2182,7 +2182,7 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately reflects the precedents regarding the US rollout timing while maintaining a warm, concise, and helpful tone.",
+      "rationale": "The draft accurately combines information from the precedents to explain the rollout timeline for Apple Pay Cash while maintaining a warm and concise tone.",
       "mean_score": 4.75
     },
     {
@@ -2191,16 +2191,16 @@
       "correctness": 5,
       "tone": 5,
       "actionability": 4,
-      "rationale": "The draft accurately reflects the precedent indicating the feature will roll out early next week for US users on iOS 11.2, maintaining a helpful and warm tone.",
+      "rationale": "The draft accurately translates the precedent reply into French while maintaining the correct information, warm tone, and helpful details.",
       "mean_score": 4.75
     }
   ],
   "judge_summary": {
-    "mean_groundedness": 4.898989898989899,
-    "mean_correctness": 4.7727272727272725,
-    "mean_tone": 4.954545454545454,
+    "mean_groundedness": 4.7272727272727275,
+    "mean_correctness": 4.742424242424242,
+    "mean_tone": 4.883838383838384,
     "mean_actionability": 4.606060606060606,
-    "mean_overall": 4.808080808080808
+    "mean_overall": 4.73989898989899
   },
   "human_agreement": null,
   "failure_examples": [
@@ -2208,7 +2208,7 @@
       "thread_id": "1236865_1236864",
       "customer_msg": "iOS 11 is buggy. Please fix it. 😩",
       "true_intent": "device_troubleshooting",
-      "pred_intent": "general_complaint",
+      "pred_intent": "out_of_scope",
       "true_escalation": "auto_handle",
       "pred_escalation": "escalate"
     },
@@ -2250,8 +2250,8 @@
       "thread_id": "1236865_1236864",
       "message": "iOS 11 is buggy. Please fix it. 😩",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.6263347268104553,
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.9105302691459656,
       "predicted_escalation": "escalate"
     },
     {
@@ -2259,7 +2259,7 @@
       "message": "your new IOS update is complete fucking dog shit. Ever since i downloaded this bs my phone hasnt work properly. I want the old 1 bak",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -2267,31 +2267,31 @@
       "message": "My iPhone 6 went dead while I was transferring it to a new iCloud account? Any obvious reasons as to why this might have happened? Never seen an iPhone going dead and it was supposed to be 2 years old (bought it 2 years ago). Thanks",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.5616323947906494,
+      "max_retrieval_similarity": 0.4784070551395416,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2422587_2422584",
       "message": "Ever since the update my reminders display on my lock screen all the time. Even before and after they’re due. And even when marked completed. What’s the deal #AppleSupport #iPhoneUpdate",
       "true_escalation": "escalate",
-      "intent_confidence": 0.98,
-      "max_retrieval_similarity": 0.5878260135650635,
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.75429767370224,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "622711_622712",
       "message": "11.1.2 (15B202). USA",
       "true_escalation": "escalate",
-      "intent_confidence": 0.99,
-      "max_retrieval_similarity": 0.787554919719696,
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.8464845418930054,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "84232_84230",
       "message": "fix that bullshit when I type “I” I don’t wanna see no more question marks",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.99,
-      "max_retrieval_similarity": 0.8258683085441589,
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 0.858582615852356,
       "predicted_escalation": "escalate"
     },
     {
@@ -2299,7 +2299,7 @@
       "message": "how do I upgrade my notes? 😩",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.36736199259757996,
+      "max_retrieval_similarity": 0.3132529556751251,
       "predicted_escalation": "escalate"
     },
     {
@@ -2307,7 +2307,7 @@
       "message": "Why does my iphone 6s plus turn into an unresponsive piece of shit when it reaches at or below 30% battery? 🙄🙄",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.49495700001716614,
+      "max_retrieval_similarity": 0.530210554599762,
       "predicted_escalation": "escalate"
     },
     {
@@ -2315,7 +2315,7 @@
       "message": "Hi, please can someone help me sort out my MacBook Air? Having problems setting it up 😫 #day3andcounting #help",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.3404845595359802,
+      "max_retrieval_similarity": 0.41028493642807007,
       "predicted_escalation": "escalate"
     },
     {
@@ -2323,7 +2323,7 @@
       "message": "Is it a common glitch that apps start to update but absolutely will not progress until the phone is shut down completeley and restarted? Bit frustrating to have greyed out unusable apps now all the time.",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.6413275003433228,
+      "max_retrieval_similarity": 0.6089839339256287,
       "predicted_escalation": "escalate"
     },
     {
@@ -2331,15 +2331,15 @@
       "message": "yo I have purchased movies via Apple TV why is it taking so long to load?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.4076426327228546,
+      "max_retrieval_similarity": 0.4868793785572052,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "366045_366044",
       "message": "Anybody else experiencing signal loss on the iPhone 8s after the latest iOS 11.2 update?",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.99,
-      "max_retrieval_similarity": 0.6938780546188354,
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 0.7451878190040588,
       "predicted_escalation": "escalate"
     },
     {
@@ -2347,7 +2347,7 @@
       "message": "ever since upgrading to high sierra, outlook does not work. Also, I took in for new keyboard and now it freezes at login. MBP",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.5582295656204224,
+      "max_retrieval_similarity": 0.6188771724700928,
       "predicted_escalation": "escalate"
     },
     {
@@ -2355,7 +2355,7 @@
       "message": "Dear your latest update has officially rendered my #iPhone useless - do you not test this stuff anymore? #iPhoneproblems",
       "true_escalation": "escalate",
       "intent_confidence": 0.9,
-      "max_retrieval_similarity": 0.8010253310203552,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "escalate"
     },
     {
@@ -2363,15 +2363,15 @@
       "message": "yo why i cant see the letter “ I “ on here when others type it",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.8622534871101379,
+      "max_retrieval_similarity": 0.7342880964279175,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1113178_1113177",
       "message": "My phone just like reset itself and battery went down like 15% wtf",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.45,
-      "max_retrieval_similarity": 0.7670917510986328,
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.6795837879180908,
       "predicted_escalation": "escalate"
     },
     {
@@ -2379,7 +2379,7 @@
       "message": "\"We need to arrange three separate repairs - One for the left AirPod, one for the right AirPod and one for the case\"",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.4352540671825409,
+      "max_retrieval_similarity": 0.17772619426250458,
       "predicted_escalation": "escalate"
     },
     {
@@ -2387,7 +2387,7 @@
       "message": "Thank you! I have the latest IOS, I’m not sure when it did happen. I notice today.",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.3912857472896576,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "escalate"
     },
     {
@@ -2395,7 +2395,7 @@
       "message": "Anyone know if i can bring this back to the Apple store and they give me new ones?",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.4853386878967285,
+      "max_retrieval_similarity": 0.5417309403419495,
       "predicted_escalation": "escalate"
     },
     {
@@ -2403,7 +2403,7 @@
       "message": "Hey Why has my iPhone 5s stopped working properly since the update?!?😡😡 I DEMAND ANSWERS!! or a new phone plz",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.7352539896965027,
+      "max_retrieval_similarity": 0.8375682234764099,
       "predicted_escalation": "escalate"
     },
     {
@@ -2411,7 +2411,7 @@
       "message": "Hey , at your suggestion I installed High Sierra, and it destroyed the Finder's sidebar. How can I get it back?",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.5111222863197327,
+      "max_retrieval_similarity": 0.7613850831985474,
       "predicted_escalation": "escalate"
     },
     {
@@ -2419,7 +2419,7 @@
       "message": "my I️ keeps changing into a random ? Why? 😭",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.99,
-      "max_retrieval_similarity": 0.6434116363525391,
+      "max_retrieval_similarity": 0.6276238560676575,
       "predicted_escalation": "escalate"
     },
     {
@@ -2427,7 +2427,7 @@
       "message": "I can’t disable &amp; delete Siri from my iCloud. It just does nothing...",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.38064515590667725,
+      "max_retrieval_similarity": 0.3911365866661072,
       "predicted_escalation": "escalate"
     },
     {
@@ -2435,7 +2435,7 @@
       "message": "Since downloading new IOS on my iphone6, I'm not getting any app notifications. Help! I want my CNN and ENews",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.5779277086257935,
+      "max_retrieval_similarity": 0.7156050801277161,
       "predicted_escalation": "escalate"
     },
     {
@@ -2443,15 +2443,15 @@
       "message": "fucking fix this",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.7228072881698608,
+      "max_retrieval_similarity": 0.8945081233978271,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1732571_1732570",
       "message": "Thanks for making my phone and iPad just a little bit worse with iOS 11. Things that used to work now have problems...",
       "true_escalation": "escalate",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.8384984731674194,
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "escalate"
     },
     {
@@ -2459,15 +2459,15 @@
       "message": "Hmmm...my High Sierra upgrade isn’t exactly going swimmingly. WTH ? #HighSierra #FAIL",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.6649240255355835,
+      "max_retrieval_similarity": 0.7509636878967285,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1449167_1449166",
       "message": "fix this bullshit",
       "true_escalation": "escalate",
-      "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.27253901958465576,
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.9126415252685547,
       "predicted_escalation": "escalate"
     },
     {
@@ -2475,23 +2475,23 @@
       "message": "come on!! Battery drain on 7+ is horrible with iOS 11.0.3!!! Using low power mode and still watching the phone die fast.",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.99,
-      "max_retrieval_similarity": 0.8494235277175903,
+      "max_retrieval_similarity": 0.8656730651855469,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2361620_2361621",
       "message": "I won't update to iOS 11, for now. It's giving a lot of problems — such as battery drain issues — to all iPhones and I don't want mine to get even worse than it already is after iOS 10. This began to happen after restoring, I don't think that not having iOS 11 is the cause of it.",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.8336704969406128,
+      "intent_confidence": 0.9,
+      "max_retrieval_similarity": 0.8292009830474854,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1821314_1821313",
       "message": "Hey , IOS 11 sucks. My battery drains in 5 minutes and the screen keeps getting stuck in landscape mode. Update please?",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -2499,54 +2499,54 @@
       "message": "Dear why’d you make the new update on iPhone so it drains batteries and is slow and laggy? P.S. used about 8% on this tweet! #apple",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.7977780103683472,
+      "max_retrieval_similarity": 0.8377957344055176,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2054361_2054360",
       "message": "please fix these bugs with iOS11! It was all to ramble until I had it glitch on iPhone but with on iPad! #unbearable",
       "true_escalation": "escalate",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.9,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1993564_1993563",
       "message": "u better fix my i’s",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.7526537179946899,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2080137_2080136",
       "message": "Hey the lastest #iOS11 drains my battery in my 7 like mad. Fix this. Seriously. FIX IT.",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.99,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.9128396511077881,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1815209_1815208",
       "message": "Hi can you fix my phone please",
       "true_escalation": "escalate",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.9133423566818237,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.843707799911499,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1445545_1445544",
       "message": "I’m sick of these question marks",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8888302445411682,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2980232_2980231",
       "message": "tell me how to revert back to IOS 10. IOS 11 has made me want to get an android",
       "true_escalation": "escalate",
-      "intent_confidence": 0.65,
+      "intent_confidence": 0.85,
       "max_retrieval_similarity": 1.0,
       "predicted_escalation": "escalate"
     },
@@ -2554,16 +2554,16 @@
       "thread_id": "2076062_2076061",
       "message": "my phone is a mess since the iOS 11 updates. 🙄The “bug fixes” have fixed very little.",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.8376228213310242,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "413744_413743",
       "message": "fuuuuuuuccccccckkkkkkk you &amp; your battery draining stupidass shit iOS 11 update!",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -2571,7 +2571,7 @@
       "message": ". I️ want you to fix this please",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.8089346885681152,
+      "max_retrieval_similarity": 0.9121671319007874,
       "predicted_escalation": "escalate"
     },
     {
@@ -2579,8 +2579,8 @@
       "message": "Hey #iOS11 #batterylife sucks! I’m losing 35% battery in the time it takes to do a 4 mile run. #WTF Fix this or I’ll find a new phone",
       "true_escalation": "escalate",
       "intent_confidence": 0.99,
-      "max_retrieval_similarity": 0.7968758344650269,
-      "predicted_escalation": "escalate"
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "168873_168872",
@@ -2594,24 +2594,24 @@
       "thread_id": "2014852_2014851",
       "message": "I want to know why this keeps happening when I️ type “I️”. Like why does this “A?” Keep coming up?! How do I️ fix it",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.99,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 0.8425567150115967,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2283809_2283811",
       "message": "I see this email looks real",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.9999999403953552,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8220755457878113,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "670636_670635",
       "message": "I need to speak to someone asap about an email I received. I need to know if it's fraud or not. It's really important",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.8551660180091858,
+      "max_retrieval_similarity": 0.7389490008354187,
       "predicted_escalation": "escalate"
     },
     {
@@ -2627,23 +2627,23 @@
       "message": "hello, is this a scam?",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.9138095378875732,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8787696361541748,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "853177_853175",
       "message": "I received this suspicious e-mail. Is this an phishing email?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8482885360717773,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1172244_1172246",
       "message": "I received this email and i want to know if is real or fraud. Thanks",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.000000238418579,
+      "max_retrieval_similarity": 0.7630544900894165,
       "predicted_escalation": "escalate"
     },
     {
@@ -2651,30 +2651,30 @@
       "message": "hello, with all the phishing emails I receive, wondering if this is an authentic notice",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8033022880554199,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1685198_1685197",
       "message": "- I’ve had an email from Apple Support but I don’t think it’s a genuine email?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8840369582176208,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2631620_2631619",
       "message": "How do I fix my disabled Apple ID? #help 🙏",
       "true_escalation": "escalate",
-      "intent_confidence": 0.98,
-      "max_retrieval_similarity": 1.0,
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "1655469_1655468",
       "message": "hi, could you tell me if an email is a scam. It doesn’t look real to me but need to make sure #pleasehelp",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.98,
+      "intent_confidence": 0.95,
       "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
@@ -2682,32 +2682,32 @@
       "thread_id": "109020_109019",
       "message": "is iCloud down? I can't sign in",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.85,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.6532237529754639,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "449466_449465",
       "message": "this is a fake email right",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.8183819055557251,
-      "predicted_escalation": "escalate"
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "483198_483197",
       "message": "Someone help pls lmao I changed my Apple ID weeks ago and it won't let me sign out w/o entering the password which doesn't work bc different email 🙃",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8626497387886047,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1898268_1898267",
       "message": "is this a legit email or is it a phishing email?",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -2715,7 +2715,7 @@
       "message": "good morning I have a problem with resetting my Apple ID",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.99,
-      "max_retrieval_similarity": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -2723,31 +2723,31 @@
       "message": "Anyone else get this email? is this a scam?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.892261803150177,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "711664_711663",
       "message": "is this email as bogus as I think it is?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
+      "max_retrieval_similarity": 1.000000238418579,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "2955499_2955498",
       "message": "I just received an email from “apple support” instructing me to verify my account through a link embedded in a pdf. Then asks for ALL my personal info. Is this a spoof scam?",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.98,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.7434754967689514,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2805964_2805963",
       "message": "Nearly fell for this Phishing email. Glad I checked the Sent From email id",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
+      "max_retrieval_similarity": 1.000000238418579,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -2755,8 +2755,8 @@
       "message": "is this a real mail from you? It was sent from __email__",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8938684463500977,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2552294_2552293",
@@ -2771,15 +2771,15 @@
       "message": "i’ve just recieve this email. Is it true and safe? Thanks",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8095648288726807,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "620187_620186",
       "message": "brand new iPhone 8+ and all of my group chat messages come to me like this.... tried a lot of different settings and restarts, still nothing. The group gets my texts, but I️ don’t receive theirs. #iPhone8Plus",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.7587110996246338,
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.5157701969146729,
       "predicted_escalation": "escalate"
     },
     {
@@ -2787,31 +2787,31 @@
       "message": "my photos aren’t loading and have a cloud in the corner... tried to delete and they all reappear, so tired of this craziness",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.7382351160049438,
+      "max_retrieval_similarity": 0.8245224952697754,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2410138_2410136",
       "message": "Why won’t my phone download apps ?",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.9045994281768799,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.739151120185852,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2949626_2949624",
       "message": "imessage can't be activated after sign out and sign in...",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.8137320280075073,
+      "max_retrieval_similarity": 0.43505650758743286,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2441834_2441832",
       "message": "my imessage isn’t working my messages are not going through i turned it off and turned it back on and its still not working..",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.99,
-      "max_retrieval_similarity": 0.8111722469329834,
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.48194611072540283,
       "predicted_escalation": "escalate"
     },
     {
@@ -2819,40 +2819,40 @@
       "message": "Why is not letting me update my apps unless I update my payment options",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.4528820514678955,
+      "max_retrieval_similarity": 0.8437138795852661,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2261502_2261501",
       "message": "my photos are not transferring to my new iPhone 8 Plus . Backed up from iCloud 3 times .",
       "true_escalation": "escalate",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.7763998508453369,
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.6197665929794312,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1623857_1623856",
       "message": "my phone keeps telling me I have no more storage yet i have been deleting apps and files...help!",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.85,
-      "max_retrieval_similarity": 1.000000238418579,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.603027880191803,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1938597_1938596",
       "message": "what is the issue with receiving group text? Mine just stops receiving messages and no idea why.",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.32912272214889526,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2309238_2309237",
       "message": "so for one particular person I can’t seem to send iMessages, and she says when I send them as regular text they never deliver 🤔",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.3272039592266083,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1807634_1807633",
@@ -2867,55 +2867,55 @@
       "message": "please give me back the 1.7 gb of photos. You can see, there are no photos in icloud 😒 #icloud",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.6180634498596191,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1943709_1943708",
       "message": "why did all of my messages disappear?",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.6125342845916748,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1693444_1693443",
       "message": "All my messages just erased what is going on 🤔",
       "true_escalation": "escalate",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.637389600276947,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2040287_2040286",
       "message": "My headphones have a short. Please send me a new pair",
       "true_escalation": "escalate",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.32514721155166626,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2081198_2081197",
       "message": "all my pictures are gone 😭😭😭 please help me get them back.",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.9208444356918335,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "686566_686565",
       "message": "App Store not working for me either",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.886692464351654,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1243398_1243397",
       "message": "So I updated my phone and all my pictures are gone 🤔 really",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.6606353521347046,
+      "max_retrieval_similarity": 0.8070864677429199,
       "predicted_escalation": "escalate"
     },
     {
@@ -2924,22 +2924,22 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2148110_2148109",
       "message": "my phone just deleted over 9K pictures from my camera roll. If this is some sick joke to get me to by the new iPhone, , it’s never happening again",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.7760009765625,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1940102_1940101",
       "message": ". explain!! what you mean “iphone storage full”??",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.31606894731521606,
+      "max_retrieval_similarity": 0.34438225626945496,
       "predicted_escalation": "escalate"
     },
     {
@@ -2947,8 +2947,8 @@
       "message": "Uh all of my photos are gone from my library",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.7712349891662598,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2887404_2887403",
@@ -2963,7 +2963,7 @@
       "message": "ITS BEEN A PAIN,TO APPLY MY APPLE CARE GUARANTEE IN MÉXICO,ALREADY TALK TO 4 PERSONS IN APPLE AND I CAN HAVE AN ANSWER!!",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.6997491717338562,
+      "max_retrieval_similarity": 0.6557800769805908,
       "predicted_escalation": "escalate"
     },
     {
@@ -2971,14 +2971,14 @@
       "message": "please tell me how to fix the new podcast update. How to mark podcasts as listened, how to get new podcasts to the top of listen now, and to get it from saying every podcast is ‘unavailable’. What did you do with this app?",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.811366081237793,
+      "max_retrieval_similarity": 0.7903674840927124,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "974463_1875343",
       "message": "I used to be a very old customer with the fairview retail but im never going their again! Her name is Jaclyn btw. And her manager is worse..",
       "true_escalation": "escalate",
-      "intent_confidence": 0.95,
+      "intent_confidence": 0.99,
       "max_retrieval_similarity": 1.0,
       "predicted_escalation": "escalate"
     },
@@ -2986,8 +2986,8 @@
       "thread_id": "652244_652242",
       "message": "Thanks for ruining podcasts, this app is unusable after update!",
       "true_escalation": "escalate",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.8821790218353271,
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.8409256935119629,
       "predicted_escalation": "escalate"
     },
     {
@@ -2995,8 +2995,8 @@
       "message": "New iOS 11 Podcast App is terrible.. Can’t go back to last listened and doesn’t start next episode…",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "693971_693970",
@@ -3011,15 +3011,15 @@
       "message": "fix the podcast app, ever since I updated my phone it doesn’t work correctly!",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.6145892143249512,
+      "max_retrieval_similarity": 0.6229240894317627,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2734387_2734386",
       "message": "The service at Stratford Westfield is piss poor! Get better service at a chicken and chip shop",
       "true_escalation": "escalate",
-      "intent_confidence": 1.0,
-      "max_retrieval_similarity": 0.9999999403953552,
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -3027,7 +3027,7 @@
       "message": "iOS 11.0.3 downloaded today... now I can’t play podcasts over Bluetooth in my car. Had no problem doing that yesterday.",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.98,
-      "max_retrieval_similarity": 0.6911464333534241,
+      "max_retrieval_similarity": 0.7252310514450073,
       "predicted_escalation": "escalate"
     },
     {
@@ -3035,7 +3035,7 @@
       "message": "Lol. I’m just really happy they destroyed the podcast app. I was really hoping they’d make it more difficult. Thanks !!!",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -3050,31 +3050,31 @@
       "thread_id": "1434433_1434432",
       "message": "please fix the Podcasts app. The UI in the iOS11 version is truly awful. Thank you!",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.98,
-      "max_retrieval_similarity": 1.0,
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "1887339_1887338",
       "message": "highly disappointed by services of Apple. They do not value their customers at all.",
       "true_escalation": "escalate",
-      "intent_confidence": 0.99,
-      "max_retrieval_similarity": 1.0,
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "722479_722478",
       "message": "Wow shocking customer service from apple not a fan!!",
       "true_escalation": "escalate",
-      "intent_confidence": 0.99,
-      "max_retrieval_similarity": 1.0,
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "2110802_2699034",
       "message": "how you were able to make the podcast app so shitty in the newest update is incredibly impressive.",
       "true_escalation": "escalate",
-      "intent_confidence": 0.98,
+      "intent_confidence": 0.95,
       "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
@@ -3082,24 +3082,24 @@
       "thread_id": "56944_56943",
       "message": "I hate the update to the podcast app on iOS11. The interface is really confusing and unorganized",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.98,
-      "max_retrieval_similarity": 0.9034598469734192,
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "2020765_2020764",
       "message": "is one of the WORST customer service experiences I have ever had!",
       "true_escalation": "escalate",
-      "intent_confidence": 0.99,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.8909950256347656,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1961601_1961600",
       "message": "shocked at the awful customer service I’ve received for my recent purchase.",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.795224666595459,
+      "max_retrieval_similarity": 0.7945706844329834,
       "predicted_escalation": "escalate"
     },
     {
@@ -3131,22 +3131,22 @@
       "message": "It works now, thx!",
       "true_escalation": "auto_handle",
       "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8384581804275513,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1765059_1765061",
       "message": "Well that didn’t work.",
       "true_escalation": "escalate",
-      "intent_confidence": 0.45,
-      "max_retrieval_similarity": 0.2790573835372925,
-      "predicted_escalation": "escalate"
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "360745_360744",
       "message": "Thanks!",
       "true_escalation": "auto_handle",
-      "intent_confidence": 1.0,
+      "intent_confidence": 0.99,
       "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
@@ -3154,24 +3154,24 @@
       "thread_id": "1683425_1683424",
       "message": "Thanks!!!",
       "true_escalation": "auto_handle",
-      "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.0000001192092896,
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "2111422_2111424",
       "message": "didn't work",
       "true_escalation": "escalate",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.7926986217498779,
-      "predicted_escalation": "escalate"
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "1458847_1458849",
       "message": "Thanks it worked eventually",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.99,
-      "max_retrieval_similarity": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -3187,39 +3187,39 @@
       "message": "That worked - thank you!!!",
       "true_escalation": "auto_handle",
       "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.0000001192092896,
+      "max_retrieval_similarity": 0.9686345458030701,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "550810_550811",
       "message": "Worked like a charm, thank you.",
       "true_escalation": "auto_handle",
-      "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.755692720413208,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2483759_2483758",
       "message": "wow that worked thank u",
       "true_escalation": "auto_handle",
-      "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.8272924423217773,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "107364_107366",
       "message": "Thanks for the help! It’s working",
       "true_escalation": "auto_handle",
       "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.851819634437561,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2593005_2593004",
       "message": "Thank you so much 😭",
       "true_escalation": "auto_handle",
-      "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.0000001192092896,
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -3235,87 +3235,87 @@
       "message": "I️t still didn’t work :/",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.7568031549453735,
-      "predicted_escalation": "escalate"
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "1834659_1834661",
       "message": "It worked! Thanks a lot! 🙏🏽",
       "true_escalation": "auto_handle",
       "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.0000001192092896,
+      "max_retrieval_similarity": 0.9999998807907104,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "209067_209069",
       "message": "I’ve tried that. And it still doesn’t work.",
       "true_escalation": "escalate",
-      "intent_confidence": 0.9,
-      "max_retrieval_similarity": 0.8822962045669556,
-      "predicted_escalation": "escalate"
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "1628910_1628912",
       "message": "Tried that and it didn’t work!",
       "true_escalation": "escalate",
-      "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.8195515871047974,
-      "predicted_escalation": "escalate"
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "2619747_2619748",
       "message": "it’s working again! thank you!",
       "true_escalation": "auto_handle",
-      "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.000000238418579,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.8050112128257751,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1712030_1712032",
       "message": "thanks I think that worked!",
       "true_escalation": "auto_handle",
-      "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.000000238418579,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.911365270614624,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1605507_1605506",
       "message": "Thank you! It worked 👍🏼",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.99,
-      "max_retrieval_similarity": 1.000000238418579,
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "382425_382424",
       "message": "Didn’t work. Still does I️t.",
       "true_escalation": "escalate",
-      "intent_confidence": 0.9,
-      "max_retrieval_similarity": 0.8349902629852295,
-      "predicted_escalation": "escalate"
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "292929_292931",
       "message": "Thanks so much for the response.",
       "true_escalation": "auto_handle",
-      "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.000000238418579,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.7616879940032959,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2837185_2837183",
       "message": "why is that the music I downloaded from my computer into my iPhone can’t play? I have Apple Music and any song it can’t match in your library it prevents me from playing songs.",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.8375318646430969,
+      "max_retrieval_similarity": 0.8421255350112915,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1299027_1299025",
       "message": "My music app keeps crashing and now won’t even open",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.48747777938842773,
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.8054426908493042,
       "predicted_escalation": "escalate"
     },
     {
@@ -3323,7 +3323,7 @@
       "message": "why can’t my sister listen to music she bought on itunes when i have individual apple music ?",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.7168029546737671,
+      "max_retrieval_similarity": 0.734757125377655,
       "predicted_escalation": "escalate"
     },
     {
@@ -3331,7 +3331,7 @@
       "message": "I’m still running into problems with accessing my Apple Music. Help!",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.8657727241516113,
+      "max_retrieval_similarity": 0.9136896729469299,
       "predicted_escalation": "escalate"
     },
     {
@@ -3339,7 +3339,7 @@
       "message": "My music won’t show up in my control center. I have to actually go into the Apple Music app just to pause the shit and it’s pissing me off",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.43669790029525757,
+      "max_retrieval_similarity": 0.8156427145004272,
       "predicted_escalation": "escalate"
     },
     {
@@ -3347,7 +3347,7 @@
       "message": "Just updated my Music Library and music app is crashing when opening it, why?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.5709537267684937,
+      "max_retrieval_similarity": 0.56979900598526,
       "predicted_escalation": "escalate"
     },
     {
@@ -3355,23 +3355,23 @@
       "message": "Apple Music isn’t working. Already a member but I can’t access the songs I’ve downloaded from the service.",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 1.000000238418579,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2899041_2899040",
       "message": "for sure just pissed me off this morning! How is it that I verified my student account multiple times for Apple Music and you debit my account for 9.99?!! I need answers and I need them now!",
       "true_escalation": "escalate",
       "intent_confidence": 0.98,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.7400749921798706,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "592241_592240",
       "message": "every time I get a Snapchat it’s stops my music - pandora and owned music, doesn’t matter how I’m listening - help",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.39612603187561035,
+      "max_retrieval_similarity": 0.4472036063671112,
       "predicted_escalation": "escalate"
     },
     {
@@ -3379,31 +3379,31 @@
       "message": "the new update deleted all my music... thanks",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.6019521951675415,
+      "max_retrieval_similarity": 0.5864874124526978,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "33351_33350",
       "message": "Why am I loosing songs I’ve downloaded on Apple Music. It won’t let me download them again either. Greyed our on playlists too",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.4640970826148987,
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.8485181927680969,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1918492_1918491",
       "message": "my apple music is not working. It is asking my to subscribe even though i am already a member. And yes you have taken my £££",
       "true_escalation": "escalate",
-      "intent_confidence": 1.0,
-      "max_retrieval_similarity": 0.8322065472602844,
-      "predicted_escalation": "escalate"
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "1906848_1906847",
       "message": "Hey, I'm having trouble with my iTunes account. I can't log in to my account, I've tried changing it's password and +",
       "true_escalation": "escalate",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.6589205265045166,
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.6665309071540833,
       "predicted_escalation": "escalate"
     },
     {
@@ -3411,7 +3411,7 @@
       "message": "I pre ordered an album on iTunes but it’s not showing up in my music library even though it’s been released how can I fix this?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -3419,7 +3419,7 @@
       "message": "was looking through my music when I noticed 1 was missing, went to the album on iTunes and was unable to redownload",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
+      "max_retrieval_similarity": 0.9999999403953552,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -3427,7 +3427,7 @@
       "message": "WTF is going with #Itunes? I can’t add music to my playlists. I’m so sick of #AppleProducts not working!",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.4697297513484955,
+      "max_retrieval_similarity": 0.7608113884925842,
       "predicted_escalation": "escalate"
     },
     {
@@ -3435,22 +3435,22 @@
       "message": "Every time I get a notification from or open up snapchat my music stops and I have to go back and press play again.",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.38941091299057007,
+      "max_retrieval_similarity": 0.5255213975906372,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1790843_1790842",
       "message": "i can’t download or add songs to my playlist on apple music? help?",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.85,
-      "max_retrieval_similarity": 1.0000001192092896,
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "2237131_2237130",
       "message": "Is apple trying to kidding me?? I already payed for all the singels and now i have to pay for the full album again?? Can sm please help me?? #reputation",
       "true_escalation": "escalate",
-      "intent_confidence": 0.98,
+      "intent_confidence": 0.99,
       "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
@@ -3458,8 +3458,8 @@
       "thread_id": "1273569_1273568",
       "message": "I’m having a problem with Apple Music. I’m using Family Sharing, money was taken out Oct 24, but it’s saying to chokse a plan",
       "true_escalation": "escalate",
-      "intent_confidence": 0.98,
-      "max_retrieval_similarity": 1.0,
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -3467,7 +3467,7 @@
       "message": "You charged me for Apple Music but didn’t even tell me my trial was over. I want a refund",
       "true_escalation": "auto_handle",
       "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -3475,7 +3475,7 @@
       "message": "my apple music app wont load everytime i click it",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.546521008014679,
+      "max_retrieval_similarity": 0.830788254737854,
       "predicted_escalation": "escalate"
     },
     {
@@ -3483,7 +3483,7 @@
       "message": "so saddened by the handling of my moms iPhone X preorder. She’s gotten no reason on why her phone is now being shipped back to the warehouse. It was scheduled to be delivered Monday. Now due to the return request from it’s going to be 10-14 days.",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.8326786756515503,
+      "max_retrieval_similarity": 0.805528998374939,
       "predicted_escalation": "escalate"
     },
     {
@@ -3491,15 +3491,15 @@
       "message": "my iPhone X keeps getting a \"Could Not Activate iPhone\" error. Is the activation server down?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.6350845694541931,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1397313_1397311",
       "message": "Hi 👋 When will the iPhone X be available at stores?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.8936083316802979,
+      "max_retrieval_similarity": 0.8971238136291504,
       "predicted_escalation": "escalate"
     },
     {
@@ -3507,7 +3507,7 @@
       "message": "I think pre-ordering iPhone X was not a good idea. My phone was shipped on 11/9/17. It’s still in China 😔. Not likings this wait time. Apple is selling phones in 50 countries but pre-orders are not fulfilled yet. What is the priority on orders?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -3515,7 +3515,7 @@
       "message": "This morning y'all couldn't reach my carrier when I tried to preorder. It said I had a reserve but no email yet?! #iPhoneX",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.7851679921150208,
+      "max_retrieval_similarity": 0.7332968711853027,
       "predicted_escalation": "escalate"
     },
     {
@@ -3523,7 +3523,7 @@
       "message": "I can’t order my iPhone X from my reservation because I hadn’t changed the billing address to my ATT account from PO Box. Help",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.7449651956558228,
+      "max_retrieval_similarity": 0.6294921636581421,
       "predicted_escalation": "escalate"
     },
     {
@@ -3531,15 +3531,15 @@
       "message": "Dam I preordered my I phone x on the Oct 27 at exactly 2:01.And it still hasn't came. Now saying you guys are out of stok",
       "true_escalation": "escalate",
       "intent_confidence": 0.99,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.6365488767623901,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1535596_1535595",
       "message": "Hey what date/time AEDT can i order my new Iphone X in Australia? CANNOT WAIT",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.737034797668457,
+      "max_retrieval_similarity": 0.7995659112930298,
       "predicted_escalation": "escalate"
     },
     {
@@ -3547,15 +3547,15 @@
       "message": "If I didn’t pre order the iPhone X, will I be able to get it by December if I order it once it comes out?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8080762624740601,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2003017_2003016",
       "message": "Unable to activate iPhone X. 20+ attempts so far. AT&amp;T says my SIM is active. Help!",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.783794641494751,
+      "max_retrieval_similarity": 0.5783714652061462,
       "predicted_escalation": "escalate"
     },
     {
@@ -3563,40 +3563,40 @@
       "message": "will i get an option to select 'unlocked and carrier free' iPHONE X on the pre-order day? OR when can we expect that option?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8023935556411743,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2983592_2983591",
       "message": "we already have the prices for iPhone X here in Brazil, can you guys give us a release date or at least a window?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.7747350931167603,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1543319_1543318",
       "message": "I cannot activate my iPhone X. Any ideas?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.941878080368042,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.6796525716781616,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2002928_2002927",
       "message": "Help!!! Keep getting \"activation server is temporarily unavailable\" Trying to set up iPhoneX. Is there another way??",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.615953266620636,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "46574_46573",
       "message": "hello, my iPhone X order says it’s “prepearing to ship” since saturday and it still hasnt changed it’s status.. what happened?",
       "true_escalation": "escalate",
       "intent_confidence": 0.99,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.7830104827880859,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1241155_1241154",
@@ -3611,8 +3611,8 @@
       "message": "how the hell do I STILL not have my iPhone X?! Preordered at 3:10am eastern time on preorder day and it’s in friggin South Korea while people who are preordering two days ago are receiving them already. This is ridiculous.",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.7886909246444702,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1388296_1388295",
@@ -3627,16 +3627,16 @@
       "message": "Hey, I would like to buy iPhone X next week. Is it possible?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.9999999403953552,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.7926288843154907,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2837182_2837181",
       "message": "Waiting over a month for my #iPhonex meant to come Friday no iPhone, meant to come today still not shipped. #Impatient",
       "true_escalation": "escalate",
-      "intent_confidence": 0.99,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.7790857553482056,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1298605_1298604",
@@ -3650,32 +3650,32 @@
       "thread_id": "371150_371149",
       "message": "may you help me , i would like to know when the IPhone x arrive to Israel thank you",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.6598398685455322,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "568394_568393",
       "message": "I updated to iOS11.2 but I don't see Apple Pay Cash... 🤔",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.99,
-      "max_retrieval_similarity": 0.9006708264350891,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 0.9149575233459473,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "557814_557812",
       "message": "I just updated to iOS 11.2 and I don’t see Apple Pay Cash feature anywhere. Help!!!!!",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.98,
-      "max_retrieval_similarity": 0.9158917665481567,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.9315323233604431,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2675743_2675741",
       "message": "Please can I have some help with Apple Pay? The bank says my card should be activated but it’s not?",
       "true_escalation": "escalate",
-      "intent_confidence": 0.75,
-      "max_retrieval_similarity": 0.8373528718948364,
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.5617424249649048,
       "predicted_escalation": "escalate"
     },
     {
@@ -3683,7 +3683,7 @@
       "message": "is it only me who can’t figure out how to add Apple Pay cash ? Followed all instructions listed online but none work",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.7908682823181152,
+      "max_retrieval_similarity": 0.8310533761978149,
       "predicted_escalation": "escalate"
     },
     {
@@ -3691,7 +3691,7 @@
       "message": "Hi I just updated to iOS 11.2 and Apple Pay Cash isn’t there. It said in release notes iOS 11.2 introduces Apple Pay Cash! Just wondering why it was left out...",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.8999999165534973,
+      "max_retrieval_similarity": 0.9042918682098389,
       "predicted_escalation": "escalate"
     },
     {
@@ -3699,7 +3699,7 @@
       "message": "Hello! I just updated to iOS 11.2, but it is not offering me a way to set up the Apple Pay Cash Card. Am I missing something? TIA",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.98,
-      "max_retrieval_similarity": 0.9999998807907104,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -3707,8 +3707,8 @@
       "message": "Updated to iOS 11.2. No Apple Pay Cash in Apple Pay settings to toggle on. Yet release notes say it’s included in release. What do I need to do? 📱",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.8826675415039062,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "553562_553561",
@@ -3722,23 +3722,23 @@
       "thread_id": "570925_570924",
       "message": "I updated to 11.2, but don’t see anything about new Apple Pay cash feature anywhere. Please help",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.98,
-      "max_retrieval_similarity": 0.9253970980644226,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.8923196792602539,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "554726_554725",
       "message": "I am on iOS 11.2, have turned on two factor auth, have debit and credit cards, but Apple Pay Cash is not available in my wallet settings. Whats up?",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "539889_539888",
       "message": "just updated to iOS 11.2 and can’t find the new Apple Pay Cash 💳 settings. I’m In the USA 🇺🇸",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.98,
+      "intent_confidence": 0.99,
       "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
@@ -3747,7 +3747,7 @@
       "message": "I just updates do iOS 11.2, no Apple Pay cash card available. Is it not TRULY available yet?",
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -3762,32 +3762,32 @@
       "thread_id": "583641_583640",
       "message": "Is it just me or what? Apple Pay cash is not included in the official iOS 11.2. I can’t find it. #ApplePayCash #iOS112",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "553485_553484",
       "message": "...DL’ed 11.2 on iPhone 8 Plus and X...but no Apple Cash Option in settings??? #help #whereisit",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.99,
-      "max_retrieval_similarity": 1.0000001192092896,
-      "predicted_escalation": "auto_handle"
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 0.7904173135757446,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1899440_1899439",
       "message": "Help! Most of my cards are not available for pay on the Apple Store app (“rejected by the app”). What’s wrong?",
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
-      "max_retrieval_similarity": 0.6670394539833069,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "escalate"
     },
     {
       "thread_id": "546662_546661",
       "message": "I’ve updated to iOS 11.2, how do I use Apple Pay Cash?",
       "true_escalation": "auto_handle",
-      "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.0000001192092896,
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     },
     {
@@ -3795,30 +3795,30 @@
       "message": "Apple Pay Cash is not showing up in iOS 11.2 for me. How do you activate it? Tried adding a card in Wallet/Pay settings. Located in US. USE 2 compatible cards in Pay.",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 0.885526180267334,
-      "predicted_escalation": "escalate"
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "549695_549694",
       "message": "I’ve updated my phone with the new software 11.2 and I don’t see the Apple Pay cash feature!! It clearly mentioned it in the update notes. Where is it?",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.98,
-      "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "max_retrieval_similarity": 0.7846088409423828,
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "553591_553590",
       "message": "I just updated to iOS 11.2 and Apple Cash is nowhere to be found!!! #iOS11",
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
-      "max_retrieval_similarity": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
       "predicted_escalation": "auto_handle"
     },
     {
       "thread_id": "552120_552119",
       "message": "Hmm. Updated to iOS 11.2 but no option for Apple Pay Cash in “Wallet &amp; Apple Pay” in Settings. How do I enable it?",
       "true_escalation": "auto_handle",
-      "intent_confidence": 0.99,
+      "intent_confidence": 1.0,
       "max_retrieval_similarity": 0.9999999403953552,
       "predicted_escalation": "auto_handle"
     },
@@ -3826,8 +3826,8 @@
       "thread_id": "570150_570149",
       "message": "I’ve upgraded to iOS 11.2, but where is the Apple Pay Cash card option? Is there somewhere else I can set this feature up?",
       "true_escalation": "auto_handle",
-      "intent_confidence": 1.0,
-      "max_retrieval_similarity": 1.0000001192092896,
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
       "predicted_escalation": "auto_handle"
     }
   ],
