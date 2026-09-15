@@ -18,6 +18,12 @@ def test_build_prompt_includes_precedents_and_message():
     assert "t1" in prompt and "t2" in prompt
 
 
+def test_build_prompt_instructs_replying_in_customer_language():
+    prompt = build_generation_prompt("mi iPhone no enciende", PRECEDENTS, STYLE_GUIDE)
+    assert "mi iPhone no enciende" in prompt
+    assert "SAME language as the customer message" in prompt
+
+
 def test_parse_response_filters_grounded_on_to_valid_ids():
     raw = json.dumps({"draft": "Please restart your device and let us know.", "grounded_on": ["t1", "bogus_id"]})
     result = _parse_response(raw, PRECEDENTS)
