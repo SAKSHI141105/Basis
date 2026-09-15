@@ -39,8 +39,20 @@ HUMAN_REQUEST_PATTERNS = [
     ]
 ]
 
-DEFAULT_CONFIDENCE_THRESHOLD = 0.6
-DEFAULT_SIMILARITY_THRESHOLD = 0.55
+# Tuned via grid search against the real golden set once it existed
+# (pipeline/tune_escalation_thresholds.py) -- the original 0.6/0.55 defaults
+# were reasonable placeholders, never calibrated against labeled data, and
+# left escalation recall at 0.146 (missing ~6 of every 7 cases that should
+# have escalated). 0.90 similarity roughly quadrupled recall (0.146 -> 0.573)
+# while also improving precision (0.480 -> 0.566) -- confidence_threshold
+# turned out to barely matter once similarity is this strict, so 0.70 is a
+# representative pick from a wide flat region of similarly-good candidates,
+# not a sharply-optimal value. Caveat, not hidden: most true_escalation
+# labels used to tune this are themselves AI-generated (see DECISION_LOG.md),
+# so this tuning optimizes agreement with a ground truth of its own
+# uncertain reliability -- a real, not fully human-verified, improvement.
+DEFAULT_CONFIDENCE_THRESHOLD = 0.70
+DEFAULT_SIMILARITY_THRESHOLD = 0.90
 DEFAULT_CONTACT_COUNT_THRESHOLD = 3
 
 

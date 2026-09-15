@@ -61,11 +61,25 @@ def test_repeated_contact_with_worsening_sentiment_escalates():
 def test_confident_and_grounded_auto_handles():
     signals = EscalationSignals(
         intent_confidence=0.9,
-        max_retrieval_similarity=0.8,
+        max_retrieval_similarity=0.95,
         message="how do I update my iOS software",
     )
     result = decide(signals)
     assert result.decision == "auto_handle"
+
+
+def test_moderate_similarity_now_escalates_after_threshold_retuning():
+    # Documents the recalibration (DECISION_LOG.md): 0.55 let almost every
+    # retrieved precedent through, driving recall down to 0.146 on the real
+    # golden set. 0.8 similarity now correctly escalates under the tuned
+    # 0.90 threshold -- a "pretty good" precedent match is not "excellent."
+    signals = EscalationSignals(
+        intent_confidence=0.9,
+        max_retrieval_similarity=0.8,
+        message="how do I update my iOS software",
+    )
+    result = decide(signals)
+    assert result.decision == "escalate"
 
 
 def test_detect_risk_flags_empty_for_benign_message():

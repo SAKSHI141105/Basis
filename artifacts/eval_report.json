@@ -403,12 +403,12 @@
       "false_escalate_count": 1
     },
     "main": {
-      "precision": 0.48,
-      "recall": 0.14634146341463414,
-      "f1": 0.22429906542056074,
-      "cost_weighted_score": 0.6245791245791246,
-      "false_auto_handle_count": 70,
-      "false_escalate_count": 13
+      "precision": 0.5662650602409639,
+      "recall": 0.573170731707317,
+      "f1": 0.5696969696969697,
+      "cost_weighted_score": 0.7626262626262627,
+      "false_auto_handle_count": 35,
+      "false_escalate_count": 36
     }
   },
   "judge_scores": [
@@ -2210,7 +2210,7 @@
       "true_intent": "device_troubleshooting",
       "pred_intent": "general_complaint",
       "true_escalation": "auto_handle",
-      "pred_escalation": "auto_handle"
+      "pred_escalation": "escalate"
     },
     {
       "thread_id": "2000150_2000149",
@@ -2226,7 +2226,7 @@
       "true_intent": "software_update_bug",
       "pred_intent": "device_troubleshooting",
       "true_escalation": "auto_handle",
-      "pred_escalation": "auto_handle"
+      "pred_escalation": "escalate"
     },
     {
       "thread_id": "2422587_2422584",
@@ -2234,7 +2234,7 @@
       "true_intent": "general_complaint",
       "pred_intent": "software_update_bug",
       "true_escalation": "escalate",
-      "pred_escalation": "auto_handle"
+      "pred_escalation": "escalate"
     },
     {
       "thread_id": "622711_622712",
@@ -2242,7 +2242,7 @@
       "true_intent": "feature_how_to",
       "pred_intent": "out_of_scope",
       "true_escalation": "escalate",
-      "pred_escalation": "auto_handle"
+      "pred_escalation": "escalate"
     }
   ],
   "escalation_signals": [
@@ -2252,7 +2252,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.6263347268104553,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2000150_2000149",
@@ -2268,7 +2268,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.5616323947906494,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2422587_2422584",
@@ -2276,7 +2276,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.98,
       "max_retrieval_similarity": 0.5878260135650635,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "622711_622712",
@@ -2284,7 +2284,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.99,
       "max_retrieval_similarity": 0.787554919719696,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "84232_84230",
@@ -2292,7 +2292,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.99,
       "max_retrieval_similarity": 0.8258683085441589,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1954404_1954403",
@@ -2324,7 +2324,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.6413275003433228,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1623356_1623355",
@@ -2340,7 +2340,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.99,
       "max_retrieval_similarity": 0.6938780546188354,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "498559_498558",
@@ -2348,7 +2348,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.5582295656204224,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1740795_1740794",
@@ -2356,7 +2356,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.9,
       "max_retrieval_similarity": 0.8010253310203552,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1559348_1559347",
@@ -2364,7 +2364,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.8622534871101379,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1113178_1113177",
@@ -2404,7 +2404,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.7352539896965027,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1756245_1756244",
@@ -2420,7 +2420,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.99,
       "max_retrieval_similarity": 0.6434116363525391,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2072314_2072313",
@@ -2436,7 +2436,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.5779277086257935,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2114729_2114728",
@@ -2444,7 +2444,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.7228072881698608,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1732571_1732570",
@@ -2452,7 +2452,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.8384984731674194,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "648548_648546",
@@ -2460,7 +2460,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.6649240255355835,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1449167_1449166",
@@ -2476,7 +2476,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.99,
       "max_retrieval_similarity": 0.8494235277175903,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2361620_2361621",
@@ -2484,7 +2484,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.8336704969406128,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1821314_1821313",
@@ -2500,7 +2500,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.7977780103683472,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2054361_2054360",
@@ -2548,7 +2548,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.65,
       "max_retrieval_similarity": 1.0,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2076062_2076061",
@@ -2572,7 +2572,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.8089346885681152,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1516133_1516132",
@@ -2580,7 +2580,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.99,
       "max_retrieval_similarity": 0.7968758344650269,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "168873_168872",
@@ -2692,7 +2692,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.8183819055557251,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "483198_483197",
@@ -2780,7 +2780,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.7587110996246338,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "989698_989696",
@@ -2788,7 +2788,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.7382351160049438,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2410138_2410136",
@@ -2804,7 +2804,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.8137320280075073,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2441834_2441832",
@@ -2812,7 +2812,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.99,
       "max_retrieval_similarity": 0.8111722469329834,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1391216_1391215",
@@ -2828,7 +2828,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.7763998508453369,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1623857_1623856",
@@ -2916,7 +2916,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.6606353521347046,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "967957_967956",
@@ -2964,7 +2964,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.6997491717338562,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2641026_2641024",
@@ -2972,7 +2972,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.811366081237793,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "974463_1875343",
@@ -2988,7 +2988,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.8821790218353271,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "753024_753022",
@@ -3012,7 +3012,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.6145892143249512,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2734387_2734386",
@@ -3028,7 +3028,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.98,
       "max_retrieval_similarity": 0.6911464333534241,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1961373_1961372",
@@ -3100,7 +3100,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.795224666595459,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2774393_2774392",
@@ -3164,7 +3164,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.7926986217498779,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1458847_1458849",
@@ -3236,7 +3236,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.7568031549453735,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1834659_1834661",
@@ -3252,7 +3252,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.9,
       "max_retrieval_similarity": 0.8822962045669556,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1628910_1628912",
@@ -3260,7 +3260,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.8195515871047974,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2619747_2619748",
@@ -3292,7 +3292,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.9,
       "max_retrieval_similarity": 0.8349902629852295,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "292929_292931",
@@ -3308,7 +3308,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.8375318646430969,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1299027_1299025",
@@ -3324,7 +3324,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.7168029546737671,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1900089_1900086",
@@ -3332,7 +3332,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.8657727241516113,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2802445_2802444",
@@ -3348,7 +3348,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.5709537267684937,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1277180_1277179",
@@ -3380,7 +3380,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.6019521951675415,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "33351_33350",
@@ -3396,7 +3396,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 1.0,
       "max_retrieval_similarity": 0.8322065472602844,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1906848_1906847",
@@ -3404,7 +3404,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.6589205265045166,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "127135_127134",
@@ -3484,7 +3484,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.8326786756515503,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1000099_1000097",
@@ -3500,7 +3500,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.8936083316802979,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2573904_2573902",
@@ -3516,7 +3516,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.7851679921150208,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1365536_1365534",
@@ -3524,7 +3524,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.7449651956558228,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2004793_2004792",
@@ -3540,7 +3540,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.737034797668457,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "2092700_2092699",
@@ -3556,7 +3556,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.783794641494751,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "1196348_1196347",
@@ -3676,7 +3676,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.75,
       "max_retrieval_similarity": 0.8373528718948364,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "556945_556943",
@@ -3684,7 +3684,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.7908682823181152,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "555265_555263",
@@ -3692,7 +3692,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.8999999165534973,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "546679_546677",
@@ -3780,7 +3780,7 @@
       "true_escalation": "escalate",
       "intent_confidence": 0.85,
       "max_retrieval_similarity": 0.6670394539833069,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "546662_546661",
@@ -3796,7 +3796,7 @@
       "true_escalation": "auto_handle",
       "intent_confidence": 0.95,
       "max_retrieval_similarity": 0.885526180267334,
-      "predicted_escalation": "auto_handle"
+      "predicted_escalation": "escalate"
     },
     {
       "thread_id": "549695_549694",

@@ -16,7 +16,7 @@ Golden set size: **198**
 |---|---|---|---|---|
 | trivial | 0.414 | 1.000 | 0.586 | 0.805 |
 | simple | 0.750 | 0.037 | 0.070 | 0.599 |
-| main | 0.480 | 0.146 | 0.224 | 0.625 |
+| main | 0.566 | 0.573 | 0.570 | 0.763 |
 
 ## LLM judge (reply quality, 1-5)
 
@@ -37,12 +37,12 @@ What would be misleading here is assuming this golden set reflects real traffic 
 ## Top failure examples
 
 - **1236865_1236864**: "iOS 11 is buggy. Please fix it. 😩"
-  - intent: true=`device_troubleshooting` pred=`general_complaint`, escalation: true=`auto_handle` pred=`auto_handle`
+  - intent: true=`device_troubleshooting` pred=`general_complaint`, escalation: true=`auto_handle` pred=`escalate`
 - **2000150_2000149**: "your new IOS update is complete fucking dog shit. Ever since i downloaded this bs my phone hasnt work properly. I want the old 1 bak"
   - intent: true=`device_troubleshooting` pred=`software_update_bug`, escalation: true=`escalate` pred=`auto_handle`
 - **2406550_2406548**: "My iPhone 6 went dead while I was transferring it to a new iCloud account? Any obvious reasons as to why this might have happened? Never seen an iPhone going dead and it was supposed to be 2 years old (bought it 2 years ago). Thanks"
-  - intent: true=`software_update_bug` pred=`device_troubleshooting`, escalation: true=`auto_handle` pred=`auto_handle`
+  - intent: true=`software_update_bug` pred=`device_troubleshooting`, escalation: true=`auto_handle` pred=`escalate`
 - **2422587_2422584**: "Ever since the update my reminders display on my lock screen all the time. Even before and after they’re due. And even when marked completed. What’s the deal #AppleSupport #iPhoneUpdate"
-  - intent: true=`general_complaint` pred=`software_update_bug`, escalation: true=`escalate` pred=`auto_handle`
+  - intent: true=`general_complaint` pred=`software_update_bug`, escalation: true=`escalate` pred=`escalate`
 - **622711_622712**: "11.1.2 (15B202). USA"
-  - intent: true=`feature_how_to` pred=`out_of_scope`, escalation: true=`escalate` pred=`auto_handle`
+  - intent: true=`feature_how_to` pred=`out_of_scope`, escalation: true=`escalate` pred=`escalate`
