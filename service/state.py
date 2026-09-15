@@ -13,10 +13,15 @@ from pipeline.classify import load_taxonomy
 from pipeline.index import RetrievalIndex
 from pipeline.llm_client import LLMClient
 
+# Derived from 20 real, resolved AppleSupport replies, not assumed --
+# see brand_style_guide.md and pipeline/derive_style_guide.py (TRD 5.3).
 DEFAULT_BRAND_STYLE_GUIDE = (
-    "Warm but concise. Acknowledge the issue in one short sentence, give a "
-    "concrete next step or fix, and offer to follow up via DM if more "
-    "account-specific detail is needed. No corporate filler, no over-apologizing."
+    "Warm but concise (aim for 1-3 short sentences, ~15-40 words). Use "
+    '"we," never "I." Acknowledge the issue in one short clause, then '
+    "either give a concrete next step/link or invite the customer to DM "
+    "for anything requiring account-specific detail -- don't try to solve "
+    "account-specific issues in the public reply. No sign-off/initials. "
+    "No apology-heavy or corporate filler language."
 )
 
 
