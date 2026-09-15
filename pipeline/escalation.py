@@ -13,6 +13,7 @@ from dataclasses import dataclass, field
 RISK_PATTERNS = [
     re.compile(p, re.IGNORECASE)
     for p in [
+        # English
         r"\bsue\b",
         r"\blawyer\b",
         r"\blegal action\b",
@@ -25,19 +26,107 @@ RISK_PATTERNS = [
         r"\bdata breach\b",
         r"\bcharge(d)? me twice\b",
         r"\bunauthorized charge\b",
+        # Spanish
+        r"\bdemandar\b",
+        r"\babogado\b",
+        r"\bacci[oó]n legal\b",
+        r"\bsuicid",
+        r"\bfraude\b",
+        r"\brobado\b",
+        r"\bhackeado\b",
+        r"\bcobraron dos veces\b",
+        r"\bcargo no autorizado\b",
+        # Portuguese
+        r"\bprocessar\b",
+        r"\badvogado\b",
+        r"\baç[aã]o legal\b",
+        r"\bfraude\b",
+        r"\broubado\b",
+        r"\bhackeado\b",
+        r"\bcobrado(a)? duas vezes\b",
+        r"\bcobran[çc]a n[ãa]o autorizada\b",
+        # French
+        r"\bpoursuivre en justice\b",
+        r"\bavocat\b",
+        r"\baction en justice\b",
+        r"\bfraude\b",
+        r"\bvol[ée]\b",
+        r"\bpirat[ée]\b",
+        r"\bfacturé deux fois\b",
+        # German
+        r"\bverklagen\b",
+        r"\banwalt\b",
+        r"\brechtliche schritte\b",
+        r"\bbetrug\b",
+        r"\bgestohlen\b",
+        r"\bgehackt\b",
+        r"\bzweimal (belastet|abgebucht)\b",
+        # Hindi (Devanagari + common romanized)
+        r"मुकदमा",
+        r"वकील",
+        r"आत्महत्या",
+        r"धोखाधड़ी",
+        r"चोरी",
+        r"हैक",
+        r"\bvakeel\b",
+        r"\bmukadma\b",
+        r"\bdhokhadhadi\b",
     ]
 ]
 
 HUMAN_REQUEST_PATTERNS = [
     re.compile(p, re.IGNORECASE)
     for p in [
+        # English
         r"\btalk to a human\b",
         r"\bspeak to a (person|human|representative|agent)\b",
         r"\breal person\b",
         r"\bcustomer service rep\b",
         r"\bmanager\b",
+        # Spanish
+        r"\bhablar con una persona\b",
+        r"\bhablar con un humano\b",
+        r"\bpersona real\b",
+        r"\brepresentante de servicio\b",
+        r"\bgerente\b",
+        # Portuguese
+        r"\bfalar com uma pessoa\b",
+        r"\bfalar com um humano\b",
+        r"\bpessoa real\b",
+        r"\brepresentante de atendimento\b",
+        r"\bgerente\b",
+        # French
+        r"\bparler à une personne\b",
+        r"\bparler à un humain\b",
+        r"\bvrai(e)? personne\b",
+        r"\breprésentant du service client\b",
+        r"\bresponsable\b",
+        # German
+        r"\bmit einer person sprechen\b",
+        r"\bmit einem menschen sprechen\b",
+        r"\becht(er|e)? mensch\b",
+        r"\bkundendienstmitarbeiter\b",
+        r"\bmanager\b",
+        # Hindi (Devanagari + common romanized)
+        r"किसी इंसान से बात",
+        r"असली व्यक्ति",
+        r"मैनेजर",
+        r"\bkisi insaan se baat\b",
+        r"\basli vyakti\b",
+        r"\bmanager se baat\b",
     ]
 ]
+
+# Best-effort multilingual coverage added when embedding/classification/
+# generation were extended beyond PRD's original English-only scope (see
+# DECISION_LOG.md). This is NOT an exhaustive per-language taxonomy -- it
+# covers the same categories as the English patterns (legal threats,
+# self-harm, fraud/theft, account compromise, double-charging, and requests
+# for a human) in the handful of languages the golden-set/dataset review
+# turned up (Spanish, Portuguese, French, German, Hindi). A message in a
+# language/phrasing not covered here still falls through to the confidence/
+# similarity threshold checks below, so it is not silently unescalatable --
+# just not guaranteed a hard-trigger match.
 
 # Tuned via grid search against the real golden set once it existed
 # (pipeline/tune_escalation_thresholds.py) -- the original 0.6/0.55 defaults

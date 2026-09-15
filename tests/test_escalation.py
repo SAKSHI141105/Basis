@@ -84,3 +84,25 @@ def test_moderate_similarity_now_escalates_after_threshold_retuning():
 
 def test_detect_risk_flags_empty_for_benign_message():
     assert detect_risk_flags("how do I reset my apple id password") == []
+
+
+def test_spanish_risk_keyword_escalates():
+    signals = EscalationSignals(
+        intent_confidence=0.99,
+        max_retrieval_similarity=0.99,
+        message="voy a demandar a Apple, esto es fraude y me han robado dinero",
+    )
+    result = decide(signals)
+    assert result.decision == "escalate"
+    assert "safety/legal" in result.reason
+
+
+def test_hindi_human_request_escalates():
+    signals = EscalationSignals(
+        intent_confidence=0.95,
+        max_retrieval_similarity=0.9,
+        message="मुझे किसी इंसान से बात करनी है",
+    )
+    result = decide(signals)
+    assert result.decision == "escalate"
+    assert "human" in result.reason
