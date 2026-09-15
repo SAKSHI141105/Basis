@@ -38,6 +38,19 @@ def test_build_prompt_explicitly_covers_english_case_not_just_non_english():
     assert "must be in English" in normalized
 
 
+def test_build_prompt_instructs_preferring_concrete_steps_over_dm_deferral():
+    # Regression guard: real bug found by the user testing the live demo --
+    # given a mix of precedents (one with a concrete troubleshooting step,
+    # one that just said "please DM us"), generation kept defaulting to the
+    # DM-only reply even for a plain troubleshooting message, making the
+    # whole demo feel like it had no actual support content. The prompt must
+    # explicitly instruct preferring a concrete step when one is available.
+    prompt = build_generation_prompt("my phone won't turn on", PRECEDENTS, STYLE_GUIDE)
+    normalized = " ".join(prompt.split())
+    assert "concrete troubleshooting step" in normalized
+    assert "prefer drawing your draft from that content" in normalized
+
+
 def test_parse_response_filters_grounded_on_to_valid_ids():
     raw = json.dumps({"draft": "Please restart your device and let us know.", "grounded_on": ["t1", "bogus_id"]})
     result = _parse_response(raw, PRECEDENTS)

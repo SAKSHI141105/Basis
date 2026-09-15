@@ -45,6 +45,18 @@ use them only for their factual content and tone, never as a language
 template):
 {precedent_block}
 
+Actionability rule: when any precedent above contains a concrete
+troubleshooting step (a specific action the customer can take, like
+restarting a certain way or checking a setting), prefer drawing your
+draft from that content over a precedent that only offers to take the
+conversation to DM. Only defer to DM when the issue genuinely requires
+account-specific detail (order number, purchase/billing info, account
+security) that can't responsibly be handled in public, or when none of
+the precedents offer a usable concrete step -- not simply because one of
+the retrieved precedents happened to say so. A generic "please DM us"
+with no other content is the least helpful reply available; use it only
+when it is truly the only responsible option.
+
 Language rule -- read carefully, this is a strict requirement:
 Step 1: identify the exact language the customer message above is
 written in.
