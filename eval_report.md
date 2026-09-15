@@ -2,15 +2,13 @@
 
 Golden set size: **198**
 
-**Note:** 46 example(s) were skipped (call failed, e.g. a free-tier quota wall) and are excluded from the main system's metrics below -- main system numbers reflect 152/198 examples, trivial/simple baselines still reflect all 198.
-
 ## Intent classification
 
 | System | Accuracy | Macro-F1 |
 |---|---|---|
 | trivial | 0.051 | 0.011 |
 | simple | 0.672 | 0.670 |
-| main | 0.836 | 0.694 |
+| main | 0.833 | 0.830 |
 
 ## Escalation decision
 
@@ -18,7 +16,15 @@ Golden set size: **198**
 |---|---|---|---|---|
 | trivial | 0.414 | 1.000 | 0.586 | 0.805 |
 | simple | 0.750 | 0.037 | 0.070 | 0.599 |
-| main | 0.500 | 0.171 | 0.255 | 0.592 |
+| main | 0.480 | 0.146 | 0.224 | 0.625 |
+
+## LLM judge (reply quality, 1-5)
+
+- mean_groundedness: 4.90
+- mean_correctness: 4.87
+- mean_tone: 4.95
+- mean_actionability: 4.79
+- mean_overall: 4.88
 
 ## Human-agreement study
 
@@ -26,7 +32,7 @@ Not run — no human judge scores found at `artifacts\human_judge_scores.json`. 
 
 ## What's misleading about my headline number
 
-What would be misleading here is assuming this golden set reflects real traffic volume: it is deliberately stratified roughly evenly across intents (pipeline/golden_set.py), NOT the real ~88% out_of_scope-skewed traffic distribution (taxonomy.yaml) -- so the trivial baseline's accuracy here (0.051) is low, not falsely high. On real, naturally-imbalanced traffic the same trivial baseline would score far higher on accuracy while being equally useless. Read accuracy numbers from this report as 'performance on a balanced sample,' not 'performance on real traffic volume.' See REPORT.md section 7.
+What would be misleading here is assuming this golden set reflects real traffic volume: it is deliberately stratified roughly evenly across intents (pipeline/golden_set.py), NOT the real ~88% out_of_scope-skewed traffic distribution (taxonomy.yaml) -- so the trivial baseline's accuracy here (0.051) is low, not falsely high. On real, naturally-imbalanced traffic the same trivial baseline would score far higher on accuracy while being equally useless. Read accuracy numbers from this report as 'performance on a balanced sample,' not 'performance on real traffic volume.' See REPORT.md section 8.
 
 ## Top failure examples
 
