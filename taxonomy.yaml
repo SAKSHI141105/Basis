@@ -78,12 +78,14 @@ intents:
     cluster_ids: [0, 8]
 
   - id: billing_subscription
+    # No dedicated cluster in this re-clustering run (see header note) --
+    # retrieval precedent coverage for this intent is currently thin.
+    # (Keep that fact out of `description`: it's injected verbatim into
+    # the live classification prompt by pipeline/classify.py and would
+    # just be irrelevant noise to the model.)
     description: >
       Charges, payment methods, or subscription/purchase access issues —
       primarily Apple Music/iTunes billing and purchased-content access.
-      No dedicated cluster formed in this re-clustering run (see header
-      note) — classification for this intent currently relies on the LLM
-      reading this description directly, not on retrieved precedents.
     examples:
       - "You charged me for an Apple Music subscription I never requested"
       - "iTunes won't accept my PayPal as a payment method"
@@ -101,12 +103,12 @@ intents:
     cluster_ids: [4]
 
   - id: general_complaint
+    # No dedicated cluster in this re-clustering run (see header note) --
+    # retrieval precedent coverage for this intent is currently thin.
+    # (Keep that fact out of `description`, same reason as billing_subscription above.)
     description: >
       Dissatisfaction with a product redesign, in-store experience, or
       customer-support interaction, without a specific fixable bug report.
-      No dedicated cluster formed in this re-clustering run (see header
-      note) — classification for this intent currently relies on the LLM
-      reading this description directly, not on retrieved precedents.
     examples:
       - "The new Podcasts app redesign is unusable, please revert it"
       - "Had the worst customer service experience at the Apple Store"
