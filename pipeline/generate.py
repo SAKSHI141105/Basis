@@ -39,17 +39,26 @@ Brand style guide:
 
 Customer message: "{message}"
 
-Precedent replies (real, historically used for similar issues -- these are
-in English regardless of the customer message's language; use them for
-their factual content and tone, not as a language template):
+Precedent replies (real, historically used for similar issues -- these
+happen to be in English regardless of the customer message's language;
+use them only for their factual content and tone, never as a language
+template):
 {precedent_block}
 
-Write your draft in the SAME language as the customer message above,
-translating the substance of the precedent replies into that language --
-do not reply in English if the customer did not write in English.
+Language rule -- read carefully, this is a strict requirement:
+Step 1: identify the exact language the customer message above is
+written in.
+Step 2: write your ENTIRE draft reply in that exact same language, and
+no other. If the customer wrote in English, your draft must be in
+English -- do not translate it into Spanish, Hindi, or any other
+language. If the customer wrote in a language other than English (e.g.
+Spanish, Hindi, French), your draft must be in that same language,
+translating the substance of the (English) precedent replies above as
+needed. The customer's own language always wins; never default to any
+particular non-English language.
 
 Respond with ONLY a JSON object:
-{{"draft": "<the reply text, in the customer's language>", "grounded_on": ["<thread_id>", ...]}}
+{{"draft": "<the reply text, in the SAME language as the customer message>", "grounded_on": ["<thread_id>", ...]}}
 List only the thread_ids of precedents that actually influenced your draft.
 No other text."""
 

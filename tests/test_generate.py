@@ -24,6 +24,20 @@ def test_build_prompt_instructs_replying_in_customer_language():
     assert "SAME language as the customer message" in prompt
 
 
+def test_build_prompt_explicitly_covers_english_case_not_just_non_english():
+    # Regression guard: an earlier version of this prompt only talked about
+    # translating INTO another language ("do not reply in English if the
+    # customer did not write in English") with no symmetric instruction for
+    # the English case -- that asymmetric phrasing caused real English
+    # customer messages to come back drafted in Spanish (observed live).
+    # The prompt must explicitly say to stay in English when the customer
+    # wrote in English, not just describe the non-English branch.
+    prompt = build_generation_prompt("my phone won't turn on", PRECEDENTS, STYLE_GUIDE)
+    normalized = " ".join(prompt.split())
+    assert "wrote in English" in normalized
+    assert "must be in English" in normalized
+
+
 def test_parse_response_filters_grounded_on_to_valid_ids():
     raw = json.dumps({"draft": "Please restart your device and let us know.", "grounded_on": ["t1", "bogus_id"]})
     result = _parse_response(raw, PRECEDENTS)
