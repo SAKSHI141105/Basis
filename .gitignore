@@ -11,6 +11,7 @@ env/
 data/raw/
 artifacts/*
 !artifacts/eval_report.json
+!artifacts/label_agreement_spotcheck.json
 .cache/*
 !.cache/llm_cache_golden.jsonl
 

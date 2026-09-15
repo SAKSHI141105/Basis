@@ -1,0 +1,13 @@
+{
+  "description": "Spot-check: does the AI labeler (used for 192/198 golden-set labels) agree with the 6 real human labels when applied to the same 6 messages? Real Gemini calls, not fabricated.",
+  "intent_agreement": "0/6",
+  "escalation_agreement": "3/6",
+  "examples": [
+    {"thread_id": "1236865_1236864", "human_intent": "device_troubleshooting", "ai_intent": "software_update_bug", "human_escalation": "auto_handle", "ai_escalation": "auto_handle"},
+    {"thread_id": "2000150_2000149", "human_intent": "device_troubleshooting", "ai_intent": "software_update_bug", "human_escalation": "escalate", "ai_escalation": "escalate"},
+    {"thread_id": "2406550_2406548", "human_intent": "software_update_bug", "ai_intent": "device_troubleshooting", "human_escalation": "auto_handle", "ai_escalation": "escalate"},
+    {"thread_id": "2422587_2422584", "human_intent": "general_complaint", "ai_intent": "software_update_bug", "human_escalation": "escalate", "ai_escalation": "auto_handle"},
+    {"thread_id": "622711_622712", "human_intent": "feature_how_to", "ai_intent": "out_of_scope", "human_escalation": "escalate", "ai_escalation": "auto_handle"},
+    {"thread_id": "84232_84230", "human_intent": "general_complaint", "ai_intent": "software_update_bug", "human_escalation": "auto_handle", "ai_escalation": "auto_handle"}
+  ]
+}

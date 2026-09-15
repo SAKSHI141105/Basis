@@ -164,3 +164,44 @@ spent, with the next usable slot arriving only after a further wait.
 window than "wait until tomorrow," not a single resumed run. Documented
 here rather than guessed at silently — the eval report's results section
 states plainly how many examples are covered as of any given snapshot.
+
+## Resolved: second API key (different Google account) finished the run
+
+A second free-tier key was created to unblock this. First attempt: a new
+key generated under the *same* Google account landed in the same default
+project (`gen-lang-client-...`) and hit the identical exhausted quota
+immediately — confirms quota really is scoped per-project, not per-key.
+Second attempt: a key from a genuinely different Google account worked
+immediately and had a full, untouched budget. Cleared the remaining ~250
+calls (48 classify/generate + 198 judge, plus some re-verification calls)
+in about 20 minutes with zero further quota errors. Final results are in
+`REPORT.md` and `artifacts/eval_report.json`; the committed fast-mode
+cache (`.cache/llm_cache_golden.jsonl`) now has all 808 real responses
+needed to reproduce them instantly via `make eval-fast`.
+
+## The AI golden-set labeler shows 0/6 agreement with real human labels
+
+**Discovered:** with working quota again, ran the actual spot-check
+promised in the golden-set-labeling section — pointed the AI labeler
+(`pipeline/ai_label_golden_set.py`) at the same 6 messages the human
+labeled, same rubric, and compared. Result
+(`artifacts/label_agreement_spotcheck.json`): **0/6 intent agreement**,
+3/6 (coin-flip) escalation agreement.
+
+**Why this matters more than the "AI-generated labels" limitation already
+disclosed:** that limitation was framed as a risk (correlated errors
+*might* exist between the labeler and the system being graded). This spot
+-check is direct evidence, not a risk — the labeler doesn't even
+reproduce a human's own judgment on the exact same rubric and text a
+majority of the time. Since AI-generated labels are 192/198 (97%) of the
+golden set, every intent-classification number in `REPORT.md` §6 is
+measured against ground truth whose self-consistency against real humans,
+on the only checkable slice, is 0%.
+
+**Decision:** disclose this as the report's leading limitation (`REPORT.md`
+§9, item 1) rather than let the strong-looking main-system macro-F1
+(0.830) stand unqualified. Not treated as a reason to discard the eval
+run — the escalation-recall finding and the retrieval/generation
+groundedness spot-checks don't depend on golden-set intent labels being
+correct — but the intent-classification headline number specifically
+needs this caveat every time it's cited.

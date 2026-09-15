@@ -1,13 +1,11 @@
 # Report — AI Support Agent for AppleSupport
 
-> **Status note:** §6 below reports **real but partial** results — 152 of
-> 198 golden-set examples (46 skipped on a quota-exhausted call, resilient
-> skip per `DECISION_LOG.md`), and 0 judge scores (none cached yet). Every
-> number traces to an actual Gemini API call already made; nothing here is
-> a placeholder. The live run (`make eval-live`) continues across sessions
-> as free-tier quota allows — see "A real constraint hit mid-build" below —
-> and this section will be updated to the full 198/198 + judge scores once
-> it completes.
+> **Status note:** §6 below reports the **complete, final** results — all
+> 198/198 golden-set examples, all 198/198 judge scores. Getting here took
+> two free-tier API keys and several days of quota walls — the full account
+> is in "A real constraint hit mid-build" below and `DECISION_LOG.md`.
+> Reproducible instantly via `make eval-fast` against the committed cache
+> (`.cache/llm_cache_golden.jsonl`, 808 real cached responses).
 
 ## 1. What this is
 
@@ -108,10 +106,15 @@ Two free-tier quota walls were discovered empirically, not assumed upfront
    calls — does not fit in one day's budget on a freshly created key.
 
 The system's caching architecture (built first, per TRD §8.3, specifically
-*for* this kind of constraint) means this costs time, not correctness or
+*for* this kind of constraint) means this cost time, not correctness or
 lost work: every successful call is cached by content hash and replayed
-free on retry, so the live run resumes exactly where it left off across
-multiple days without re-spending quota.
+free on retry, so each resumption picked up exactly where the last one
+left off without re-spending quota. The quota also didn't behave like a
+clean once-daily reset — see `DECISION_LOG.md`'s "trickle-refill" entry.
+The run was ultimately finished using a second, genuinely separate
+free-tier API key (a new key under the same Google account/project shares
+the same exhausted quota — it has to come from a different account
+entirely), which cleared the remaining ~250 calls in about 20 minutes.
 
 ## 4. Golden set: how it was actually labeled
 
@@ -130,10 +133,26 @@ disagreement, because the same kind of model made both calls. A real
 human-annotator pass would not share that blind spot. Every headline number
 in this report inherits this weakness and should be read with it in mind.
 
-**A small, honest silver lining:** the 6 human labels give a tiny spot-check
-of AI-labeling quality on the same rubric (not a substitute for the
-required human-agreement study below, but a useful sanity signal) —
-included once the full run completes.
+**The spot-check was run, and the result is worse than "a small caveat" —
+it materially undermines the golden set's ground truth.** The AI labeler
+was pointed at the same 6 messages the human labeled, using the same
+rubric (`artifacts/label_agreement_spotcheck.json`, real Gemini calls):
+
+| | Agreement |
+|---|---|
+| Intent | **0/6** |
+| Escalation | 3/6 (coin-flip) |
+
+**Zero out of six.** The AI labeler did not match the human's intent label
+on a single one of these 6 messages, applying the identical rubric to the
+identical text. This is not a rounding-error caveat — it's direct evidence
+that the 192 AI-generated intent labels making up 97% of this golden set
+may not reliably reflect what a human would actually call these messages.
+Every intent-classification number in §6 is measured against ground truth
+whose own self-consistency, on the only slice checkable against a real
+human, is 0%. This is disclosed here in full rather than softened, because
+it is the single biggest reason to treat this report's headline intent
+numbers as provisional, not proven.
 
 ## 5. Human-agreement study: not performed
 
@@ -150,20 +169,25 @@ would just be checking whether one LLM agrees with another LLM applying a
 similar rubric. The eval report marks this section "not performed" rather
 than filling it with a number that looks like agreement data but isn't.
 
-## 6. Results (partial — 152/198, 0 judge scores)
+## 6. Results (final — 198/198, 198/198 judge scores)
 
-From `artifacts/eval_report.json`, committed and reproducible via
-`make eval-fast`. **46 examples and all judge scores are missing** because
-the live run hit a free-tier quota wall mid-run (§3) — every number below
-is real, from actual Gemini calls, on whatever subset has completed so far.
+From `artifacts/eval_report.json`, committed and reproducible instantly via
+`make eval-fast`. Every number below is real, from actual Gemini API
+calls, complete — no skipped examples, no missing judge scores. **Read the
+intent numbers specifically alongside §4's labeler spot-check (0/6
+agreement with real human labels) before trusting them at face value.**
 
-**Intent classification** (main system: 152 examples; baselines: all 198):
+**Intent classification:**
 
 | System | Accuracy | Macro-F1 |
 |---|---|---|
 | Trivial (always majority label) | 0.051 | 0.011 |
 | Simple (TF-IDF + LogReg) | 0.672 | 0.670 |
-| Main system (LLM classifier) | 0.836 | 0.694 |
+| Main system (LLM classifier) | 0.833 | 0.830 |
+
+The main system clearly outperforms both baselines on the metric that
+actually matters (macro-F1) — this holds up at full scale, not just on the
+partial sample seen mid-build.
 
 **Escalation decision:**
 
@@ -171,21 +195,40 @@ is real, from actual Gemini calls, on whatever subset has completed so far.
 |---|---|---|---|---|
 | Trivial (always escalate) | 0.414 | 1.000 | 0.586 | 0.805 |
 | Simple (keyword rule) | 0.750 | 0.037 | 0.070 | 0.599 |
-| Main system | 0.500 | 0.171 | 0.255 | 0.592 |
+| Main system | 0.480 | 0.146 | 0.224 | 0.625 |
 
-**A real, concerning finding, not smoothed over:** the main system's
-escalation **recall is only 0.171** — it misses roughly 5 of every 6
-examples that should have been escalated, on this partial slice. PRD §6 is
-explicit that a missed escalation (a confidently-wrong reply sent
-unsupervised) is the *expensive* failure mode here, more expensive than an
-unnecessary escalation. A recall this low is a real problem with the
-current threshold calibration (`pipeline/escalation.py`'s
+**A real, concerning finding, confirmed at full scale, not smoothed over:**
+the main system's escalation **recall is only 0.146** — it misses roughly
+6 of every 7 examples that should have been escalated. This got slightly
+*worse*, not better, once every example was included, ruling out "small
+sample noise" as an excuse. PRD §6 is explicit that a missed escalation (a
+confidently-wrong reply sent unsupervised) is the *expensive* failure mode
+here, more expensive than an unnecessary escalation. This is a real problem
+with the current threshold calibration (`pipeline/escalation.py`'s
 `DEFAULT_CONFIDENCE_THRESHOLD`/`DEFAULT_SIMILARITY_THRESHOLD`), not a
-rounding error — worth retuning against the golden set once it's complete,
-called out explicitly in §10 below.
+rounding error — see §7's failure analysis for a concrete pattern behind
+it (profanity/anger not treated as its own trigger), and §10 for the fix.
 
-LLM judge scores: none yet (0/152 cached) — no reply-quality numbers to
-report until the live run produces some.
+**LLM judge — reply quality (1-5), all 198 replies scored:**
+
+| Dimension | Mean |
+|---|---|
+| Groundedness | 4.90 |
+| Correctness | 4.87 |
+| Tone | 4.95 |
+| Actionability | 4.79 |
+| **Overall** | **4.88** |
+
+**A second "misleading number" worth naming, not just reporting:** these
+scores are suspiciously uniform and high — every dimension within 0.16 of
+each other, clustered near the top of a 5-point scale. That pattern is
+exactly what you'd expect either from (a) a genuinely well-grounded,
+on-brand generation pipeline, or (b) an LLM judge being lenient/agreeable
+toward output from a similarly-built LLM pipeline, and **this report
+cannot tell you which.** That's precisely what the human-agreement study
+(§5) exists to check, and it wasn't performed. Read these judge numbers as
+"the judge is satisfied," not "reply quality is independently verified
+excellent" — a real, disclosed gap, not a headline to celebrate uncritically.
 
 ## 7. Failure analysis (case studies)
 
@@ -286,17 +329,22 @@ trusted on this dataset.**
 
 ## 9. Known limitations (full list)
 
-1. Golden-set ground truth is 97% AI-generated, not human-labeled (§4).
-2. The human-agreement study could not be performed (§5).
+1. **The AI-generated golden-set labels (97% of the set) showed 0/6 intent
+   agreement with real human labels on direct spot-check** (§4) — the
+   single biggest reason to treat every intent-classification number in
+   this report as provisional, not proven. This is worse than a caveat;
+   it's evidence the ground truth itself may be unreliable.
+2. The human-agreement study could not be performed (§5) — which also means
+   the very high, suspiciously uniform LLM judge scores (§6) cannot be
+   independently verified as real quality vs. judge leniency.
 3. The "resolved" heuristic is weak — silence ≠ satisfaction (§2.1).
 4. `out_of_scope` dominates real traffic by construction (§2.2) — makes
-   raw accuracy misleading (§7).
-5. Free-tier daily quotas (§3) mean a full live run spans multiple days —
-   §6's results are from 152/198 examples and 0/152 judge scores as of this
-   writing, clearly marked partial, not presented as final.
-6. **Main system escalation recall is low (0.171) on the partial results**
-   (§6) — a real, not-yet-explained weakness in the current threshold
-   calibration, exactly the kind of finding this report exists to surface.
+   raw accuracy misleading (§8).
+5. Free-tier daily quotas (§3) meant the full live run took two API keys
+   and several days to complete — resolved, results in §6 are final.
+6. **Main system escalation recall is only 0.146, confirmed at full scale**
+   (§6) — the most concrete, actionable weakness in this report that
+   doesn't depend on trusting the golden-set labels.
 7. No PII redaction pipeline (brand chosen partly to reduce this need, but
    it's a gap, not a guarantee — `PRD.md` §7).
 8. No live system integration, multi-language support, or fine-tuning —
@@ -304,18 +352,19 @@ trusted on this dataset.**
 
 ## 10. What I'd do next with one more week
 
-- **Retune the escalation thresholds against the golden set** — §6's 0.171
-  recall is the single most actionable finding in this report; the
-  deterministic thresholds in `pipeline/escalation.py` were set by
-  reasonable default, never calibrated against real labeled data.
-- Get a real independent human annotator for both the golden-set labels and
-  the reply-quality human-agreement study — the single highest-value fix
-  for the credibility of every number in this report.
+- **Get a real independent human annotator to re-label the golden set
+  from scratch**, now the top priority given §4's 0/6 spot-check result —
+  this isn't a nice-to-have anymore, it's the precondition for trusting
+  any intent-classification number in this report. The same annotator
+  should also run the reply-quality human-agreement study (§5).
+- **Retune the escalation thresholds against (re-labeled) golden-set
+  data** — §6's 0.146 recall is the most actionable finding that doesn't
+  depend on the labeling concern above; the deterministic thresholds in
+  `pipeline/escalation.py` were set by reasonable default, never
+  calibrated against real labeled data.
 - An embedding-only classifier (TRD §4.3 Option B) as a second real system
   to compare against the LLM classifier — cheaper, and a good "two systems,
   not just two baselines" story.
-- Investigate whether a paid/higher tier or a second API key would let a
-  full live eval run complete same-day rather than spanning a quota reset.
 - Deployment (`AGENT_WORKING_AGREEMENT.md` §5) — deliberately last, per the
   build order, and only attempted once everything above is solid. The
   Next.js demo frontend (`ARCHITECTURE.md` §2.4) is already built.
