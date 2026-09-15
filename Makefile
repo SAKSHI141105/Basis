@@ -1,7 +1,7 @@
 PYTHON ?= .venv/Scripts/python
 
 .PHONY: setup pipeline ingest clean-data taxonomy apply-taxonomy split index baselines \
-        golden-set eval-fast eval-live test run-api run-web clean-artifacts
+        full-split-baselines golden-set eval-fast eval-live test run-api run-web clean-artifacts
 
 setup:
 	python -m venv .venv
@@ -36,6 +36,13 @@ index:
 
 baselines:
 	$(PYTHON) -m pipeline.baselines
+
+# Offline-only (no API calls): baseline accuracy/macro-F1 on the full,
+# naturally-imbalanced eval split -- the other half of REPORT.md §8's
+# "misleading headline number" story, alongside the golden-set numbers
+# eval-fast/eval-live produce.
+full-split-baselines:
+	$(PYTHON) -m eval.full_split_baselines
 
 # Golden-set labels are collected out-of-band (see labeling_guide.md) into
 # artifacts/golden_labels.json, then merged here into the committed golden_set.jsonl.
