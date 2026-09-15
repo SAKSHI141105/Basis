@@ -32,6 +32,7 @@ const NAV_LINKS = [
   { href: "/", label: "Overview" },
   { href: "/demo", label: "Live demo" },
   { href: "/eval", label: "Eval dashboard" },
+  { href: "/docs", label: "Docs" },
 ];
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

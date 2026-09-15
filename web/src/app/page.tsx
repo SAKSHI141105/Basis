@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArchitectureDiagram } from "@/components/ArchitectureDiagram";
 import { getEvalReport } from "@/lib/api";
 
 const CAPABILITIES = [
@@ -119,12 +118,12 @@ export default async function OverviewPage() {
       </section>
 
       <section className="mt-24 mb-8">
-        <h2 className="text-[12.5px] font-medium uppercase tracking-[0.08em] text-text-muted mb-5">
-          Architecture
-        </h2>
-        <div className="rounded-xl border border-border bg-surface p-8 shadow-[var(--shadow-card)]">
-          <ArchitectureDiagram />
-        </div>
+        <Link
+          href="/docs"
+          className="inline-flex items-center gap-1.5 text-[13.5px] font-mono text-accent hover:text-accent-hover transition-colors"
+        >
+          How it&apos;s built &mdash; architecture &amp; docs &rarr;
+        </Link>
       </section>
     </div>
   );
