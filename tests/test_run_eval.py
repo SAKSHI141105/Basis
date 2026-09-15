@@ -119,6 +119,13 @@ def test_run_eval_produces_full_report(tmp_path, monkeypatch):
     assert report["human_agreement"] is None  # no human scores file in this test
     assert "misleading" in report["misleading_number_note"].lower()
 
+    assert len(report["escalation_signals"]) == 2
+    sig = report["escalation_signals"][0]
+    assert set(sig.keys()) == {
+        "thread_id", "message", "true_escalation",
+        "intent_confidence", "max_retrieval_similarity", "predicted_escalation",
+    }
+
 
 def test_run_eval_skips_example_on_failure_instead_of_crashing(tmp_path, monkeypatch):
     monkeypatch.setenv("JUDGE_MODEL", "gemini-3.5-flash")

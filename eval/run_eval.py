@@ -155,6 +155,21 @@ def run(
         if (i + 1) % 10 == 0 or (i + 1) == total:
             logger.info("main system: %d/%d examples processed", i + 1, total)
 
+    # Persisted so threshold tuning (pipeline/tune_escalation_thresholds.py) can
+    # replay decide() against different thresholds without any new API calls --
+    # everything needed (confidence, similarity, message, true label) is here.
+    escalation_signals = [
+        {
+            "thread_id": item["example"]["thread_id"],
+            "message": item["example"]["customer_msg"],
+            "true_escalation": item["example"]["true_escalation"],
+            "intent_confidence": item["classification"].confidence,
+            "max_retrieval_similarity": max((p.similarity for p in item["precedents"]), default=0.0),
+            "predicted_escalation": pred,
+        }
+        for item, pred in zip(per_example, main_escalation_preds)
+    ]
+
     intent_metrics = {
         "trivial": compute_intent_metrics(true_intents, trivial_intent_preds).__dict__,
         "simple": compute_intent_metrics(true_intents, simple_intent_preds).__dict__,
@@ -231,6 +246,7 @@ def run(
         "judge_summary": judge_summary,
         "human_agreement": human_agreement,
         "failure_examples": failures[:5],
+        "escalation_signals": escalation_signals,
         "misleading_number_note": _build_misleading_number_note(intent_metrics),
     }
 

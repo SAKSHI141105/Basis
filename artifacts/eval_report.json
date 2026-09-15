@@ -2245,5 +2245,1591 @@
       "pred_escalation": "auto_handle"
     }
   ],
+  "escalation_signals": [
+    {
+      "thread_id": "1236865_1236864",
+      "message": "iOS 11 is buggy. Please fix it. 😩",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.6263347268104553,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2000150_2000149",
+      "message": "your new IOS update is complete fucking dog shit. Ever since i downloaded this bs my phone hasnt work properly. I want the old 1 bak",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2406550_2406548",
+      "message": "My iPhone 6 went dead while I was transferring it to a new iCloud account? Any obvious reasons as to why this might have happened? Never seen an iPhone going dead and it was supposed to be 2 years old (bought it 2 years ago). Thanks",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.5616323947906494,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2422587_2422584",
+      "message": "Ever since the update my reminders display on my lock screen all the time. Even before and after they’re due. And even when marked completed. What’s the deal #AppleSupport #iPhoneUpdate",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 0.5878260135650635,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "622711_622712",
+      "message": "11.1.2 (15B202). USA",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.787554919719696,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "84232_84230",
+      "message": "fix that bullshit when I type “I” I don’t wanna see no more question marks",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.8258683085441589,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1954404_1954403",
+      "message": "how do I upgrade my notes? 😩",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.36736199259757996,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "1416949_1416947",
+      "message": "Why does my iphone 6s plus turn into an unresponsive piece of shit when it reaches at or below 30% battery? 🙄🙄",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.49495700001716614,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "602406_602405",
+      "message": "Hi, please can someone help me sort out my MacBook Air? Having problems setting it up 😫 #day3andcounting #help",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.3404845595359802,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "2794401_2794400",
+      "message": "Is it a common glitch that apps start to update but absolutely will not progress until the phone is shut down completeley and restarted? Bit frustrating to have greyed out unusable apps now all the time.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.6413275003433228,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1623356_1623355",
+      "message": "yo I have purchased movies via Apple TV why is it taking so long to load?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.4076426327228546,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "366045_366044",
+      "message": "Anybody else experiencing signal loss on the iPhone 8s after the latest iOS 11.2 update?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.6938780546188354,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "498559_498558",
+      "message": "ever since upgrading to high sierra, outlook does not work. Also, I took in for new keyboard and now it freezes at login. MBP",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.5582295656204224,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1740795_1740794",
+      "message": "Dear your latest update has officially rendered my #iPhone useless - do you not test this stuff anymore? #iPhoneproblems",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.9,
+      "max_retrieval_similarity": 0.8010253310203552,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1559348_1559347",
+      "message": "yo why i cant see the letter “ I “ on here when others type it",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.8622534871101379,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1113178_1113177",
+      "message": "My phone just like reset itself and battery went down like 15% wtf",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.45,
+      "max_retrieval_similarity": 0.7670917510986328,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "2555435_2555434",
+      "message": "\"We need to arrange three separate repairs - One for the left AirPod, one for the right AirPod and one for the case\"",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.4352540671825409,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "2971294_2971296",
+      "message": "Thank you! I have the latest IOS, I’m not sure when it did happen. I notice today.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.3912857472896576,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "1921766_1921765",
+      "message": "Anyone know if i can bring this back to the Apple store and they give me new ones?",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.4853386878967285,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "1970916_1970915",
+      "message": "Hey Why has my iPhone 5s stopped working properly since the update?!?😡😡 I DEMAND ANSWERS!! or a new phone plz",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.7352539896965027,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1756245_1756244",
+      "message": "Hey , at your suggestion I installed High Sierra, and it destroyed the Finder's sidebar. How can I get it back?",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.5111222863197327,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "2001209_2001208",
+      "message": "my I️ keeps changing into a random ? Why? 😭",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.6434116363525391,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2072314_2072313",
+      "message": "I can’t disable &amp; delete Siri from my iCloud. It just does nothing...",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.38064515590667725,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "257194_257193",
+      "message": "Since downloading new IOS on my iphone6, I'm not getting any app notifications. Help! I want my CNN and ENews",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.5779277086257935,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2114729_2114728",
+      "message": "fucking fix this",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.7228072881698608,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1732571_1732570",
+      "message": "Thanks for making my phone and iPad just a little bit worse with iOS 11. Things that used to work now have problems...",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.8384984731674194,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "648548_648546",
+      "message": "Hmmm...my High Sierra upgrade isn’t exactly going swimmingly. WTH ? #HighSierra #FAIL",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.6649240255355835,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1449167_1449166",
+      "message": "fix this bullshit",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.27253901958465576,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "2205840_2205838",
+      "message": "come on!! Battery drain on 7+ is horrible with iOS 11.0.3!!! Using low power mode and still watching the phone die fast.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.8494235277175903,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2361620_2361621",
+      "message": "I won't update to iOS 11, for now. It's giving a lot of problems — such as battery drain issues — to all iPhones and I don't want mine to get even worse than it already is after iOS 10. This began to happen after restoring, I don't think that not having iOS 11 is the cause of it.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.8336704969406128,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1821314_1821313",
+      "message": "Hey , IOS 11 sucks. My battery drains in 5 minutes and the screen keeps getting stuck in landscape mode. Update please?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2055585_2055584",
+      "message": "Dear why’d you make the new update on iPhone so it drains batteries and is slow and laggy? P.S. used about 8% on this tweet! #apple",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.7977780103683472,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2054361_2054360",
+      "message": "please fix these bugs with iOS11! It was all to ramble until I had it glitch on iPhone but with on iPad! #unbearable",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1993564_1993563",
+      "message": "u better fix my i’s",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2080137_2080136",
+      "message": "Hey the lastest #iOS11 drains my battery in my 7 like mad. Fix this. Seriously. FIX IT.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1815209_1815208",
+      "message": "Hi can you fix my phone please",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.9133423566818237,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1445545_1445544",
+      "message": "I’m sick of these question marks",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2980232_2980231",
+      "message": "tell me how to revert back to IOS 10. IOS 11 has made me want to get an android",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.65,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2076062_2076061",
+      "message": "my phone is a mess since the iOS 11 updates. 🙄The “bug fixes” have fixed very little.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "413744_413743",
+      "message": "fuuuuuuuccccccckkkkkkk you &amp; your battery draining stupidass shit iOS 11 update!",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1649013_1649012",
+      "message": ". I️ want you to fix this please",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.8089346885681152,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1516133_1516132",
+      "message": "Hey #iOS11 #batterylife sucks! I’m losing 35% battery in the time it takes to do a 4 mile run. #WTF Fix this or I’ll find a new phone",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.7968758344650269,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "168873_168872",
+      "message": "I think iOS 11.1.2 is draining my iPhone 7 Plus battery quite heavily..?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2014852_2014851",
+      "message": "I want to know why this keeps happening when I️ type “I️”. Like why does this “A?” Keep coming up?! How do I️ fix it",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2283809_2283811",
+      "message": "I see this email looks real",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.9999999403953552,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "670636_670635",
+      "message": "I need to speak to someone asap about an email I received. I need to know if it's fraud or not. It's really important",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.8551660180091858,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "967315_967313",
+      "message": "hi guys, just wondering if this email is genuine please?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1594932_1594930",
+      "message": "hello, is this a scam?",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.9138095378875732,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "853177_853175",
+      "message": "I received this suspicious e-mail. Is this an phishing email?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1172244_1172246",
+      "message": "I received this email and i want to know if is real or fraud. Thanks",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.000000238418579,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "660458_660457",
+      "message": "hello, with all the phishing emails I receive, wondering if this is an authentic notice",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1685198_1685197",
+      "message": "- I’ve had an email from Apple Support but I don’t think it’s a genuine email?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2631620_2631619",
+      "message": "How do I fix my disabled Apple ID? #help 🙏",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1655469_1655468",
+      "message": "hi, could you tell me if an email is a scam. It doesn’t look real to me but need to make sure #pleasehelp",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "109020_109019",
+      "message": "is iCloud down? I can't sign in",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "449466_449465",
+      "message": "this is a fake email right",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.8183819055557251,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "483198_483197",
+      "message": "Someone help pls lmao I changed my Apple ID weeks ago and it won't let me sign out w/o entering the password which doesn't work bc different email 🙃",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1898268_1898267",
+      "message": "is this a legit email or is it a phishing email?",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2304617_2304616",
+      "message": "good morning I have a problem with resetting my Apple ID",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1303336_1303335",
+      "message": "Anyone else get this email? is this a scam?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "711664_711663",
+      "message": "is this email as bogus as I think it is?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2955499_2955498",
+      "message": "I just received an email from “apple support” instructing me to verify my account through a link embedded in a pdf. Then asks for ALL my personal info. Is this a spoof scam?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2805964_2805963",
+      "message": "Nearly fell for this Phishing email. Glad I checked the Sent From email id",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "953183_953182",
+      "message": "is this a real mail from you? It was sent from __email__",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2552294_2552293",
+      "message": "__email__ is this a real email???",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1626534_1626533",
+      "message": "i’ve just recieve this email. Is it true and safe? Thanks",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "620187_620186",
+      "message": "brand new iPhone 8+ and all of my group chat messages come to me like this.... tried a lot of different settings and restarts, still nothing. The group gets my texts, but I️ don’t receive theirs. #iPhone8Plus",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.7587110996246338,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "989698_989696",
+      "message": "my photos aren’t loading and have a cloud in the corner... tried to delete and they all reappear, so tired of this craziness",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.7382351160049438,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2410138_2410136",
+      "message": "Why won’t my phone download apps ?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.9045994281768799,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2949626_2949624",
+      "message": "imessage can't be activated after sign out and sign in...",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.8137320280075073,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2441834_2441832",
+      "message": "my imessage isn’t working my messages are not going through i turned it off and turned it back on and its still not working..",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.8111722469329834,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1391216_1391215",
+      "message": "Why is not letting me update my apps unless I update my payment options",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.4528820514678955,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "2261502_2261501",
+      "message": "my photos are not transferring to my new iPhone 8 Plus . Backed up from iCloud 3 times .",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.7763998508453369,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1623857_1623856",
+      "message": "my phone keeps telling me I have no more storage yet i have been deleting apps and files...help!",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 1.000000238418579,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1938597_1938596",
+      "message": "what is the issue with receiving group text? Mine just stops receiving messages and no idea why.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2309238_2309237",
+      "message": "so for one particular person I can’t seem to send iMessages, and she says when I send them as regular text they never deliver 🤔",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1807634_1807633",
+      "message": "WTF I SHUT OFF MY PHONE AND ALL MY PHOTOS ARE LOST",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "301560_301559",
+      "message": "please give me back the 1.7 gb of photos. You can see, there are no photos in icloud 😒 #icloud",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1943709_1943708",
+      "message": "why did all of my messages disappear?",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1693444_1693443",
+      "message": "All my messages just erased what is going on 🤔",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2040287_2040286",
+      "message": "My headphones have a short. Please send me a new pair",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2081198_2081197",
+      "message": "all my pictures are gone 😭😭😭 please help me get them back.",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "686566_686565",
+      "message": "App Store not working for me either",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1243398_1243397",
+      "message": "So I updated my phone and all my pictures are gone 🤔 really",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.6606353521347046,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "967957_967956",
+      "message": "your headphones just shocked the inside of my ear while i was working out 😅😭😤",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2148110_2148109",
+      "message": "my phone just deleted over 9K pictures from my camera roll. If this is some sick joke to get me to by the new iPhone, , it’s never happening again",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1940102_1940101",
+      "message": ". explain!! what you mean “iphone storage full”??",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.31606894731521606,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "756518_756517",
+      "message": "Uh all of my photos are gone from my library",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2887404_2887403",
+      "message": "If I miss out on this deal because of apple’s fault, I will be 100% sure that Apple is fraud. I will take this issue to other people and will make sure to protest against it. What a money grab. #boycottapple",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "1986612_1986610",
+      "message": "ITS BEEN A PAIN,TO APPLY MY APPLE CARE GUARANTEE IN MÉXICO,ALREADY TALK TO 4 PERSONS IN APPLE AND I CAN HAVE AN ANSWER!!",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.6997491717338562,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2641026_2641024",
+      "message": "please tell me how to fix the new podcast update. How to mark podcasts as listened, how to get new podcasts to the top of listen now, and to get it from saying every podcast is ‘unavailable’. What did you do with this app?",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.811366081237793,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "974463_1875343",
+      "message": "I used to be a very old customer with the fairview retail but im never going their again! Her name is Jaclyn btw. And her manager is worse..",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "652244_652242",
+      "message": "Thanks for ruining podcasts, this app is unusable after update!",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.8821790218353271,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "753024_753022",
+      "message": "New iOS 11 Podcast App is terrible.. Can’t go back to last listened and doesn’t start next episode…",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "693971_693970",
+      "message": "got a massive issue with Customer Care, have given up with my complaint, next action legal..",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2043980_2043979",
+      "message": "fix the podcast app, ever since I updated my phone it doesn’t work correctly!",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.6145892143249512,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2734387_2734386",
+      "message": "The service at Stratford Westfield is piss poor! Get better service at a chicken and chip shop",
+      "true_escalation": "escalate",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 0.9999999403953552,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1186563_1186562",
+      "message": "iOS 11.0.3 downloaded today... now I can’t play podcasts over Bluetooth in my car. Had no problem doing that yesterday.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 0.6911464333534241,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1961373_1961372",
+      "message": "Lol. I’m just really happy they destroyed the podcast app. I was really hoping they’d make it more difficult. Thanks !!!",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "460897_460896",
+      "message": "I am disgusted with Apple store service customer service at Bethesda store is horrible",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1434433_1434432",
+      "message": "please fix the Podcasts app. The UI in the iOS11 version is truly awful. Thank you!",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1887339_1887338",
+      "message": "highly disappointed by services of Apple. They do not value their customers at all.",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "722479_722478",
+      "message": "Wow shocking customer service from apple not a fan!!",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2110802_2699034",
+      "message": "how you were able to make the podcast app so shitty in the newest update is incredibly impressive.",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "56944_56943",
+      "message": "I hate the update to the podcast app on iOS11. The interface is really confusing and unorganized",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 0.9034598469734192,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2020765_2020764",
+      "message": "is one of the WORST customer service experiences I have ever had!",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1961601_1961600",
+      "message": "shocked at the awful customer service I’ve received for my recent purchase.",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.795224666595459,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2774393_2774392",
+      "message": ", What is the deal with the podcast app? It is a mess!",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2185439_2185438",
+      "message": "first time I have received the worst support. What’s the purpose of Apple Care if you can’t deliver what’s promised..",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2146542_2146541",
+      "message": "Dear Please fix the podcast app. I miss knowing which archived episodes I haven't listened to and when the home screen display was accurate and functioning.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "330961_330960",
+      "message": "It works now, thx!",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1765059_1765061",
+      "message": "Well that didn’t work.",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.45,
+      "max_retrieval_similarity": 0.2790573835372925,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "360745_360744",
+      "message": "Thanks!",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1683425_1683424",
+      "message": "Thanks!!!",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2111422_2111424",
+      "message": "didn't work",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.7926986217498779,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1458847_1458849",
+      "message": "Thanks it worked eventually",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2128235_2128237",
+      "message": "That actually worked...thank you for your help! 🙏🏼",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1676234_1676236",
+      "message": "That worked - thank you!!!",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "550810_550811",
+      "message": "Worked like a charm, thank you.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2483759_2483758",
+      "message": "wow that worked thank u",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "107364_107366",
+      "message": "Thanks for the help! It’s working",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2593005_2593004",
+      "message": "Thank you so much 😭",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2147772_2147774",
+      "message": "Thank you i think it worked",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1704680_1704679",
+      "message": "I️t still didn’t work :/",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.7568031549453735,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1834659_1834661",
+      "message": "It worked! Thanks a lot! 🙏🏽",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "209067_209069",
+      "message": "I’ve tried that. And it still doesn’t work.",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.9,
+      "max_retrieval_similarity": 0.8822962045669556,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1628910_1628912",
+      "message": "Tried that and it didn’t work!",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.8195515871047974,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2619747_2619748",
+      "message": "it’s working again! thank you!",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.000000238418579,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1712030_1712032",
+      "message": "thanks I think that worked!",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.000000238418579,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1605507_1605506",
+      "message": "Thank you! It worked 👍🏼",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.000000238418579,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "382425_382424",
+      "message": "Didn’t work. Still does I️t.",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.9,
+      "max_retrieval_similarity": 0.8349902629852295,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "292929_292931",
+      "message": "Thanks so much for the response.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.000000238418579,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2837185_2837183",
+      "message": "why is that the music I downloaded from my computer into my iPhone can’t play? I have Apple Music and any song it can’t match in your library it prevents me from playing songs.",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.8375318646430969,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1299027_1299025",
+      "message": "My music app keeps crashing and now won’t even open",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.48747777938842773,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "506469_506467",
+      "message": "why can’t my sister listen to music she bought on itunes when i have individual apple music ?",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.7168029546737671,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1900089_1900086",
+      "message": "I’m still running into problems with accessing my Apple Music. Help!",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.8657727241516113,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2802445_2802444",
+      "message": "My music won’t show up in my control center. I have to actually go into the Apple Music app just to pause the shit and it’s pissing me off",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.43669790029525757,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "1009095_1009093",
+      "message": "Just updated my Music Library and music app is crashing when opening it, why?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.5709537267684937,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1277180_1277179",
+      "message": "Apple Music isn’t working. Already a member but I can’t access the songs I’ve downloaded from the service.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2899041_2899040",
+      "message": "for sure just pissed me off this morning! How is it that I verified my student account multiple times for Apple Music and you debit my account for 9.99?!! I need answers and I need them now!",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "592241_592240",
+      "message": "every time I get a Snapchat it’s stops my music - pandora and owned music, doesn’t matter how I’m listening - help",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.39612603187561035,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "331720_331719",
+      "message": "the new update deleted all my music... thanks",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.6019521951675415,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "33351_33350",
+      "message": "Why am I loosing songs I’ve downloaded on Apple Music. It won’t let me download them again either. Greyed our on playlists too",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.4640970826148987,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "1918492_1918491",
+      "message": "my apple music is not working. It is asking my to subscribe even though i am already a member. And yes you have taken my £££",
+      "true_escalation": "escalate",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 0.8322065472602844,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1906848_1906847",
+      "message": "Hey, I'm having trouble with my iTunes account. I can't log in to my account, I've tried changing it's password and +",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.6589205265045166,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "127135_127134",
+      "message": "I pre ordered an album on iTunes but it’s not showing up in my music library even though it’s been released how can I fix this?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1930599_1930598",
+      "message": "was looking through my music when I noticed 1 was missing, went to the album on iTunes and was unable to redownload",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2069699_2069698",
+      "message": "WTF is going with #Itunes? I can’t add music to my playlists. I’m so sick of #AppleProducts not working!",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.4697297513484955,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "903729_903731",
+      "message": "Every time I get a notification from or open up snapchat my music stops and I have to go back and press play again.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.38941091299057007,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "1790843_1790842",
+      "message": "i can’t download or add songs to my playlist on apple music? help?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2237131_2237130",
+      "message": "Is apple trying to kidding me?? I already payed for all the singels and now i have to pay for the full album again?? Can sm please help me?? #reputation",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1273569_1273568",
+      "message": "I’m having a problem with Apple Music. I’m using Family Sharing, money was taken out Oct 24, but it’s saying to chokse a plan",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "149947_149946",
+      "message": "You charged me for Apple Music but didn’t even tell me my trial was over. I want a refund",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "109039_109040",
+      "message": "my apple music app wont load everytime i click it",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.546521008014679,
+      "predicted_escalation": "escalate"
+    },
+    {
+      "thread_id": "622622_622621",
+      "message": "so saddened by the handling of my moms iPhone X preorder. She’s gotten no reason on why her phone is now being shipped back to the warehouse. It was scheduled to be delivered Monday. Now due to the return request from it’s going to be 10-14 days.",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.8326786756515503,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1000099_1000097",
+      "message": "my iPhone X keeps getting a \"Could Not Activate iPhone\" error. Is the activation server down?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1397313_1397311",
+      "message": "Hi 👋 When will the iPhone X be available at stores?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.8936083316802979,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2573904_2573902",
+      "message": "I think pre-ordering iPhone X was not a good idea. My phone was shipped on 11/9/17. It’s still in China 😔. Not likings this wait time. Apple is selling phones in 50 countries but pre-orders are not fulfilled yet. What is the priority on orders?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1362534_1362532",
+      "message": "This morning y'all couldn't reach my carrier when I tried to preorder. It said I had a reserve but no email yet?! #iPhoneX",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.7851679921150208,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1365536_1365534",
+      "message": "I can’t order my iPhone X from my reservation because I hadn’t changed the billing address to my ATT account from PO Box. Help",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.7449651956558228,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2004793_2004792",
+      "message": "Dam I preordered my I phone x on the Oct 27 at exactly 2:01.And it still hasn't came. Now saying you guys are out of stok",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1535596_1535595",
+      "message": "Hey what date/time AEDT can i order my new Iphone X in Australia? CANNOT WAIT",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.737034797668457,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2092700_2092699",
+      "message": "If I didn’t pre order the iPhone X, will I be able to get it by December if I order it once it comes out?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2003017_2003016",
+      "message": "Unable to activate iPhone X. 20+ attempts so far. AT&amp;T says my SIM is active. Help!",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.783794641494751,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1196348_1196347",
+      "message": "will i get an option to select 'unlocked and carrier free' iPHONE X on the pre-order day? OR when can we expect that option?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2983592_2983591",
+      "message": "we already have the prices for iPhone X here in Brazil, can you guys give us a release date or at least a window?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1543319_1543318",
+      "message": "I cannot activate my iPhone X. Any ideas?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.941878080368042,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2002928_2002927",
+      "message": "Help!!! Keep getting \"activation server is temporarily unavailable\" Trying to set up iPhoneX. Is there another way??",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "46574_46573",
+      "message": "hello, my iPhone X order says it’s “prepearing to ship” since saturday and it still hasnt changed it’s status.. what happened?",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1241155_1241154",
+      "message": "when I pre-order the iPhone X on the app can I have it shipped to an Apple Store to pick up Nov 3rd? Thanks!",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2557263_2557262",
+      "message": "how the hell do I STILL not have my iPhone X?! Preordered at 3:10am eastern time on preorder day and it’s in friggin South Korea while people who are preordering two days ago are receiving them already. This is ridiculous.",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1388296_1388295",
+      "message": "I was able to pre-order iPhone X for a store pick up. Do I have to pick up the phone on Nov 3? or another day?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1596048_1596047",
+      "message": "Hey, I would like to buy iPhone X next week. Is it possible?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.9999999403953552,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2837182_2837181",
+      "message": "Waiting over a month for my #iPhonex meant to come Friday no iPhone, meant to come today still not shipped. #Impatient",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1298605_1298604",
+      "message": "Does apple plan to sell full priced unlocked iphoneXs for preorders today?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "371150_371149",
+      "message": "may you help me , i would like to know when the IPhone x arrive to Israel thank you",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "568394_568393",
+      "message": "I updated to iOS11.2 but I don't see Apple Pay Cash... 🤔",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.9006708264350891,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "557814_557812",
+      "message": "I just updated to iOS 11.2 and I don’t see Apple Pay Cash feature anywhere. Help!!!!!",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 0.9158917665481567,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "2675743_2675741",
+      "message": "Please can I have some help with Apple Pay? The bank says my card should be activated but it’s not?",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.75,
+      "max_retrieval_similarity": 0.8373528718948364,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "556945_556943",
+      "message": "is it only me who can’t figure out how to add Apple Pay cash ? Followed all instructions listed online but none work",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.7908682823181152,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "555265_555263",
+      "message": "Hi I just updated to iOS 11.2 and Apple Pay Cash isn’t there. It said in release notes iOS 11.2 introduces Apple Pay Cash! Just wondering why it was left out...",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.8999999165534973,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "546679_546677",
+      "message": "Hello! I just updated to iOS 11.2, but it is not offering me a way to set up the Apple Pay Cash Card. Am I missing something? TIA",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 0.9999998807907104,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "586945_586944",
+      "message": "Updated to iOS 11.2. No Apple Pay Cash in Apple Pay settings to toggle on. Yet release notes say it’s included in release. What do I need to do? 📱",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "553562_553561",
+      "message": "I updated to iOS 11.2. I’m trying to set up Apple Pay cash but the Apple Pay cash options/settings doesn’t appear at all. All I see on display are my bank and credit cards. How do I solve this problem?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "570925_570924",
+      "message": "I updated to 11.2, but don’t see anything about new Apple Pay cash feature anywhere. Please help",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 0.9253970980644226,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "554726_554725",
+      "message": "I am on iOS 11.2, have turned on two factor auth, have debit and credit cards, but Apple Pay Cash is not available in my wallet settings. Whats up?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "539889_539888",
+      "message": "just updated to iOS 11.2 and can’t find the new Apple Pay Cash 💳 settings. I’m In the USA 🇺🇸",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "552150_552149",
+      "message": "I just updates do iOS 11.2, no Apple Pay cash card available. Is it not TRULY available yet?",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "594621_594620",
+      "message": "I updated to iOS 11.2 but I don’t see the Apple Pay card in my wallet app. I have two factor authentication enabled on my account.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "583641_583640",
+      "message": "Is it just me or what? Apple Pay cash is not included in the official iOS 11.2. I can’t find it. #ApplePayCash #iOS112",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "553485_553484",
+      "message": "...DL’ed 11.2 on iPhone 8 Plus and X...but no Apple Cash Option in settings??? #help #whereisit",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "1899440_1899439",
+      "message": "Help! Most of my cards are not available for pay on the Apple Store app (“rejected by the app”). What’s wrong?",
+      "true_escalation": "escalate",
+      "intent_confidence": 0.85,
+      "max_retrieval_similarity": 0.6670394539833069,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "546662_546661",
+      "message": "I’ve updated to iOS 11.2, how do I use Apple Pay Cash?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "554773_554772",
+      "message": "Apple Pay Cash is not showing up in iOS 11.2 for me. How do you activate it? Tried adding a card in Wallet/Pay settings. Located in US. USE 2 compatible cards in Pay.",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 0.885526180267334,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "549695_549694",
+      "message": "I’ve updated my phone with the new software 11.2 and I don’t see the Apple Pay cash feature!! It clearly mentioned it in the update notes. Where is it?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.98,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "553591_553590",
+      "message": "I just updated to iOS 11.2 and Apple Cash is nowhere to be found!!! #iOS11",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.95,
+      "max_retrieval_similarity": 1.0,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "552120_552119",
+      "message": "Hmm. Updated to iOS 11.2 but no option for Apple Pay Cash in “Wallet &amp; Apple Pay” in Settings. How do I enable it?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 0.99,
+      "max_retrieval_similarity": 0.9999999403953552,
+      "predicted_escalation": "auto_handle"
+    },
+    {
+      "thread_id": "570150_570149",
+      "message": "I’ve upgraded to iOS 11.2, but where is the Apple Pay Cash card option? Is there somewhere else I can set this feature up?",
+      "true_escalation": "auto_handle",
+      "intent_confidence": 1.0,
+      "max_retrieval_similarity": 1.0000001192092896,
+      "predicted_escalation": "auto_handle"
+    }
+  ],
   "misleading_number_note": "What would be misleading here is assuming this golden set reflects real traffic volume: it is deliberately stratified roughly evenly across intents (pipeline/golden_set.py), NOT the real ~88% out_of_scope-skewed traffic distribution (taxonomy.yaml) -- so the trivial baseline's accuracy here (0.051) is low, not falsely high. On real, naturally-imbalanced traffic the same trivial baseline would score far higher on accuracy while being equally useless. Read accuracy numbers from this report as 'performance on a balanced sample,' not 'performance on real traffic volume.' See REPORT.md section 8."
 }
