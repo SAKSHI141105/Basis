@@ -142,3 +142,25 @@ daily quota survivable across multiple days without losing progress or
 re-spending budget. This is disclosed as a real timeline constraint: a full
 live golden-set run plus a same-day labeling pass does not fit in one day's
 free-tier budget for a freshly created key.
+
+## The quota does not behave like a clean once-daily reset to 500
+
+**Discovered:** on the calendar day after exhausting the quota, a single
+manual probe call succeeded ("OK"), but the very next call — made seconds
+later, as part of resuming the eval run — immediately failed with the same
+`RESOURCE_EXHAUSTED` error. If the quota had cleanly reset to 500 at
+midnight, dozens of calls should have gone through before hitting the
+ceiling again. This happened on both attempted resumptions.
+
+**Working theory (not confirmable without AI Studio dashboard access):**
+the free-tier quota likely refills gradually (a leaky-bucket/trickle model)
+rather than jumping to a full 500 at a fixed daily boundary. This would
+explain both observations: a small number of calls succeeding right after
+a long idle period, then immediate re-exhaustion once that small buffer is
+spent, with the next usable slot arriving only after a further wait.
+
+**Consequence:** finishing the remaining ~48 classify/generate calls plus
+198 judge calls may require many small attempts spread across a longer
+window than "wait until tomorrow," not a single resumed run. Documented
+here rather than guessed at silently — the eval report's results section
+states plainly how many examples are covered as of any given snapshot.
