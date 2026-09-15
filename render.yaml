@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: applesupport-agent-api
+    runtime: python
+    plan: free
+    buildCommand: "pip install -e . && bash scripts/fetch_artifacts.sh"
+    startCommand: "uvicorn service.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: CLASSIFIER_MODEL
+        value: gemini-3.5-flash-lite
+      - key: GENERATION_MODEL
+        value: gemini-3.5-flash-lite
+      - key: JUDGE_MODEL
+        value: gemini-3.5-flash-lite
+      - key: EMBEDDING_MODEL
+        value: paraphrase-multilingual-MiniLM-L12-v2
+      - key: ARTIFACTS_RELEASE_URL
+        sync: false
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false

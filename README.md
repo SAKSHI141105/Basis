@@ -40,7 +40,7 @@ leading disclosed limitation, not a footnote.
 ## Quickstart
 
 ```bash
-git clone <this-repo>
+git clone https://github.com/SAKSHI141105/Basis.git
 cd Basis
 make setup
 ```
@@ -216,3 +216,50 @@ tests/      pytest unit + integration tests (no API key needed — fully mocked)
 make test        # unit + integration tests (no API key needed)
 make run-api      # local FastAPI service on :8000
 ```
+
+## Deployment (free tier: Render + Vercel)
+
+The retrieval index and baseline model (`index_embeddings.npy`,
+`index_metadata.parquet`, `baseline_model.pkl`) are gitignored (large,
+regenerable binaries — see `.gitignore`), so a fresh deploy clone has
+nothing to build the retrieval index from without the raw Kaggle dataset.
+`scripts/fetch_artifacts.sh` downloads them from a GitHub Release instead
+of requiring a full pipeline re-run on the deploy host.
+
+**One-time setup:**
+1. Run `make pipeline` locally at least once so `artifacts/` is populated.
+2. Create a GitHub Release on this repo (any tag, e.g. `artifacts-v1`) and
+   upload `artifacts/index_embeddings.npy`, `artifacts/index_metadata.parquet`,
+   `artifacts/baseline_model.pkl`, and `artifacts/trivial_majority_label.txt`
+   as release assets.
+3. Note the release's asset base URL:
+   `https://github.com/<owner>/<repo>/releases/download/<tag>`
+
+**Backend on Render:**
+1. New Web Service → connect this repo (or use the committed `render.yaml`
+   blueprint — "New" → "Blueprint").
+2. Build command: `pip install -e . && bash scripts/fetch_artifacts.sh`
+   Start command: `uvicorn service.main:app --host 0.0.0.0 --port $PORT`
+3. Environment variables: `GEMINI_API_KEY` (yours), `ARTIFACTS_RELEASE_URL`
+   (from step above), `CORS_ALLOWED_ORIGINS` (set after the frontend is
+   deployed, once you have its URL — see below).
+4. Deploy. Check `https://<your-service>.onrender.com/health`.
+
+**Frontend on Vercel:**
+1. New Project → import this repo → set **Root Directory** to `web`.
+2. Environment variable: `NEXT_PUBLIC_API_URL=https://<your-render-service>.onrender.com`
+3. Deploy, then copy the resulting `https://<your-app>.vercel.app` URL back
+   into Render's `CORS_ALLOWED_ORIGINS` and redeploy the API so CORS allows it.
+
+**Known free-tier caveats, not glossed over:**
+- Render's free web services spin down after inactivity — the first request
+  after a period of idle can take 30–60s (cold start) plus the time to
+  download the ~470MB multilingual embedding model from Hugging Face on
+  first use each time the container restarts.
+- Render's free tier has limited RAM (512MB at the time of writing) —
+  `sentence-transformers` + the 100MB embeddings array + FastAPI can be
+  tight; if the service crashes on startup, check the Render logs for an
+  out-of-memory kill and consider a paid instance size.
+- `ARTIFACTS_RELEASE_URL` files are public once uploaded to a GitHub
+  Release on a public repo — fine here (derived from the already-public
+  Kaggle dataset), but worth knowing.
