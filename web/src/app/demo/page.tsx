@@ -56,27 +56,34 @@ export default function DemoPage() {
           Pick a real customer message from the golden set, or write your own.
         </p>
 
-        <div className="flex flex-col gap-2 mb-7">
-          {samples.map((s) => (
-            <button
-              key={s.thread_id}
-              onClick={() => {
+        <div className="mb-7">
+          <label className="block text-[11px] font-mono uppercase tracking-[0.06em] text-text-muted mb-2">
+            Pick an example
+          </label>
+          <select
+            value={selectedId ?? ""}
+            onChange={(e) => {
+              const s = samples.find((s) => s.thread_id === e.target.value);
+              if (s) {
                 setSelectedId(s.thread_id);
                 setMessage(s.message);
-              }}
-              className={
-                "text-left rounded-lg border px-3.5 py-3 text-[13px] leading-[1.45] transition-all " +
-                (selectedId === s.thread_id
-                  ? "border-accent-border bg-accent-bg text-text shadow-[var(--shadow-sm)]"
-                  : "border-border bg-surface text-text-secondary shadow-[var(--shadow-card)] hover:border-border-strong")
               }
-            >
-              {s.message.length > 90 ? s.message.slice(0, 90) + "…" : s.message}
-            </button>
-          ))}
+            }}
+            disabled={samples.length === 0}
+            className="w-full rounded-lg border border-border bg-surface px-3.5 py-3 text-[13px] text-text shadow-[var(--shadow-card)] disabled:opacity-50"
+          >
+            <option value="" disabled>
+              {samples.length === 0 ? "No samples loaded" : "Select a golden-set example…"}
+            </option>
+            {samples.map((s) => (
+              <option key={s.thread_id} value={s.thread_id}>
+                {s.message.length > 80 ? s.message.slice(0, 80) + "…" : s.message}
+              </option>
+            ))}
+          </select>
           {samples.length === 0 && (
-            <p className="text-[12px] font-mono text-text-muted">
-              No samples loaded — is the API running at the configured URL?
+            <p className="mt-2 text-[12px] font-mono text-text-muted">
+              Is the API running at the configured URL?
             </p>
           )}
         </div>
@@ -110,6 +117,12 @@ export default function DemoPage() {
 
         {(result || loading) && (
           <div className="flex flex-col gap-5">
+            {loading && !result && (
+              <div className="flex items-center gap-2.5 text-[12.5px] font-mono text-text-muted">
+                <span className="inline-block h-2 w-2 rounded-full bg-accent animate-pulse" />
+                Processing your message…
+              </div>
+            )}
             <TraceStep visible={visibleStage >= 1} label="1. Classify">
               {result && (
                 <div className="flex items-center gap-3 rounded-xl border border-border bg-surface p-4 shadow-[var(--shadow-card)]">
