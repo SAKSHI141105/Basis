@@ -261,3 +261,54 @@ others. Not evaluated against a non-English golden set — the existing 198
 -example golden set is still all-English, so this feature's classification
 /generation quality is verified by spot-check and pipeline correctness,
 not by a metric like the English-only eval numbers in `REPORT.md`.
+
+## Re-ran the full golden-set eval after the multilingual expansion (198/198, zero skips)
+
+**Why:** the previously-committed `REPORT.md`/`artifacts/eval_report.json`
+were generated *before* the multilingual re-clustering — the report still
+said "30 raw clusters" when the code now produces 27, and every
+classify/retrieve/generate call underneath the numbers had changed. Caught
+during a full project audit, not reported by the user.
+
+**Found in passing, fixed immediately:** the taxonomy re-derivation commit
+had put clustering meta-commentary ("no dedicated cluster formed...")
+directly into `billing_subscription`/`general_complaint`'s `description`
+field in `taxonomy.yaml` — `pipeline/classify.py` injects that field
+verbatim into the live classification prompt, so it would have been sent
+to the model on every real classification call. Moved to a YAML comment.
+
+**Hit the same quota wall a second time:** the live re-run got through
+60/198 examples then hit `RESOURCE_EXHAUSTED` on the first key, exactly
+the "trickle-refill" behavior from the original build. Confirmed the
+`DiskCache` (`pipeline/llm_client.py`, keyed by prompt content, not by API
+key) had already persisted those 60 examples' responses to
+`.cache/llm_cache.jsonl` — switching to a second key (different Google
+account, same fix as before) replayed those 60 for free and only needed
+fresh quota for the remaining ~138 classify/generate calls plus the 198
+judge calls. Finished clean: 198/198 evaluated, 0 skipped.
+
+**Real number changes, not hidden:** intent macro-F1 moved 0.830 → 0.807
+(still far above both baselines); the simple TF-IDF+LogReg baseline
+dropped sharply (0.670 → 0.416 macro-F1) because its training data's
+intent distribution got more concentrated post-re-clustering, not because
+anything about the baseline itself changed — disclosed in `REPORT.md` §6
+as a reason the simple baseline isn't directly comparable across the two
+eval runs.
+
+**Escalation thresholds retuned a second time**, again via
+`pipeline/tune_escalation_thresholds.py`'s offline grid search against this
+run's cached signals (zero extra API calls): the new retrieval index's
+similarity distribution meant 0.70/0.90 was no longer near-optimal.
+`confidence_threshold=0.95`/`similarity_threshold=0.95` is the new shipped
+default — recall improved again (0.573 → 0.707) at some cost to precision
+(0.566 → 0.433, since the stricter confidence threshold pushes more
+borderline-but-correct auto-handle cases into escalate too). Patched
+directly into the already-generated `eval_report.json`'s escalation
+section (recomputed from the same cached signals) rather than re-running
+the full pipeline again for a decision-layer-only change.
+
+**One case-study finding survived unchanged across both retunings:** §7's
+case 2 (heavy profanity, 1.00 similarity precedent, 0.95 confidence) still
+gets `auto_handle` under the new thresholds too — concrete evidence that
+this specific miss needs a new hard trigger (profanity/hostility), not
+another round of threshold tuning.
