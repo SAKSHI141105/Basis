@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArchitectureDiagram } from "@/components/ArchitectureDiagram";
+import { Reveal } from "@/components/Reveal";
 
 const DOCS = [
   {
@@ -32,41 +33,44 @@ const DOCS = [
 export default function DocsPage() {
   return (
     <div className="mx-auto max-w-[1120px] px-6 py-16">
-      <p className="font-mono text-[12px] tracking-[0.08em] uppercase text-text-muted mb-3">
-        Documentation
-      </p>
-      <h1 className="font-display text-[32px] leading-[1.2] font-medium text-text max-w-[640px]">
-        How this system is built, and why.
-      </h1>
-      <p className="mt-4 max-w-[640px] text-[14.5px] leading-[1.65] text-text-secondary">
-        Moved off the overview page to keep that page focused on what the
-        agent does. This page is for anyone who wants the reasoning behind
-        it.
-      </p>
+      <Reveal>
+        <p className="font-mono text-[12px] tracking-[0.08em] uppercase text-text-muted mb-3">
+          Documentation
+        </p>
+        <h1 className="font-display text-[32px] leading-[1.2] font-medium text-text max-w-[640px]">
+          How this system is built, and why.
+        </h1>
+        <p className="mt-4 max-w-[640px] text-[14.5px] leading-[1.65] text-text-secondary">
+          Moved off the overview page to keep that page focused on what the
+          agent does. This page is for anyone who wants the reasoning behind
+          it.
+        </p>
+      </Reveal>
 
-      <section className="mt-14">
-        <h2 className="text-[12.5px] font-medium uppercase tracking-[0.08em] text-text-muted mb-5">
-          Architecture
-        </h2>
-        <div className="rounded-xl border border-border bg-surface p-8 shadow-[var(--shadow-card)]">
-          <ArchitectureDiagram />
-        </div>
-      </section>
+      <Reveal className="mt-14">
+        <section>
+          <h2 className="text-[12.5px] font-medium uppercase tracking-[0.08em] text-text-muted mb-5">
+            Architecture
+          </h2>
+          <div className="hover-lift rounded-xl border border-border bg-surface p-8 shadow-[var(--shadow-card)]">
+            <ArchitectureDiagram />
+          </div>
+        </section>
+      </Reveal>
 
       <section className="mt-14 mb-8">
         <h2 className="text-[12.5px] font-medium uppercase tracking-[0.08em] text-text-muted mb-5">
           Source documents (in the repo root)
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {DOCS.map((d) => (
-            <div
-              key={d.file}
-              className="rounded-xl border border-border bg-surface p-6 shadow-[var(--shadow-card)]"
-            >
-              <p className="font-mono text-[11px] text-accent mb-2">{d.file}</p>
-              <h3 className="font-display text-[16px] font-medium mb-1.5 text-text">{d.title}</h3>
-              <p className="text-[13px] leading-[1.6] text-text-secondary">{d.body}</p>
-            </div>
+          {DOCS.map((d, i) => (
+            <Reveal key={d.file} delay={i * 70}>
+              <div className="hover-lift rounded-xl border border-border bg-surface p-6 shadow-[var(--shadow-card)] h-full">
+                <p className="font-mono text-[11px] text-accent mb-2">{d.file}</p>
+                <h3 className="font-display text-[16px] font-medium mb-1.5 text-text">{d.title}</h3>
+                <p className="text-[13px] leading-[1.6] text-text-secondary">{d.body}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </section>
