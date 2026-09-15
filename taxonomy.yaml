@@ -1,45 +1,70 @@
 # Intent taxonomy for the AppleSupport support agent.
 #
-# Derived from HDBSCAN clustering of 103,757 customer messages (PCA-reduced
-# to 50 dims before clustering — see pipeline/taxonomy.py:_reduce_dims for
-# why), min_cluster_size=25, producing 30 raw clusters + a noise bucket.
-# Each raw cluster was manually read (artifacts/cluster_samples.md) and
-# merged into one of the 8 named intents below, or into out_of_scope.
-# cluster_ids is what pipeline/apply_taxonomy.py uses to map cluster -> intent.
+# Re-derived from HDBSCAN clustering of 103,757 customer messages using the
+# multilingual embedding model (paraphrase-multilingual-MiniLM-L12-v2),
+# PCA-reduced to 50 dims before clustering (pipeline/taxonomy.py:_reduce_dims),
+# min_cluster_size=25, producing 27 raw clusters + a noise bucket.
+# Each raw cluster was manually read (artifacts/cluster_samples.md, generated
+# 2026-09-15) and merged into one of the 8 named intents below, or into
+# out_of_scope. cluster_ids is what pipeline/apply_taxonomy.py uses to map
+# cluster -> intent.
 #
-# Documented finding, not hidden: the HDBSCAN noise bucket alone was ~87%
-# of all messages. Reading the noise sample showed this is mostly genuinely
-# low-content traffic (emoji-only replies, "check DM", "same issue" with no
-# restated context, bare iOS version numbers, non-English text — PRD scopes
-# this project to English only) rather than a clustering failure. Several
-# named raw clusters (17, 19, 20, 21, 23, 24, 28, 29) turned out to be the
-# same kind of low-content/meta-conversational traffic and were folded into
-# out_of_scope rather than kept as their own weak "intent." This makes
-# out_of_scope the majority class by construction, which is disclosed in the
-# report rather than treated as a clustering bug to chase away.
+# Multilingual scope expansion (see DECISION_LOG.md): this replaces the
+# original English-only clustering. The intended effect is visible in the
+# new clusters -- e.g. cluster 10 (App Store not loading) contains a
+# Portuguese message ("Minha App Store não esta fazendo nenhum
+# download...") sitting alongside English ones, and cluster 16 (iOS 11
+# WiFi/Bluetooth re-enabling itself) mixes English, German, and Spanish
+# reports of the same bug. Non-English messages about a known issue now
+# land in that issue's real intent instead of being lumped into
+# out_of_scope purely for being non-English.
+#
+# Documented finding, not hidden: the HDBSCAN noise bucket is ~87% of all
+# messages, same as before -- reading the noise sample shows this is still
+# mostly genuinely low-content traffic (emoji-only replies, "check DM",
+# "same issue" with no restated context, bare version numbers), not a
+# clustering failure. Several named raw clusters (2, 5, 12, 13, 17, 23, 25)
+# turned out to be that same kind of low-content/meta-conversational
+# traffic and were folded into out_of_scope rather than kept as their own
+# weak "intent" -- consistent with how the original English-only taxonomy
+# was built.
+#
+# Second documented finding: billing_subscription and general_complaint had
+# real dedicated clusters in the original English-only run but did NOT
+# reform as their own clusters in this re-clustering (min_cluster_size=25
+# apparently wasn't met, or the multilingual embedding space groups that
+# content differently). Their cluster_ids lists are empty below -- this is
+# disclosed, not silently dropped. It means the retrieval index currently
+# has no historical precedent threads pre-labeled with these two intents,
+# but pipeline/classify.py's live LLM classifier still reads the intent
+# descriptions/examples from this file and can assign either intent to a
+# live message; only the retrieval-precedent coverage for those two intents
+# is currently thin. Worth revisiting (e.g. lowering min_cluster_size, or a
+# targeted keyword-based backfill) rather than treated as resolved.
 
 intents:
   - id: device_troubleshooting
     description: >
       Device or app malfunction not tied to a specific recent software
-      update — data/photos disappearing, hardware defects (headphones,
-      AirPods), iMessage not sending, App Store not loading.
+      update — data/photos disappearing, App Store not loading, Apple
+      Music crashing, generic "still not working after restarting" reports.
     examples:
       - "All my photos got deleted off my phone help"
-      - "My AirPods won't pair and keep making a dropping noise"
-      - "iMessage isn't working, I can't send or receive texts"
-    cluster_ids: [0, 1, 3, 10]
+      - "My Apple Music keeps crashing and won't open"
+      - "Minha App Store não esta fazendo nenhum download"
+    cluster_ids: [3, 6, 10, 21]
 
   - id: software_update_bug
     description: >
       A bug the customer attributes directly to an OS/app update — battery
-      drain after updating, the iOS 11 "I" autocorrect glitch, Bluetooth/
-      WiFi re-enabling itself, a Mac bricked by a High Sierra update.
+      drain or freezing after updating, the iOS 11 "I" autocorrect glitch,
+      Bluetooth/WiFi re-enabling itself, a Mac bricked by a High Sierra
+      update. Reported in English, Spanish, and German in the golden data.
     examples:
       - "Battery life is half of what it was since updating to iOS 11"
       - "Ever since iOS 11 my WiFi and Bluetooth turn back on by themselves"
-      - "Why does typing I autocorrect to a box with a question mark"
-    cluster_ids: [2, 7, 12, 15, 16, 18, 26, 27]
+      - "Hat noch jemand WiFi Probleme unter iOS 11?"
+    cluster_ids: [1, 9, 14, 15, 16, 18, 19, 22, 24, 26]
 
   - id: apple_id_account_access
     description: >
@@ -50,17 +75,20 @@ intents:
       - "I forgot my Apple ID password and can't recover my account"
       - "My iCloud account has been locked for security reasons"
       - "Is this email asking to verify my account a phishing scam?"
-    cluster_ids: [5, 14]
+    cluster_ids: [0, 8]
 
   - id: billing_subscription
     description: >
       Charges, payment methods, or subscription/purchase access issues —
       primarily Apple Music/iTunes billing and purchased-content access.
+      No dedicated cluster formed in this re-clustering run (see header
+      note) — classification for this intent currently relies on the LLM
+      reading this description directly, not on retrieved precedents.
     examples:
       - "You charged me for an Apple Music subscription I never requested"
       - "iTunes won't accept my PayPal as a payment method"
       - "I bought an album but it won't let me redownload it"
-    cluster_ids: [4]
+    cluster_ids: []
 
   - id: repair_order_status
     description: >
@@ -70,17 +98,20 @@ intents:
       - "My iPhone X order says preparing for shipment, is that normal?"
       - "iPhone X won't activate, activation servers are down"
       - "Does my unlocked iPhone warranty apply internationally?"
-    cluster_ids: [11]
+    cluster_ids: [4]
 
   - id: general_complaint
     description: >
       Dissatisfaction with a product redesign, in-store experience, or
       customer-support interaction, without a specific fixable bug report.
+      No dedicated cluster formed in this re-clustering run (see header
+      note) — classification for this intent currently relies on the LLM
+      reading this description directly, not on retrieved precedents.
     examples:
       - "The new Podcasts app redesign is unusable, please revert it"
       - "Had the worst customer service experience at the Apple Store"
       - "AppleCare support wasted 90 minutes and fixed nothing"
-    cluster_ids: [6, 9, 13]
+    cluster_ids: []
 
   - id: feature_how_to
     description: >
@@ -90,7 +121,7 @@ intents:
       - "I updated to iOS 11.2 but don't see Apple Pay Cash, how do I enable it?"
       - "How do I set up Apple Pay Cash in Wallet settings?"
       - "Where did the option to add a card in Wallet go?"
-    cluster_ids: [8]
+    cluster_ids: [7]
 
   - id: positive_feedback
     description: >
@@ -100,17 +131,17 @@ intents:
       - "That worked! Thanks so much."
       - "Thank you, I appreciate it!"
       - "Got it, that fixed the issue."
-    cluster_ids: [22, 25]
+    cluster_ids: [11, 20]
 
   - id: out_of_scope
     description: >
       HDBSCAN noise, plus low-content/meta-conversational traffic that
-      isn't a standalone actionable support message on its own: bare "help
-      me" with no content, "check DM"/"sent a DM", "same issue" with no
-      restated context, bare version-number replies, emoji-only replies,
-      and non-English text (English-only scope per PRD 7).
+      isn't a standalone actionable support message on its own: bare "it
+      didn't work"/"same issue" with no restated context, "check DM", bare
+      version-number replies, emoji-only replies, and vague "update sucks"
+      complaints with no specific bug named.
     examples:
-      - "help me pls"
+      - "It didn't work."
       - "check dms"
       - "😡😡😡"
-    cluster_ids: [-1, 17, 19, 20, 21, 23, 24, 28, 29]
+    cluster_ids: [-1, 2, 5, 12, 13, 17, 23, 25]
