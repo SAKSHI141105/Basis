@@ -50,7 +50,7 @@ def _build_misleading_number_note(intent_metrics: dict) -> str:
     not a hardcoded assumption -- a static claim about which baseline "looks
     falsely strong" can be flat wrong depending on whether the golden set's
     class balance matches real traffic (it deliberately doesn't -- see
-    pipeline/golden_set.py's stratified sampling and REPORT.md 7)."""
+    pipeline/golden_set.py's stratified sampling and REPORT.md 8)."""
     trivial = intent_metrics["trivial"]
     main = intent_metrics["main"]
 
@@ -61,7 +61,7 @@ def _build_misleading_number_note(intent_metrics: dict) -> str:
             "useless -- always predicting the majority label scores well on accuracy "
             "when one class dominates. Macro-F1 and per-intent F1 are what actually "
             "reflect classification quality; raw accuracy alone is misleading here. "
-            "See REPORT.md section 7 for how this flips depending on class balance."
+            "See REPORT.md section 8 for how this flips depending on class balance."
         )
     return (
         "What would be misleading here is assuming this golden set reflects real "
@@ -72,7 +72,7 @@ def _build_misleading_number_note(intent_metrics: dict) -> str:
         "real, naturally-imbalanced traffic the same trivial baseline would score "
         "far higher on accuracy while being equally useless. Read accuracy "
         "numbers from this report as 'performance on a balanced sample,' not "
-        "'performance on real traffic volume.' See REPORT.md section 7."
+        "'performance on real traffic volume.' See REPORT.md section 8."
     )
 
 
