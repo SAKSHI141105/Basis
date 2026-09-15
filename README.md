@@ -135,6 +135,39 @@ spot-check pointed the AI labeler at the same 6 messages the human labeled
 treat this project's intent-classification headline numbers as provisional.
 See `REPORT.md` §4 and §9 for the full discussion.
 
+## Multilingual support (scope expansion beyond the original PRD)
+
+`PRD.md` §7 originally scoped this project to English-only. That was
+deliberately expanded later, on direct request, to: classify and reply in
+the customer's own language, still grounded on the existing English-only
+historical precedents (translated in-prompt) — not a full separate
+taxonomy/index per language.
+
+What changed: the embedding model (`all-MiniLM-L6-v2` →
+`paraphrase-multilingual-MiniLM-L12-v2`), the generation prompt (draft in
+the customer's language, translating precedent substance rather than
+replying in English), and best-effort multilingual risk/human-request
+escalation patterns (Spanish, Portuguese, French, German, Hindi) alongside
+the English ones. The full clustering pipeline was re-run on all 103,757
+messages and `taxonomy.yaml` was manually remapped against the new
+clusters.
+
+**Verified, not just assumed to work:** the new clustering visibly groups
+non-English messages with their English equivalents by underlying issue
+(e.g. the iOS 11 WiFi/Bluetooth bug cluster mixes English, German, and
+Spanish reports) rather than dumping all non-English text into
+`out_of_scope`. End-to-end tested with a real Spanish message — correctly
+classified, replied to in Spanish, and correctly escalated when no strong
+English precedent existed for it.
+
+**Known gap, not hidden:** the 198-example golden set and `REPORT.md`'s
+eval numbers are still English-only — this feature has not been measured
+against a metric the way the rest of the system has, only spot-checked for
+correctness. `billing_subscription` and `general_complaint` also didn't
+form their own clusters in the multilingual re-run, so retrieval precedent
+coverage for those two intents is thinner than the others (see
+`taxonomy.yaml`'s header and `DECISION_LOG.md` for the full account).
+
 ## Project layout
 
 ```
@@ -172,8 +205,10 @@ tests/      pytest unit + integration tests (no API key needed — fully mocked)
   not skewed this way — see `REPORT.md` §7 for why both directions matter.)
 - No PII redaction pipeline. Apple was chosen partly to reduce this need, but
   it's a known gap, not a guarantee.
-- No live system integration, no multi-language support, no fine-tuning —
-  see `PRD.md` §7 for the full out-of-scope list.
+- No live system integration, no fine-tuning — see `PRD.md` §7 for the full
+  out-of-scope list. (Multi-language support, also originally out of scope
+  there, was later added as a deliberate, explicitly-requested scope
+  expansion — see the section below and `DECISION_LOG.md`.)
 
 ## Development
 

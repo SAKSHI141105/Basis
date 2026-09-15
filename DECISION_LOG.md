@@ -205,3 +205,59 @@ run — the escalation-recall finding and the retrieval/generation
 groundedness spot-checks don't depend on golden-set intent labels being
 correct — but the intent-classification headline number specifically
 needs this caveat every time it's cited.
+
+## Scope expansion: multilingual support (beyond PRD's English-only decision)
+
+**Requested directly, not assumed:** the PRD explicitly scoped this
+project to English-only (PRD §7, out of scope). Asked directly whether to
+extend to other languages, including Indian languages. Confirmed the
+specific shape wanted: classify + reply in the customer's own language,
+still grounded on the existing English-only historical precedents
+(translated in-prompt) — not a full separate taxonomy/index per language,
+and not merely detect-and-escalate non-English messages untouched.
+
+**What changed, in order:**
+1. Swapped the embedding model from `all-MiniLM-L6-v2` to
+   `paraphrase-multilingual-MiniLM-L12-v2` (`.env`, `pipeline/taxonomy.py`)
+   — multilingual coverage (50+ languages incl. Hindi and other Indian
+   languages) while staying in the same lightweight sentence-transformers
+   family, not a heavier model like LaBSE.
+2. Added best-effort multilingual risk-keyword and human-request regex
+   patterns to `pipeline/escalation.py` (Spanish, Portuguese, French,
+   German, Hindi) alongside the existing English-only ones — otherwise a
+   non-English safety-trigger message would only be caught by the
+   confidence/similarity thresholds, not the hard escalation trigger.
+3. Updated `pipeline/generate.py`'s prompt to instruct the model to draft
+   in the same language as the customer message, translating the
+   substance of the (still English-only) precedent replies rather than
+   replying in English regardless of input language.
+4. Re-ran the full offline pipeline (embed → cluster → apply_taxonomy →
+   split → index → baselines) with the new embedding model on all 103,757
+   messages, and manually re-read `artifacts/cluster_samples.md` to remap
+   the 27 new raw clusters onto the 8 existing named intents (`taxonomy.yaml`).
+
+**Confirmed the intended effect, not just that it runs:** in the new
+clustering, non-English messages about a known issue land in the same
+cluster as the English reports of that issue — e.g. the iOS 11
+WiFi/Bluetooth-re-enabling-itself cluster mixes English, German, and
+Spanish complaints; the App Store cluster includes a Portuguese message —
+instead of a blanket "non-English = out_of_scope" bucket the old
+English-only embedding space produced. End-to-end tested with a real
+Spanish message ("Mi iPhone se calienta mucho después de la
+actualización...") — classified `software_update_bug` at 0.99 confidence
+and drafted a reply in Spanish; correctly escalated because retrieval
+similarity (0.87) fell under the tuned 0.90 threshold, since precedents
+remain English-only.
+
+**Documented, not hidden, gap:** `billing_subscription` and
+`general_complaint` did not reform as their own clusters in the
+multilingual re-clustering (`min_cluster_size=25` not met, or the
+multilingual embedding space simply groups that content differently).
+Their `cluster_ids` are empty in `taxonomy.yaml` — the live LLM classifier
+can still assign either intent from the taxonomy description, but the
+retrieval index currently has no precedent threads pre-labeled with them,
+so grounded-reply quality for those two intents is weaker than for the
+others. Not evaluated against a non-English golden set — the existing 198
+-example golden set is still all-English, so this feature's classification
+/generation quality is verified by spot-check and pipeline correctness,
+not by a metric like the English-only eval numbers in `REPORT.md`.
