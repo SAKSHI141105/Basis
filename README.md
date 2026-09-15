@@ -6,15 +6,36 @@ dataset: it classifies incoming customer messages into a data-derived intent
 taxonomy, drafts a reply grounded in real historically-resolved precedent, and
 decides auto-handle vs. escalate-to-human with a stated reason.
 
+**Start with [`REPORT.md`](REPORT.md)** — the full account of methodology,
+final results, and (most importantly) where this system is weaker than its
+headline numbers suggest. This README covers setup and reproduction only.
+
 See [`PRD.md`](PRD.md) for the product spec, [`TRD.md`](TRD.md) for technical
 decisions, [`ARCHITECTURE.md`](ARCHITECTURE.md) for the system diagram, and
-[`DECISION_LOG.md`](DECISION_LOG.md) for real decisions made (and constraints
-discovered) while actually building this against the live API and real data.
+[`DECISION_LOG.md`](DECISION_LOG.md) for the chronological account of real
+decisions made (and constraints discovered) while actually building this
+against the live API and real data.
 
-> **Status:** under active build, following the milestone order in `PRD.md`
-> §9. This README is updated in the same commit as any setup/run step change
-> (see `AGENT_WORKING_AGREEMENT.md` §4) — if a step below doesn't work, that's
-> a bug, not stale docs.
+> **Status:** core deliverables complete — the full golden-set eval has run
+> to completion (198/198 examples, 198/198 judge scores), reproducible
+> instantly via `make eval-fast`. Deployment (`AGENT_WORKING_AGREEMENT.md`
+> §5) is the one remaining optional step. This README is updated in the same
+> commit as any setup/run step change (see `AGENT_WORKING_AGREEMENT.md` §4)
+> — if a step below doesn't work, that's a bug, not stale docs.
+
+## The headline number, and why it isn't the whole story
+
+Main intent classifier: **83.3% accuracy, 0.830 macro-F1** (vs. 0.011
+macro-F1 for a trivial baseline, 0.670 for TF-IDF+LogReg). Escalation
+recall, after retuning thresholds against real data: **0.573** (up from an
+uncalibrated 0.146).
+
+**Read these next to `REPORT.md` §4, not instead of it:** a spot-check found
+the AI-generated labels making up 97% of the golden set agree with real
+human labels on intent **0 times out of 6** on direct comparison. Every
+number above is real and reproducible, and also measured against ground
+truth whose own reliability is genuinely in question — this is the report's
+leading disclosed limitation, not a footnote.
 
 ## Quickstart
 
@@ -47,10 +68,11 @@ make setup
 4. **Run the eval harness** against the committed golden set
    (`golden_set.jsonl`):
    ```bash
-   make eval-fast   # replays the committed LLM-response cache, no API calls
-   make eval-live   # re-calls the real Gemini API for real, ~30-60 min
+   make eval-fast   # replays the committed LLM-response cache -- instant, no API calls
+   make eval-live   # re-calls the real Gemini API for real
    ```
-   This produces `artifacts/eval_report.json` and `eval_report.md`.
+   This produces `artifacts/eval_report.json` and `eval_report.md`,
+   matching the numbers already committed and reported in `REPORT.md`.
 5. **Run the demo frontend** (optional — the API + eval report are the core
    deliverables, this is the polish layer per `AGENT_WORKING_AGREEMENT.md` §1):
    ```bash
@@ -66,23 +88,29 @@ make setup
 
 | Mode | Command | What it does |
 |---|---|---|
-| Fast (default) | `make eval-fast` | Replays the committed LLM-response cache for the golden set — no network calls |
+| Fast (default) | `make eval-fast` | Replays the committed LLM-response cache (808 real responses) — instant, no network calls |
 | Live | `make eval-live` | Re-calls the real Gemini API, with rate-limit pacing and retry on transient errors |
 
 No `GEMINI_API_KEY` set → the pipeline falls back to a local Ollama model for
 generation/judging (slower; see `.env.example`). This fallback is not held to
 the same reproducibility bar as the Gemini path.
 
-## A real constraint discovered building this, not assumed upfront
+## Real constraints discovered building this, not assumed upfront
 
-`gemini-3.5-flash` (the model TRD's tiering originally intended for
-generation/judging) carries only a **20 requests/day** free-tier quota on a
-freshly created API key — nowhere near enough for a 198-example golden-set
-run, and not documented anywhere discoverable without an authenticated AI
-Studio session. Classification, generation, *and* judging all run on
-`gemini-3.5-flash-lite` instead, which doesn't hit this ceiling. This is a
-real, disclosed trade-off (weaker generation/judge quality than the
-originally-intended split) — see `DECISION_LOG.md` for the full account.
+- `gemini-3.5-flash` (the model TRD's tiering originally intended for
+  generation/judging) carries only a **20 requests/day** free-tier quota on
+  a freshly created key — unusable at any real volume. Everything runs on
+  `gemini-3.5-flash-lite` instead.
+- `gemini-3.5-flash-lite` itself caps at 500 requests/day, and that quota
+  did not behave like a clean daily reset — see `DECISION_LOG.md`'s
+  "trickle-refill" entry. The full run was ultimately completed using a
+  second, genuinely separate free-tier API key (a new key under the *same*
+  Google account shares the same exhausted quota — it has to come from a
+  different account).
+
+Full chronological account, including several other fixes discovered the
+same way (a PCA-before-clustering fix, an offline-model-loading fix, a
+retry-on-transient-error fix), in `DECISION_LOG.md`.
 
 ## Golden set: how it was actually labeled
 
@@ -93,17 +121,18 @@ examples carry real human labels (`label_source: "human"`), the remaining
 192 were labeled by Gemini applying the same rubric a human would
 (`labeling_guide.md`), tagged `label_source: "ai_generated"`.
 
-This is disclosed prominently, not hidden, because it's a real limitation:
-using an LLM to generate ground truth that then grades an LLM-based
-classifier and LLM judge risks correlated errors — the two could agree with
-each other's mistakes in a way a human never would. See `DECISION_LOG.md`
-and the eval report's "what's misleading about my headline number" section.
+**This is not just a theoretical risk — it was checked and confirmed.** A
+spot-check pointed the AI labeler at the same 6 messages the human labeled
+(`artifacts/label_agreement_spotcheck.json`): **0/6 intent agreement**, 3/6
+(coin-flip) escalation agreement. This is the single biggest reason to
+treat this project's intent-classification headline numbers as provisional.
+See `REPORT.md` §4 and §9 for the full discussion.
 
 ## Project layout
 
 ```
-pipeline/   offline pipeline (ingest, clean, taxonomy, index, baselines, llm_client)
-service/    FastAPI serving layer (/classify, /draft-reply, /decide, /pipeline)
+pipeline/   offline pipeline (ingest, clean, taxonomy, index, baselines, llm_client, escalation tuning)
+service/    FastAPI serving layer (/classify, /draft-reply, /decide, /pipeline, /eval-report, /samples)
 eval/       evaluation harness (golden set, metrics, LLM judge, human-agreement study)
 web/        Next.js demo frontend — overview, live demo panel, eval dashboard
 tests/      pytest unit + integration tests (no API key needed — fully mocked)
@@ -111,18 +140,26 @@ tests/      pytest unit + integration tests (no API key needed — fully mocked)
 
 ## Known limitations (stated up front, not buried)
 
-- **Golden-set labels are mostly AI-generated**, not human-labeled — see
-  above. This is the single biggest caveat on every headline eval number.
+- **The AI-generated golden-set labels (97% of the set) showed 0/6 intent
+  agreement with real human labels on direct spot-check** — see above and
+  `REPORT.md` §4. Treat every intent-classification number as provisional.
 - The **human-agreement study** required by `TRD.md` §7.3 (comparing the LLM
   judge's reply-quality scores against an independent human rater) could not
   be performed for the same reason — using another LLM as a stand-in for
-  "the human" would be circular, not weaker evidence, so it's marked
-  explicitly not-performed in the eval report rather than faked.
+  "the human" would be circular, not weaker evidence. The LLM judge's very
+  high, suspiciously uniform scores (4.88/5 overall) are correspondingly
+  unverified.
+- Escalation thresholds were originally uncalibrated (recall 0.146) and have
+  since been retuned against the golden set (`pipeline/tune_escalation_thresholds.py`,
+  now recall 0.573) — a real, verified improvement that still inherits the
+  golden-set-labeling caveat above.
 - The "resolved" heuristic (silence or a closure phrase after the brand's
   reply) is weak — silence is not proof of satisfaction. See `TRD.md` §2.3.
 - `out_of_scope` is ~88% of real traffic by construction (see
   `taxonomy.yaml`'s header) — this makes raw accuracy a misleading headline
-  metric; macro-F1 is what actually reflects classification quality here.
+  metric on the *natural* distribution; macro-F1 is what actually reflects
+  classification quality. (The golden set itself is deliberately balanced,
+  not skewed this way — see `REPORT.md` §7 for why both directions matter.)
 - No PII redaction pipeline. Apple was chosen partly to reduce this need, but
   it's a known gap, not a guarantee.
 - No live system integration, no multi-language support, no fine-tuning —
