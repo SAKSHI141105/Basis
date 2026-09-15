@@ -8,6 +8,24 @@
 > the full account is in "A real constraint hit mid-build" below and
 > `DECISION_LOG.md`. Reproducible instantly via `make eval-fast` against the
 > committed cache (`.cache/llm_cache_golden.jsonl`).
+>
+> **Known currently-stale numbers, disclosed not hidden:** real interactive
+> testing (a user running the live demo) surfaced that the escalation
+> thresholds this report's numbers were computed against
+> (`confidence_threshold=0.95`/`similarity_threshold=0.95`) were too
+> aggressive in practice — see §6's escalation section and
+> `DECISION_LOG.md`'s "Walked back the 0.95/0.95 escalation thresholds"
+> entry. The shipped default in `pipeline/escalation.py` is now
+> `confidence_threshold=0.90`/`similarity_threshold=0.85`, and the
+> generation prompt was separately fixed to stop defaulting to "please DM
+> us" (`DECISION_LOG.md`). Both changes invalidated the cached
+> classify/generate/judge responses this report's §6 numbers came from,
+> and re-running hit the same free-tier quota wall documented below before
+> it could finish. The numbers in §6 are the last real, complete run —
+> honest at the time they were generated — but they reflect the
+> **pre-walkback** thresholds and the **pre-fix** generation prompt, not
+> the code currently shipped. Re-run `make eval-live` once quota allows to
+> refresh them.
 
 ## 1. What this is
 

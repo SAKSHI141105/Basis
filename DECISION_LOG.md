@@ -327,3 +327,54 @@ disclosed cost of trading precision for the recall gain. Fixed in
 `REPORT.md` §7 immediately once found — a reminder to verify report prose
 against the final artifact, not an intermediate one, especially after a
 sequence of patch-then-rerun steps.
+
+## Walked back the 0.95/0.95 escalation thresholds after real user testing
+
+**Found by the user, not by the eval metric:** testing the live demo with
+"I'm unable to turn on hotspot on my iPhone 12... just give me the steps"
+— classified `device_troubleshooting` at 0.95 confidence, drafted a
+correct, concrete answer, then escalated anyway (retrieval similarity
+0.42, below the 0.95 threshold). Reported as "this shouldn't have been
+escalated."
+
+**Two distinct findings from investigating this, not one:**
+
+1. **This specific case is a retrieval-coverage gap, not a threshold bug.**
+   Reproduced directly against the pipeline: the top 3 retrieved
+   precedents for this message were all generic "please DM us" boilerplate
+   at ~0.41 similarity — the training data has essentially no resolved
+   Personal Hotspot threads. The model answered correctly from its own
+   general Apple knowledge, ungrounded in any real precedent
+   (`grounded_on` was empty). Escalating here is the system working
+   exactly as designed (never let an ungrounded answer go out
+   unsupervised) — no similarity threshold above ~0.45 would change this
+   specific outcome, since 0.42 is genuinely low, not an artifact of
+   picking 0.95 vs. some other number.
+
+2. **But the 0.95/0.95 default really was too aggressive in general.**
+   Checked the golden set's actual similarity distribution: median 0.86,
+   only 38% of examples reach 0.95. A blanket 0.95 similarity requirement
+   means ~67% of ALL messages escalate regardless of how good the
+   classification or draft is — including confidently-classified,
+   correctly-answered routine questions. That 0.95/0.95 pick was the
+   mathematically-best candidate by cost-weighted score (which weights a
+   missed escalation 3x a false one, per PRD's stated priority) — but
+   optimizing that metric in isolation trivially rewards escalating
+   almost everything, which defeats the point of having an auto_handle
+   capability at all. This is exactly the kind of blind spot pure
+   cost-metric optimization has, and it took a real person clicking
+   through the actual demo to surface it — the golden-set eval alone
+   never would have, since the eval's own cost metric was the thing
+   producing the recommendation.
+
+**Decision:** walked back to conf=0.90/sim=0.85 as a deliberately
+less-cost-optimal, more usable default: escalate rate 66.7% -> 54.5%,
+recall stays well above the original untuned baseline (0.585 vs 0.146),
+precision ticks up slightly (0.433 -> 0.436). A product judgment call,
+not a purely metric-driven one — the full trade-off table (four
+candidate threshold pairs, their precision/recall/cost/escalate-rate) is
+in `pipeline/escalation.py`'s comment. Golden-set eval re-run blocked by
+the same quota wall as before (hit `RESOURCE_EXHAUSTED` again partway
+through); `REPORT.md`/`eval_report.json` still reflect the 0.95/0.95 run
+until quota recovers or a fresh key is available — flagged there, not
+silently left stale.

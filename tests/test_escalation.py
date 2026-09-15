@@ -71,17 +71,19 @@ def test_confident_and_grounded_auto_handles():
 def test_moderate_similarity_now_escalates_after_threshold_retuning():
     # Documents the recalibration (DECISION_LOG.md): 0.55 let almost every
     # retrieved precedent through, driving recall down to 0.146 on the real
-    # golden set. A "pretty good" 0.9 precedent match no longer clears the
-    # tuned 0.95 threshold (retuned a second time after the multilingual
-    # re-clustering changed the retrieval index's similarity distribution).
-    # High confidence here isolates the similarity check specifically.
+    # golden set. A retuning pass (twice, now landing at 0.85 similarity as
+    # a deliberate, less-aggressive-than-cost-optimal middle ground -- see
+    # the long comment in pipeline/escalation.py) still correctly escalates
+    # a below-threshold precedent match. High confidence here isolates the
+    # similarity check specifically.
     signals = EscalationSignals(
         intent_confidence=0.99,
-        max_retrieval_similarity=0.9,
+        max_retrieval_similarity=0.7,
         message="how do I update my iOS software",
     )
     result = decide(signals)
     assert result.decision == "escalate"
+    assert "retrieval_similarity" in result.reason
     assert "retrieval_similarity" in result.reason
 
 

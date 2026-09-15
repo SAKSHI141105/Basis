@@ -140,14 +140,40 @@ HUMAN_REQUEST_PATTERNS = [
 # distribution enough that 0.70/0.90 was no longer near-optimal -- a fresh
 # grid search against the re-run golden set's cached escalation signals
 # (zero new API calls -- pipeline/tune_escalation_thresholds.py replays
-# decide() logic offline) found conf=0.95/sim=0.95 as the new best
-# candidate: recall 0.573 -> 0.707, precision 0.412 -> 0.433, cost-weighted
-# score 0.710 -> 0.751. Caveat, not hidden: most true_escalation labels used
-# to tune this are themselves AI-generated (see DECISION_LOG.md), so this
-# tuning optimizes agreement with a ground truth of its own uncertain
-# reliability -- a real, not fully human-verified, improvement.
-DEFAULT_CONFIDENCE_THRESHOLD = 0.95
-DEFAULT_SIMILARITY_THRESHOLD = 0.95
+# decide() logic offline) found conf=0.95/sim=0.95 as the best candidate by
+# raw cost-weighted score: recall 0.573 -> 0.707, precision 0.412 -> 0.433,
+# cost-weighted score 0.710 -> 0.751.
+#
+# Walked back from 0.95/0.95 after real interactive testing (a user running
+# the live demo) surfaced the actual practical cost of that pick: checking
+# the golden set's similarity distribution afterward showed a median of
+# only 0.86, so a 0.95 similarity bar alone pushes ~67% of ALL messages to
+# escalate -- including confidently-classified, correctly-answered routine
+# questions (e.g. "how do I turn on Personal Hotspot", 0.95 confidence,
+# perfectly correct drafted answer, escalated only because no historical
+# precedent for that specific feature existed in the training data at
+# >=0.95 similarity). Optimizing purely for cost-weighted score (which
+# weights a missed escalation 3x a false escalation, per PRD's stated
+# priority) trivially rewards escalating almost everything -- mathematically
+# valid, but it defeats the point of having an "auto_handle" capability at
+# all. conf=0.90/sim=0.85 is a deliberately less cost-optimal, more usable
+# middle ground: escalate rate 66.7% -> 54.5%, recall stays well above the
+# original untuned baseline (0.585 vs 0.146), precision ticks up slightly
+# too (0.433 -> 0.436). This is a product judgment call, not a purely
+# metric-driven one -- see DECISION_LOG.md for the full trade-off table.
+#
+# Caveat, not hidden: most true_escalation labels used to tune any of this
+# are themselves AI-generated (see DECISION_LOG.md), so all of the above
+# optimizes agreement with a ground truth of its own uncertain reliability.
+#
+# Separately, real limitation this threshold cannot fix: when the
+# retrieval index has no good precedent for a specific, narrow feature
+# (observed for Personal Hotspot troubleshooting), the system escalates by
+# design regardless of how low you set this threshold, because "no strong
+# precedent" is the whole signal -- the fix for that is better retrieval
+# coverage (more training data for that feature), not threshold tuning.
+DEFAULT_CONFIDENCE_THRESHOLD = 0.90
+DEFAULT_SIMILARITY_THRESHOLD = 0.85
 DEFAULT_CONTACT_COUNT_THRESHOLD = 3
 
 
