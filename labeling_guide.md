@@ -36,16 +36,30 @@ For each sampled thread:
   reproducibility of the sample itself, independent of the labels applied
   to it.
 
-## Known limitation of this method
+## What actually happened (updated after the fact, not left stale)
 
-One author labels the entire set in one pass — there is no second labeler
-and no adjudication step for disagreements, because a one-week take-home
-budget doesn't support a full annotation study. This is a real limitation:
-the "true" labels reflect one person's judgment, not inter-annotator
-consensus. It's disclosed here and in the report's "what's misleading about
-my headline number" section, not hidden.
+This guide describes the rubric a single human author intended to apply
+end to end. In practice, hand-labeling all 198 examples took longer than
+the time available: **only 6 of 198 examples ended up independently
+human-labeled** (`label_source: "human"` in `golden_set.jsonl`); the
+remaining 192 were labeled by an LLM (`pipeline/ai_label_golden_set.py`)
+applying this same rubric (`label_source: "ai_generated"`).
+
+**This was checked, not just assumed acceptable.** A spot-check compared
+the AI labeler's output against the 6 real human labels on the same
+messages, same rubric: **0/6 intent agreement**, 3/6 escalation agreement
+(`artifacts/label_agreement_spotcheck.json`). This is a real, material
+limitation on the golden set's ground truth — see `REPORT.md` §4 and §9
+for the full discussion, not a footnote here.
+
+## Known limitation of the original (human) labeling method
+
+Even for the 6 examples that were human-labeled: one author labels them in
+one pass — there is no second labeler and no adjudication step for
+disagreements. The "true" labels reflect one person's judgment, not
+inter-annotator consensus.
 
 The **separate** human-agreement study (TRD 7.3) is not a substitute for
-this — that study checks whether the *LLM judge* agrees with a human on
-*reply-quality* scores, not whether two humans agree on intent/escalation
-ground truth.
+either limitation above — that study checks whether the *LLM judge* agrees
+with a human on *reply-quality* scores, not whether two humans (or a human
+and an AI labeler) agree on intent/escalation ground truth.
