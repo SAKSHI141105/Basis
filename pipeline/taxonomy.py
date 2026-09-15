@@ -24,7 +24,7 @@ from pipeline.config import ARTIFACTS_DIR, RANDOM_SEED, THREADS_PARQUET
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-EMBEDDING_MODEL_NAME = os.environ.get("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
+EMBEDDING_MODEL_NAME = os.environ.get("EMBEDDING_MODEL", "paraphrase-multilingual-MiniLM-L12-v2")
 EMBEDDINGS_PATH = ARTIFACTS_DIR / "message_embeddings.npy"
 CLUSTERS_PATH = ARTIFACTS_DIR / "cluster_assignments.parquet"
 SAMPLES_PATH = ARTIFACTS_DIR / "cluster_samples.md"
